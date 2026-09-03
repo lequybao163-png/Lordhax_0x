@@ -1,0 +1,1519 @@
+-- Gui to Lua
+-- Version: 3.3 
+
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local MainFrame = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local ImageLabel = Instance.new("ImageLabel")
+local Executor = Instance.new("TextButton")
+local ExecutorFrame = Instance.new("Frame")
+local FrameK = Instance.new("Frame")
+local TextBox = Instance.new("TextBox")
+local File = Instance.new("TextButton")
+local Clear = Instance.new("TextButton")
+local Execute = Instance.new("TextButton")
+local Outputithink = Instance.new("TextBox")
+local Settings = Instance.new("TextButton")
+local close = Instance.new("TextButton")
+local bigger_dontwork = Instance.new("TextButton")
+local Remove = Instance.new("TextButton")
+
+-- Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.ResetOnSpawn = false
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.25, 0, 0.15, 0)
+Frame.Size = UDim2.new(0, 600, 0, 32)
+Frame.Active = true
+Frame.Draggable = true
+
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = Frame
+MainFrame.BackgroundColor3 = Color3.fromRGB(234, 234, 234)
+MainFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+MainFrame.BorderSizePixel = 0
+MainFrame.Position = UDim2.new(0, 0, 1, 0)
+MainFrame.Size = UDim2.new(0, 600, 0, 388)
+
+Title.Name = "Title"
+Title.Parent = Frame
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Title.BorderSizePixel = 0
+Title.Position = UDim2.new(0.04, 0, 0.1, 0)
+Title.Size = UDim2.new(0, 160, 0, 24)
+Title.Font = Enum.Font.SourceSans
+Title.Text = "Dominant Executor"
+Title.TextColor3 = Color3.fromRGB(0, 0, 0)
+Title.TextSize = 16.000
+Title.TextWrapped = true
+
+ImageLabel.Parent = Frame
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageLabel.BorderSizePixel = 0
+ImageLabel.Position = UDim2.new(0.012, 0, 0.18, 0)
+ImageLabel.Size = UDim2.new(0, 20, 0, 20)
+ImageLabel.Image = "rbxassetid://86102463824382"
+
+Executor.Name = "Executor"
+Executor.Parent = Frame
+Executor.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Executor.BorderColor3 = Color3.fromRGB(124, 124, 124)
+Executor.Position = UDim2.new(0.012, 0, 1.2, 0)
+Executor.Size = UDim2.new(0, 60, 0, 20)
+Executor.Font = Enum.Font.SourceSans
+Executor.Text = "Executor"
+Executor.TextColor3 = Color3.fromRGB(0, 0, 0)
+Executor.TextSize = 14.000
+
+ExecutorFrame.Name = "ExecutorFrame"
+ExecutorFrame.Parent = Frame
+ExecutorFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ExecutorFrame.BorderColor3 = Color3.fromRGB(124, 124, 124)
+ExecutorFrame.Position = UDim2.new(0.012, 0, 1.85, 0)
+ExecutorFrame.Size = UDim2.new(0, 585, 0, 360)
+
+FrameK.Name = "FrameK"
+FrameK.Parent = ExecutorFrame
+FrameK.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+FrameK.BorderColor3 = Color3.fromRGB(124, 124, 124)
+FrameK.Position = UDim2.new(0.79, 0, 0.04, 0)
+FrameK.Size = UDim2.new(0, 115, 0, 335)
+
+local ScrollingFrame = Instance.new("ScrollingFrame")
+ScrollingFrame.Parent = FrameK
+ScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScrollingFrame.BackgroundTransparency = 1.000
+ScrollingFrame.BorderSizePixel = 0
+ScrollingFrame.Size = UDim2.new(1, 0, 1, 0)
+ScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, 700)
+ScrollingFrame.ScrollBarThickness = 5
+
+local UIListLayout = Instance.new("UIListLayout")
+UIListLayout.Parent = ScrollingFrame
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.Padding = UDim.new(0, 5)
+
+-- Các nút chức năng cũ
+local JohnDoeBtn = Instance.new("TextButton")
+JohnDoeBtn.Parent = ScrollingFrame
+JohnDoeBtn.BackgroundColor3 = Color3.fromRGB(240, 240, 240)
+JohnDoeBtn.BorderColor3 = Color3.fromRGB(180, 180, 180)
+JohnDoeBtn.Size = UDim2.new(1, -5, 0, 30)
+JohnDoeBtn.Font = Enum.Font.SourceSans
+JohnDoeBtn.Text = "John Doe"
+JohnDoeBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+JohnDoeBtn.TextSize = 12.000
+
+local AnonymousBtn = Instance.new("TextButton")
+AnonymousBtn.Parent = ScrollingFrame
+AnonymousBtn.BackgroundColor3 = Color3.fromRGB(240, 240, 240)
+AnonymousBtn.BorderColor3 = Color3.fromRGB(180, 180, 180)
+AnonymousBtn.Size = UDim2.new(1, -5, 0, 30)
+AnonymousBtn.Font = Enum.Font.SourceSans
+AnonymousBtn.Text = "Anonymous Mode"
+AnonymousBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+AnonymousBtn.TextSize = 12.000
+
+local StummyBtn = Instance.new("TextButton")
+StummyBtn.Parent = ScrollingFrame
+StummyBtn.BackgroundColor3 = Color3.fromRGB(240, 240, 240)
+StummyBtn.BorderColor3 = Color3.fromRGB(180, 180, 180)
+StummyBtn.Size = UDim2.new(1, -5, 0, 30)
+StummyBtn.Font = Enum.Font.SourceSans
+StummyBtn.Text = "Stummy Guns"
+StummyBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+StummyBtn.TextSize = 13.000
+
+local C00lkiddBtn = Instance.new("TextButton")
+C00lkiddBtn.Parent = ScrollingFrame
+C00lkiddBtn.BackgroundColor3 = Color3.fromRGB(240, 240, 240)
+C00lkiddBtn.BorderColor3 = Color3.fromRGB(180, 180, 180)
+C00lkiddBtn.Size = UDim2.new(1, -5, 0, 30)
+C00lkiddBtn.Font = Enum.Font.SourceSans
+C00lkiddBtn.Text = "C00lkidd Sky/Decal"
+C00lkiddBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+C00lkiddBtn.TextSize = 12.000
+
+local ObungaBtn = Instance.new("TextButton")
+ObungaBtn.Parent = ScrollingFrame
+ObungaBtn.BackgroundColor3 = Color3.fromRGB(240, 240, 240)
+ObungaBtn.BorderColor3 = Color3.fromRGB(180, 180, 180)
+ObungaBtn.Size = UDim2.new(1, -5, 0, 30)
+ObungaBtn.Font = Enum.Font.SourceSans
+ObungaBtn.Text = "Obunga Jumpscare"
+ObungaBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+ObungaBtn.TextSize = 11.000
+
+local ObungaV2Btn = Instance.new("TextButton")
+ObungaV2Btn.Parent = ScrollingFrame
+ObungaV2Btn.BackgroundColor3 = Color3.fromRGB(240, 240, 240)
+ObungaV2Btn.BorderColor3 = Color3.fromRGB(180, 180, 180)
+ObungaV2Btn.Size = UDim2.new(1, -5, 0, 30)
+ObungaV2Btn.Font = Enum.Font.SourceSans
+ObungaV2Btn.Text = "Obunga v2"
+ObungaV2Btn.TextColor3 = Color3.fromRGB(0, 0, 0)
+ObungaV2Btn.TextSize = 12.000
+
+local GoobydolanBtn = Instance.new("TextButton")
+GoobydolanBtn.Parent = ScrollingFrame
+GoobydolanBtn.BackgroundColor3 = Color3.fromRGB(240, 240, 240)
+GoobydolanBtn.BorderColor3 = Color3.fromRGB(180, 180, 180)
+GoobydolanBtn.Size = UDim2.new(1, -5, 0, 30)
+GoobydolanBtn.Font = Enum.Font.SourceSans
+GoobydolanBtn.Text = "Goobydolan Sky"
+GoobydolanBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+GoobydolanBtn.TextSize = 11.000
+
+local TrollfaceBtn = Instance.new("TextButton")
+TrollfaceBtn.Parent = ScrollingFrame
+TrollfaceBtn.BackgroundColor3 = Color3.fromRGB(240, 240, 240)
+TrollfaceBtn.BorderColor3 = Color3.fromRGB(180, 180, 180)
+TrollfaceBtn.Size = UDim2.new(1, -5, 0, 30)
+TrollfaceBtn.Font = Enum.Font.SourceSans
+TrollfaceBtn.Text = "Trollface"
+TrollfaceBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+TrollfaceBtn.TextSize = 13.000
+
+local DancingSkeletonBtn = Instance.new("TextButton")
+DancingSkeletonBtn.Parent = ScrollingFrame
+DancingSkeletonBtn.BackgroundColor3 = Color3.fromRGB(240, 240, 240)
+DancingSkeletonBtn.BorderColor3 = Color3.fromRGB(180, 180, 180)
+DancingSkeletonBtn.Size = UDim2.new(1, -5, 0, 30)
+DancingSkeletonBtn.Font = Enum.Font.SourceSans
+DancingSkeletonBtn.Text = "Dancing Skeleton"
+DancingSkeletonBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+DancingSkeletonBtn.TextSize = 11.000
+
+local AnimeSkyBtn = Instance.new("TextButton")
+AnimeSkyBtn.Parent = ScrollingFrame
+AnimeSkyBtn.BackgroundColor3 = Color3.fromRGB(240, 240, 240)
+AnimeSkyBtn.BorderColor3 = Color3.fromRGB(180, 180, 180)
+AnimeSkyBtn.Size = UDim2.new(1, -5, 0, 30)
+AnimeSkyBtn.Font = Enum.Font.SourceSans
+AnimeSkyBtn.Text = "Anime Sky"
+AnimeSkyBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+AnimeSkyBtn.TextSize = 13.000
+
+local DuckRainBtn = Instance.new("TextButton")
+DuckRainBtn.Parent = ScrollingFrame
+DuckRainBtn.BackgroundColor3 = Color3.fromRGB(240, 240, 240)
+DuckRainBtn.BorderColor3 = Color3.fromRGB(180, 180, 180)
+DuckRainBtn.Size = UDim2.new(1, -5, 0, 30)
+DuckRainBtn.Font = Enum.Font.SourceSans
+DuckRainBtn.Text = "Duck Rain"
+DuckRainBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+DuckRainBtn.TextSize = 13.000
+
+local SpookifyBtn = Instance.new("TextButton")
+SpookifyBtn.Parent = ScrollingFrame
+SpookifyBtn.BackgroundColor3 = Color3.fromRGB(240, 240, 240)
+SpookifyBtn.BorderColor3 = Color3.fromRGB(180, 180, 180)
+SpookifyBtn.Size = UDim2.new(1, -5, 0, 30)
+SpookifyBtn.Font = Enum.Font.SourceSans
+SpookifyBtn.Text = "Spookify Audio"
+SpookifyBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+SpookifyBtn.TextSize = 12.000
+
+local LazyTownBtn = Instance.new("TextButton")
+LazyTownBtn.Parent = ScrollingFrame
+LazyTownBtn.BackgroundColor3 = Color3.fromRGB(240, 240, 240)
+LazyTownBtn.BorderColor3 = Color3.fromRGB(180, 180, 180)
+LazyTownBtn.Size = UDim2.new(1, -5, 0, 30)
+LazyTownBtn.Font = Enum.Font.SourceSans
+LazyTownBtn.Text = "Lazy Town Sky"
+LazyTownBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+LazyTownBtn.TextSize = 12.000
+
+local SongGoodBtn = Instance.new("TextButton")
+SongGoodBtn.Parent = ScrollingFrame
+SongGoodBtn.BackgroundColor3 = Color3.fromRGB(240, 240, 240)
+SongGoodBtn.BorderColor3 = Color3.fromRGB(180, 180, 180)
+SongGoodBtn.Size = UDim2.new(1, -5, 0, 30)
+SongGoodBtn.Font = Enum.Font.SourceSans
+SongGoodBtn.Text = "Song (good🤑)"
+SongGoodBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+SongGoodBtn.TextSize = 12.000
+
+local RainingTacosBtn = Instance.new("TextButton")
+RainingTacosBtn.Parent = ScrollingFrame
+RainingTacosBtn.BackgroundColor3 = Color3.fromRGB(240, 240, 240)
+RainingTacosBtn.BorderColor3 = Color3.fromRGB(180, 180, 180)
+RainingTacosBtn.Size = UDim2.new(1, -5, 0, 30)
+RainingTacosBtn.Font = Enum.Font.SourceSans
+RainingTacosBtn.Text = "Raining Tacos"
+RainingTacosBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+RainingTacosBtn.TextSize = 12.000
+
+-- Nút Pee mới được thêm vào
+local PeeBtn = Instance.new("TextButton")
+PeeBtn.Parent = ScrollingFrame
+PeeBtn.BackgroundColor3 = Color3.fromRGB(240, 240, 240)
+PeeBtn.BorderColor3 = Color3.fromRGB(180, 180, 180)
+PeeBtn.Size = UDim2.new(1, -5, 0, 30)
+PeeBtn.Font = Enum.Font.SourceSans
+PeeBtn.Text = "Pee"
+PeeBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+PeeBtn.TextSize = 13.000
+
+TextBox.Parent = ExecutorFrame
+TextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.BorderColor3 = Color3.fromRGB(124, 124, 124)
+TextBox.Position = UDim2.new(0.012, 0, 0.04, 0)
+TextBox.Size = UDim2.new(0, 440, 0, 195)
+TextBox.ClearTextOnFocus = false
+TextBox.Font = Enum.Font.SourceSans
+TextBox.MultiLine = true
+TextBox.Text = ""
+TextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.TextSize = 14.000
+TextBox.TextWrapped = true
+TextBox.TextXAlignment = Enum.TextXAlignment.Left
+TextBox.TextYAlignment = Enum.TextYAlignment.Top
+
+File.Name = "File"
+File.Parent = ExecutorFrame
+File.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+File.BorderColor3 = Color3.fromRGB(124, 124, 124)
+File.Position = UDim2.new(0.012, 0, 0.86, 0)
+File.Size = UDim2.new(0, 135, 0, 34)
+File.Font = Enum.Font.SourceSans
+File.Text = "File"
+File.TextColor3 = Color3.fromRGB(0, 0, 0)
+File.TextSize = 14.000
+
+Clear.Name = "Clear"
+Clear.Parent = ExecutorFrame
+Clear.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Clear.BorderColor3 = Color3.fromRGB(124, 124, 124)
+Clear.Position = UDim2.new(0.012, 0, 0.73, 0)
+Clear.Size = UDim2.new(0, 135, 0, 34)
+Clear.Font = Enum.Font.SourceSans
+Clear.Text = "Clear"
+Clear.TextColor3 = Color3.fromRGB(0, 0, 0)
+Clear.TextSize = 14.000
+
+Execute.Name = "Execute"
+Execute.Parent = ExecutorFrame
+Execute.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Execute.BorderColor3 = Color3.fromRGB(124, 124, 124)
+Execute.Position = UDim2.new(0.012, 0, 0.60, 0)
+Execute.Size = UDim2.new(0, 135, 0, 34)
+Execute.Font = Enum.Font.SourceSans
+Execute.Text = "Execute"
+Execute.TextColor3 = Color3.fromRGB(0, 0, 0)
+Execute.TextSize = 14.000
+
+Outputithink.Name = "Outputithink"
+Outputithink.Parent = ExecutorFrame
+Outputithink.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Outputithink.BorderColor3 = Color3.fromRGB(124, 124, 124)
+Outputithink.Position = UDim2.new(0.26, 0, 0.60, 0)
+Outputithink.Size = UDim2.new(0, 295, 0, 128)
+Outputithink.Font = Enum.Font.SourceSans
+Outputithink.Text = ""
+Outputithink.TextColor3 = Color3.fromRGB(0, 0, 0)
+Outputithink.TextSize = 14.000
+Outputithink.TextXAlignment = Enum.TextXAlignment.Left
+Outputithink.TextYAlignment = Enum.TextYAlignment.Top
+
+Settings.Name = "Settings"
+Settings.Parent = Frame
+Settings.BackgroundColor3 = Color3.fromRGB(218, 218, 218)
+Settings.BorderColor3 = Color3.fromRGB(124, 124, 124)
+Settings.Position = UDim2.new(0.12, 0, 1.2, 0)
+Settings.Size = UDim2.new(0, 60, 0, 20)
+Settings.Font = Enum.Font.SourceSans
+Settings.Text = "Settings"
+Settings.TextColor3 = Color3.fromRGB(0, 0, 0)
+Settings.TextSize = 14.000
+
+close.Name = "close"
+close.Parent = Frame
+close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+close.BackgroundTransparency = 1.000
+close.BorderColor3 = Color3.fromRGB(0, 0, 0)
+close.BorderSizePixel = 0
+close.Position = UDim2.new(0.81, 0, 0, 0)
+close.Size = UDim2.new(0, 40, 0, 32)
+close.Font = Enum.Font.SourceSans
+close.Text = "-"
+close.TextColor3 = Color3.fromRGB(0, 0, 0)
+close.TextSize = 16.000
+
+bigger_dontwork.Name = "bigger_dontwork"
+bigger_dontwork.Parent = Frame
+bigger_dontwork.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+bigger_dontwork.BorderColor3 = Color3.fromRGB(0, 0, 0)
+bigger_dontwork.BorderSizePixel = 0
+bigger_dontwork.Position = UDim2.new(0.88, 0, 0, 0)
+bigger_dontwork.Size = UDim2.new(0, 36, 0, 30)
+bigger_dontwork.Font = Enum.Font.SourceSans
+bigger_dontwork.Text = "[]"
+bigger_dontwork.TextColor3 = Color3.fromRGB(198, 198, 198)
+bigger_dontwork.TextSize = 14.000
+
+Remove.Name = "Remove"
+Remove.Parent = Frame
+Remove.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Remove.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Remove.BorderSizePixel = 0
+Remove.Position = UDim2.new(0.94, 0, 0, 0)
+Remove.Size = UDim2.new(0, 36, 0, 28)
+Remove.Font = Enum.Font.SourceSans
+Remove.Text = "x"
+Remove.TextColor3 = Color3.fromRGB(0, 0, 0)
+Remove.TextSize = 16.000
+
+-- Functions & Event Handlers
+
+local function JohnDoeScript()
+	local script = Instance.new('LocalScript', JohnDoeBtn)
+	local Outputithink = script.Parent.Parent.Parent.Parent.Outputithink
+	script.Parent.MouseButton1Click:Connect(function()
+		local success, err = pcall(function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/retpirato/Roblox-Scripts/refs/heads/master/John%20Doe.lua", true))()
+		end)
+		if success then
+			Outputithink.Text = "[IDE]: Executed John Doe Script!"
+		else
+			Outputithink.Text = "[IDE Error]: " .. tostring(err)
+		end
+	end)
+end
+coroutine.wrap(JohnDoeScript)()
+
+local function AnonymousScript()
+	local script = Instance.new('LocalScript', AnonymousBtn)
+	local Outputithink = script.Parent.Parent.Parent.Parent.Outputithink
+	script.Parent.MouseButton1Click:Connect(function()
+		local success, err = pcall(function()
+			local char = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait()
+			local head = char:WaitForChild("Head")
+			local humanoid = char:FindFirstChildOfClass("Humanoid")
+			
+			if humanoid then
+				humanoid.DisplayName = "Anonymous"
+			end
+			
+			for _, v in pairs(head:GetChildren()) do
+				if v:IsA("Decal") or v:IsA("ParticleEmitter") then
+					v:Destroy()
+				end
+			end
+			
+			local pe = Instance.new("ParticleEmitter")
+			pe.Name = "AnonymousParticles"
+			pe.Texture = "http://www.roblox.com/asset/?id=127476787"
+			pe.VelocitySpread = 5
+			pe.Rate = 25
+			pe.Lifetime = NumberRange.new(1.5, 3)
+			pe.Speed = NumberRange.new(3, 7)
+			pe.Size = NumberSequence.new(0.6, 1.2)
+			pe.Parent = head
+
+			local light = Instance.new("PointLight")
+			light.Brightness = 2
+			light.Range = 8
+			light.Color = Color3.fromRGB(0, 255, 150)
+			light.Parent = head
+		end)
+		if success then
+			Outputithink.Text = "[IDE]: Executed Anonymous Mode!"
+		else
+			Outputithink.Text = "[IDE Error]: " .. tostring(err)
+		end
+	end)
+end
+coroutine.wrap(AnonymousScript)()
+
+local function LXZFXVA_fake_script() 
+	local script = Instance.new('LocalScript', Clear)
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.TextBox.Text = ""
+	end)
+end
+coroutine.wrap(LXZFXVA_fake_script)()
+
+local function RLDMLYY_fake_script() 
+	local script = Instance.new('LocalScript', Execute)
+	local TextBox = script.Parent.Parent.TextBox
+	local Outputithink = script.Parent.Parent.Outputithink
+	script.Parent.MouseButton1Click:Connect(function()
+		local success, err = pcall(function()
+			loadstring(TextBox.Text)()
+		end)
+		if success then
+			Outputithink.Text = "[IDE]: Successfully Executed The Script!"
+		else
+			Outputithink.Text = "[IDE Error]: " .. tostring(err)
+		end
+	end)
+end
+coroutine.wrap(RLDMLYY_fake_script)()
+
+local function FileScript()
+	local script = Instance.new('LocalScript', File)
+	local Outputithink = script.Parent.Parent.Outputithink
+	script.Parent.MouseButton1Click:Connect(function()
+		local success, err = pcall(function()
+			local UI = {}
+
+			UI["1"] = ScreenGui
+			UI["1"]["Name"] = [[logo]]
+			UI["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling
+			UI["1"]["ResetOnSpawn"] = false
+
+			UI["2"] = Instance.new("LocalScript", UI["1"])
+
+			UI["3"] = Instance.new("ScreenGui", UI["1"])
+			UI["3"]["DisplayOrder"] = 999
+			UI["3"]["ResetOnSpawn"] = false
+			UI["3"]["Name"] = [[datag2]]
+
+			UI["4"] = Instance.new("ImageLabel", UI["3"])
+			UI["4"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255)
+			UI["4"]["Image"] = [[rbxassetid://86102463824382]]
+			UI["4"]["Size"] = UDim2.new(0, 90, 0, 90)
+			UI["4"]["BorderColor3"] = Color3.fromRGB(28, 43, 54)
+			UI["4"]["BackgroundTransparency"] = 1
+			UI["4"]["Name"] = [[Main]]
+			UI["4"]["Position"] = UDim2.new(0.47598, 0, 0.42337, 0)
+
+			UI["5"] = Instance.new("ImageLabel", UI["4"])
+			UI["5"]["ZIndex"] = 2
+			UI["5"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255)
+			UI["5"]["Image"] = [[http://www.roblox.com/asset/?id=6208815613]]
+			UI["5"]["BorderColor3"] = Color3.fromRGB(28, 43, 54)
+			UI["5"]["BackgroundTransparency"] = 1
+			UI["5"]["Name"] = [[Orbit]]
+
+			UI["6"] = Instance.new("ImageLabel", UI["4"])
+			UI["6"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255)
+			UI["6"]["Image"] = [[rbxassetid://126506133083228]]
+			UI["6"]["Size"] = UDim2.new(0, 118, 0, 118)
+			UI["6"]["BorderColor3"] = Color3.fromRGB(28, 43, 54)
+			UI["6"]["BackgroundTransparency"] = 1
+			UI["6"]["Name"] = [[Ring]]
+			UI["6"]["Position"] = UDim2.new(-0.16, 0, -0.16, 0)
+
+			UI["7"] = Instance.new("ImageLabel", UI["4"])
+			UI["7"]["ZIndex"] = 3
+			UI["7"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255)
+			UI["7"]["ImageTransparency"] = 1
+			UI["7"]["Image"] = [[rbxassetid://7102276469]]
+			UI["7"]["Size"] = UDim2.new(1, 0, 1, 0)
+			UI["7"]["BorderColor3"] = Color3.fromRGB(28, 43, 54)
+			UI["7"]["BackgroundTransparency"] = 1
+			UI["7"]["Name"] = [[Main2]]
+			UI["7"]["Position"] = UDim2.new(0, 0, 0, 0)
+
+			UI["8"] = Instance.new("Frame", UI["4"])
+			UI["8"]["Visible"] = false
+			UI["8"]["ZIndex"] = 2
+			UI["8"]["BackgroundColor3"] = Color3.fromRGB(17, 153, 255)
+			UI["8"]["Size"] = UDim2.new(0.24, 0, 0.24, 0)
+			UI["8"]["BorderColor3"] = Color3.fromRGB(17, 153, 255)
+			UI["8"]["Name"] = [[Outline]]
+			UI["8"]["BackgroundTransparency"] = 0.9
+
+			UI["9"] = Instance.new("LocalScript", UI["3"])
+			UI["9"]["Name"] = [[Orbi]]
+
+			UI["a"] = Instance.new("BindableEvent", UI["3"])
+			UI["a"]["Name"] = [[olleH]]
+
+			local function SCRIPT_2()
+				local script = UI["2"]
+				local activated = false
+				task.wait(0.3)
+				local connections = {
+					['printconsole'] = {},
+					['loadstring'] = {},
+					['GetObjects'] = {},
+					['syntax'] = {},
+				}
+				for i,v in pairs(connections) do
+					local newanimt = Instance.new('Animation')
+					newanimt.AnimationId = i..string.rep('4592', 100)
+					local cloney = newanimt:Clone()
+					connections[i].ready = false
+					connections[i].anim = newanimt
+					connections[i].animdupe = cloney
+					cloney.AnimationId = string.reverse(newanimt.AnimationId)
+					task.spawn(function()
+						cloney.Changed:Wait()
+						newanimt.AnimationId = 'OKAYDOE'..string.rep('\0', 0)
+						connections[i].ready = true
+					end)
+				end
+				game:GetService('RunService').RenderStepped:Connect(function()
+					for i,v in pairs(connections) do
+						v.animdupe.AnimationId = string.reverse(v.anim.AnimationId)
+					end
+				end)
+				local lan = Instance.new('Animation')
+				lan.AnimationId = string.rep('lugxdd', 999)
+				local dupean = lan:Clone()
+				game:GetService('RunService').RenderStepped:Connect(function()
+					dupean.AnimationId = string.reverse(lan.AnimationId)
+				end)
+				repeat task.wait() until lan.AnimationId ~= string.rep('lugxdd', 999)
+				if lan.AnimationId:find('CEX:') then
+					lan.AnimationId = string.rep('YEAH YOU GOT IT BRO XDX', 1)
+					repeat task.wait() until lan.AnimationId:find('cool cool im ready broX')
+					lan.AnimationId = ('Name: '..game:GetService('Players').LocalPlayer.Name)
+					repeat task.wait() until lan.AnimationId:find('placei') and lan.AnimationId ~= 'Name: '..game:GetService('Players').LocalPlayer.Name
+					local gamname = game:GetService('MarketplaceService'):GetProductInfo(game.PlaceId).Name..string.rep(' ', 10)
+					lan.AnimationId = gamname
+					repeat task.wait() until lan.AnimationId:find('lolx') and lan.AnimationId ~= gamname
+					lan.AnimationId = string.rep('fatxdd', 999)
+					activated = true
+					pcall(function() game:GetService("StarterGui"):SetCoreGuiEnabled("Backpack", true) end)
+				end
+			end
+			task.spawn(SCRIPT_2)
+
+			local function SCRIPT_9()
+				local script = UI["9"]
+				local Main = script.Parent.Main
+				local Main2 = Main.Main2
+				local Orbit = Main.Orbit
+				local Ring = Main.Ring
+				
+				local RS = game:GetService("RunService").Heartbeat
+				local Tween = game:GetService("TweenService")
+				local WaitTime = 0.25
+				local LoadInfo = TweenInfo.new(WaitTime, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0)
+				local FlashInfo = TweenInfo.new(WaitTime, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 1, true, 0)
+				local hk = Main.AbsoluteSize.X/2
+				local MainSize = Main.AbsoluteSize.X
+				local ls = Orbit.AbsoluteSize.X/2
+				local r = hk
+				local theta = 0
+				local step = (2*math.pi)/450
+				local rotvel = 0.35
+				local StepInstance = Instance.new("NumberValue")
+				local RotInstance = Instance.new("NumberValue")
+				StepInstance.Changed:Connect(function()
+					step = StepInstance.Value
+				end)
+				RotInstance.Changed:Connect(function()
+					rotvel = RotInstance.Value
+				end)
+				
+				local Modes = {
+					Tween:Create(Main2, LoadInfo, {ImageTransparency=0.5}),
+					Tween:Create(Main2, LoadInfo, {ImageTransparency=1}),
+					Tween:Create(Main2, FlashInfo, {ImageTransparency=0}),
+					Tween:Create(StepInstance, LoadInfo, {Value=(2*math.pi)/180}),
+					Tween:Create(StepInstance, LoadInfo, {Value=(2*math.pi)/450}),
+					Tween:Create(RotInstance, LoadInfo, {Value=1}),
+					Tween:Create(RotInstance, LoadInfo, {Value=0.35}),
+				}
+				Modes[2].Completed:Connect(function()
+					Modes[3]:Play()
+				end)
+				
+				local function ScriptLoading()
+					Modes[6]:Play()
+					Modes[4]:Play()
+					Modes[1]:Play()
+				end
+				
+				local function ScriptDone()
+					Modes[2]:Play()
+					Modes[5]:Play()
+					Modes[7]:Play()
+				end
+				
+				task.spawn(function()
+					local hi = script.Parent.Main
+					hi:TweenPosition(UDim2.new(0.5, -50, 0.5, -50), Enum.EasingDirection.In)
+					task.wait(3)
+					hi:TweenPosition(UDim2.new(0, 30, 1, -126), Enum.EasingDirection.Out)
+					game:GetService('Players').LocalPlayer.Chatted:Connect(function(agg)
+						pcall(function()
+							if agg == '/e hidemeh' then
+								hi.Visible = not hi.Visible
+							end
+						end)
+					end)
+				end)
+				
+				script.Parent.olleH.Event:Connect(function(a)
+					if a then ScriptLoading() else ScriptDone() end
+				end)
+				
+				while true do
+					theta = theta < 360 and theta + step or 0
+					local x = (hk + r * math.cos(theta) - ls)
+					local y = (hk + r * math.sin(theta) - ls)
+					Orbit.Position = UDim2.new(x/MainSize, 0, y/MainSize, 0)
+					Ring.Rotation = Ring.Rotation < 360 and Ring.Rotation + rotvel or 0
+					RS:Wait()
+				end
+			end
+			task.spawn(SCRIPT_9)
+		end)
+		
+		if success then
+			Outputithink.Text = "[IDE]: Logo UI Loaded Successfully via File!"
+		else
+			Outputithink.Text = "[IDE Error]: " .. tostring(err)
+		end
+	end)
+end
+coroutine.wrap(FileScript)()
+
+local function StummyScript()
+	local script = Instance.new('LocalScript', StummyBtn)
+	local Outputithink = script.Parent.Parent.Parent.Parent.Outputithink
+	script.Parent.MouseButton1Click:Connect(function()
+		local success, err = pcall(function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/yoolpydroolpy/Secreetdhwhw/refs/heads/main/stummy.guns.converted.by.yoolz.txt"))()
+		end)
+		if success then
+			Outputithink.Text = "[IDE]: Executed Stummy Guns!"
+		else
+			Outputithink.Text = "[IDE Error]: " .. tostring(err)
+		end
+	end)
+end
+coroutine.wrap(StummyScript)()
+
+local function C00lkiddScript()
+	local script = Instance.new('LocalScript', C00lkiddBtn)
+	local Outputithink = script.Parent.Parent.Parent.Parent.Outputithink
+	script.Parent.MouseButton1Click:Connect(function()
+		local success, err = pcall(function()
+			local s = Instance.new("Sky")
+			s.Name = "SKY"
+			s.SkyboxBk = "http://www.roblox.com/asset/?id=158118263"
+			s.SkyboxDn = "http://www.roblox.com/asset/?id=158118263"
+			s.SkyboxFt = "http://www.roblox.com/asset/?id=158118263"
+			s.SkyboxLf = "http://www.roblox.com/asset/?id=158118263"
+			s.SkyboxRt = "http://www.roblox.com/asset/?id=158118263"
+			s.SkyboxUp = "http://www.roblox.com/asset/?id=158118263"
+			s.Parent = game.Lighting
+			
+			local Spooky = Instance.new("Sound", game.Workspace)
+			Spooky.Name = "Spooky"
+			Spooky.SoundId = "rbxassetid://132"
+			Spooky.Volume = 5
+			Spooky.Looped = true
+			Spooky.Pitch = 0.30
+			Spooky:Play()
+			
+			local ID = 158118263
+			
+			local function spamDecal(v, id)
+				if v:IsA("Part") then
+					for i = 0, 5 do
+						local D = Instance.new("Decal")
+						D.Name = "MYDECALHUE"
+						D.Face = i
+						D.Parent = v
+						D.Texture = ("http://www.roblox.com/asset/?id="..id)
+					end
+				elseif v:IsA("Model") then
+					for a, b in pairs(v:GetChildren()) do
+						spamDecal(b, id)
+					end
+				end
+			end
+			
+			local function decalspam(id)
+				for i, v in pairs(game.Workspace:GetChildren()) do
+					if v:IsA("Part") then
+						for face = 0, 5 do
+							local D = Instance.new("Decal")
+							D.Name = "MYDECALHUE"
+							D.Face = face
+							D.Parent = v
+							D.Texture = ("http://www.roblox.com/asset/?id="..id)
+						end
+					elseif v:IsA("Model") then
+						spamDecal(v, id)
+					end
+				end
+			end
+			
+			decalspam(ID)
+		end)
+		if success then
+			Outputithink.Text = "[IDE]: Executed C00lkidd Sky & Decal!"
+		else
+			Outputithink.Text = "[IDE Error]: " .. tostring(err)
+		end
+	end)
+end
+coroutine.wrap(C00lkiddScript)()
+
+local function ObungaScript()
+	local script = Instance.new('LocalScript', ObungaBtn)
+	local Outputithink = script.Parent.Parent.Parent.Parent.Outputithink
+	script.Parent.MouseButton1Click:Connect(function()
+		local success, err = pcall(function()
+			local gui = Instance.new("ScreenGui")
+			gui.Name = "Obama Jumpscare "
+			gui.Parent = game.CoreGui
+			local jump = Instance.new("ImageLabel")
+			jump.Size = UDim2.new(0.9, 150, 0.9, 150)
+			jump.Position = UDim2.new(0.0, 0, 0.0, -59)
+			jump.BackgroundColor3 = Color3.new(0, 0, 0)
+			jump.ImageColor3 = Color3.new(1, 1, 1)
+			jump.Image = "rbxassetid://83908371516322"
+			jump.ImageTransparency = 0
+			jump.Parent = gui
+			jump.BackgroundTransparency = 0 
+			local jumpscareSound = Instance.new("Sound", workspace)
+			jumpscareSound.Name = "JumpscareSound"
+			jumpscareSound.Volume = 999
+			jumpscareSound.Pitch = 1
+			jumpscareSound.SoundId = "rbxassetid://9067444671"
+			jumpscareSound:play()
+			task.wait(5.7)
+			jump.ImageTransparency = 0.1
+			task.wait(0.02)
+			jump.ImageTransparency = 0.2
+			task.wait(0.02)
+			jump.ImageTransparency = 0.3
+			task.wait(0.02)
+			jump.ImageTransparency = 0.4
+			task.wait(0.02)
+			jump.ImageTransparency = 0.5
+			task.wait(0.02)
+			jump.ImageTransparency = 0.6
+			task.wait(0.02)
+			jump.ImageTransparency = 0.7
+			task.wait(0.02)
+			jump.ImageTransparency = 0.8
+			task.wait(0.02)
+			jump.ImageTransparency = 0.9
+			task.wait(0.02)
+			jump.ImageTransparency = 1
+			task.wait(3.5)
+			jump.Image = "rbxassetid://17397008583"
+			task.wait(0.01)
+			jump.ImageTransparency = 0.9
+			task.wait(0.01)
+			jump.ImageTransparency = 0.8
+			task.wait(0.01)
+			jump.ImageTransparency = 0.7
+			task.wait(0.01)
+			jump.ImageTransparency = 0.6
+			task.wait(0.01)
+			jump.ImageTransparency = 0.5
+			task.wait(0.01)
+			jump.ImageTransparency = 0.4
+			task.wait(0.01)
+			jump.ImageTransparency = 0.3
+			task.wait(0.01)
+			jump.ImageTransparency = 0.2
+			task.wait(0.01)
+			jump.ImageTransparency = 0.1
+			task.wait(0.01)
+			jump.ImageTransparency = 0
+			local jumpscareSound2 = Instance.new("Sound", workspace)
+			jumpscareSound2.Name = "JumpscareSound"
+			jumpscareSound2.Volume = 7
+			jumpscareSound2.Pitch = 1
+			jumpscareSound2.SoundId = "rbxassetid://131902818695416"
+			jumpscareSound2:play()
+			jumpscareSound2.Looped = true
+			
+			task.spawn(function()
+				while true do
+					task.wait(2.9)
+					jump.Image = "rbxassetid://123627289299234"
+					task.wait(0.9)
+					jump.Image = "rbxassetid://2050833946"
+					local jumpscareSound3 = Instance.new("Sound", workspace)
+					jumpscareSound3.Name = "JumpscareSound"
+					jumpscareSound3.Volume = 15
+					jumpscareSound3.SoundId = "rbxassetid://5547866547"
+					jumpscareSound3:play()
+					task.wait(1)
+					jump.Image = "rbxassetid://17397008583"
+				end
+			end)
+		end)
+		if success then
+			Outputithink.Text = "[IDE]: Executed Obunga Jumpscare!"
+		else
+			Outputithink.Text = "[IDE Error]: " .. tostring(err)
+		end
+	end)
+end
+coroutine.wrap(ObungaScript)()
+
+local function ObungaV2Script()
+	local script = Instance.new('LocalScript', ObungaV2Btn)
+	local Outputithink = script.Parent.Parent.Parent.Parent.Outputithink
+	script.Parent.MouseButton1Click:Connect(function()
+		local success, err = pcall(function()
+			task.spawn(function()
+				local Players = game:GetService("Players")
+				local TweenService = game:GetService("TweenService")
+				local SoundService = game:GetService("SoundService")
+				local player = Players.LocalPlayer
+				local playerGui = player:WaitForChild("PlayerGui")
+				local screenGui = Instance.new("ScreenGui")
+				screenGui.Name = "BlackJumpscare"
+				screenGui.ResetOnSpawn = false
+				screenGui.IgnoreGuiInset = true
+				screenGui.DisplayOrder = 999999999
+				screenGui.Parent = playerGui
+				local blackFrame = Instance.new("Frame")
+				blackFrame.Size = UDim2.new(1, 0, 1, 0)
+				blackFrame.BackgroundColor3 = Color3.new(0, 0, 0)
+				blackFrame.BorderSizePixel = 0
+				blackFrame.ZIndex = 1
+				blackFrame.Parent = screenGui
+				local mainImage = Instance.new("ImageLabel")
+				mainImage.Size = UDim2.new(1, 0, 1, 0)
+				mainImage.BackgroundTransparency = 1
+				mainImage.Image = "rbxassetid://123627289299234"
+				mainImage.ImageTransparency = 1
+				mainImage.ZIndex = 2
+				mainImage.Parent = screenGui
+				local overlayImage = Instance.new("ImageLabel")
+				overlayImage.Size = UDim2.new(1, 0, 1, 0)
+				overlayImage.BackgroundTransparency = 1
+				overlayImage.Image = "rbxassetid://114050799068731"
+				overlayImage.ImageTransparency = 1
+				overlayImage.ZIndex = 3
+				overlayImage.Parent = screenGui
+				local sound = Instance.new("Sound")
+				sound.SoundId = "rbxassetid://133742715058018"
+				sound.Volume = 10
+				sound.PlaybackSpeed = 0.147
+				sound.Looped = true
+				sound.Parent = SoundService
+				sound:Play()
+				task.wait(0.4)
+				TweenService:Create(mainImage, TweenInfo.new(2.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {ImageTransparency = 0}):Play()
+				task.wait(3.2)
+				TweenService:Create(overlayImage, TweenInfo.new(2.8, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {ImageTransparency = 0}):Play()
+			end)
+		end)
+		if success then
+			Outputithink.Text = "[IDE]: Executed Obunga v2!"
+		else
+			Outputithink.Text = "[IDE Error]: " .. tostring(err)
+		end
+	end)
+end
+coroutine.wrap(ObungaV2Script)()
+
+local function GoobydolanScript()
+	local script = Instance.new('LocalScript', GoobydolanBtn)
+	local Outputithink = script.Parent.Parent.Parent.Parent.Outputithink
+	script.Parent.MouseButton1Click:Connect(function()
+		local success, err = pcall(function()
+			local lighting = game:GetService("Lighting")
+			lighting:ClearAllChildren()
+			local sky = Instance.new("Sky", lighting)
+			sky.SkyboxBk = "rbxassetid://100091122003498"
+			sky.SkyboxFt = "rbxassetid://100091122003498"
+			sky.SkyboxLf = "rbxassetid://100091122003498"
+			sky.SkyboxRt = "rbxassetid://100091122003498"
+			sky.SkyboxUp = "rbxassetid://100091122003498"
+			sky.SkyboxDn = "rbxassetid://100091122003498"
+		end)
+		if success then
+			Outputithink.Text = "[IDE]: Executed Goobydolan Sky!"
+		else
+			Outputithink.Text = "[IDE Error]: " .. tostring(err)
+		end
+	end)
+end
+coroutine.wrap(GoobydolanScript)()
+
+local function TrollfaceScript()
+	local script = Instance.new('LocalScript', TrollfaceBtn)
+	local Outputithink = script.Parent.Parent.Parent.Parent.Outputithink
+	script.Parent.MouseButton1Click:Connect(function()
+		local success, err = pcall(function()
+			for i,v in pairs(game.Players:GetChildren()) do
+				if v.Character and v.Character:FindFirstChild("Head") then
+					local gui1 = Instance.new("BillboardGui")
+					gui1.Parent = v.Character.Head
+					gui1.Adornee = v.Character.Head
+					gui1.Size = UDim2.new(2.5, 0, 2.5, 0)
+					gui1.StudsOffset = Vector3.new(0, 0.2, 0)
+					gui1.AlwaysOnTop = true
+					local text1 = Instance.new("ImageLabel")
+					text1.Image = "http://www.roblox.com/asset/?id=6862780932"
+					text1.Size = UDim2.new(1, 0, 1, 0)
+					text1.Position = UDim2.new(0, 0, 0, 0)
+					text1.BackgroundTransparency = 1
+					text1.Parent = gui1
+					v.Character.Head.Transparency = 1
+				end
+			end
+		end)
+		if success then
+			Outputithink.Text = "[IDE]: Executed Trollface!"
+		else
+			Outputithink.Text = "[IDE Error]: " .. tostring(err)
+		end
+	end)
+end
+coroutine.wrap(TrollfaceScript)()
+
+local function DancingSkeletonScript()
+	local script = Instance.new('LocalScript', DancingSkeletonBtn)
+	local Outputithink = script.Parent.Parent.Parent.Parent.Outputithink
+	script.Parent.MouseButton1Click:Connect(function()
+		local success, err = pcall(function()
+			task.spawn(function()
+				local imageOne = "http://www.roblox.com/asset/?id=169585459"
+				local imageTwo = "http://www.roblox.com/asset/?id=169585475"
+				local imageThree = "http://www.roblox.com/asset/?id=169585485"
+				local imageFour = "http://www.roblox.com/asset/?id=169585502"
+				local imageFive = "http://www.roblox.com/asset/?id=169585515"
+				local imageSix = "http://www.roblox.com/asset/?id=169585502"
+				local imageSeven = "http://www.roblox.com/asset/?id=169585485"
+				local imageEight = "http://www.roblox.com/asset/?id=169585475"
+
+				local s = Instance.new("Sound")
+				s.Parent = workspace
+				s.Volume = 1
+				s.PlaybackSpeed = 0.2
+				s.RollOffMaxDistance = 100000
+				s.Looped = false
+
+				local function play(id)
+					s.SoundId = id
+					s.TimePosition = 0
+					s:Play()
+
+					repeat task.wait() until not s.IsPlaying
+				end
+
+				task.spawn(function()
+					while true do
+						play("rbxassetid://72141332532439")
+						play("rbxassetid://86140257759613")
+						play("rbxassetid://106583245385825")
+						play("rbxassetid://99516782375219")
+						play("rbxassetid://138305537168202")
+						play("rbxassetid://75436219824043")
+						play("rbxassetid://115767819629824")
+						play("rbxassetid://110204390814987")
+						play("rbxassetid://95264711497878")
+						play("rbxassetid://119853140744697")
+					end
+				end)
+
+				local Sky = Instance.new("Sky", game.Lighting)
+				Sky.SkyboxBk = imageOne
+				Sky.SkyboxDn = imageOne
+				Sky.SkyboxFt = imageOne
+				Sky.SkyboxLf = imageOne
+				Sky.SkyboxRt = imageOne
+				Sky.SkyboxUp = imageOne
+
+				while true do
+					Sky.SkyboxBk = imageOne
+					Sky.SkyboxDn = imageOne
+					Sky.SkyboxFt = imageOne
+					Sky.SkyboxLf = imageOne
+					Sky.SkyboxRt = imageOne
+					Sky.SkyboxUp = imageOne
+					task.wait(0.15)
+					Sky.SkyboxBk = imageTwo
+					Sky.SkyboxDn = imageTwo
+					Sky.SkyboxFt = imageTwo
+					Sky.SkyboxLf = imageTwo
+					Sky.SkyboxRt = imageTwo
+					Sky.SkyboxUp = imageTwo
+					task.wait(0.15)
+					Sky.SkyboxBk = imageThree
+					Sky.SkyboxDn = imageThree
+					Sky.SkyboxFt = imageThree
+					Sky.SkyboxLf = imageThree
+					Sky.SkyboxRt = imageThree
+					Sky.SkyboxUp = imageThree
+					task.wait(0.15)
+					Sky.SkyboxBk = imageFour
+					Sky.SkyboxDn = imageFour
+					Sky.SkyboxFt = imageFour
+					Sky.SkyboxLf = imageFour
+					Sky.SkyboxRt = imageFour
+					Sky.SkyboxUp = imageFour
+					task.wait(0.15)
+					Sky.SkyboxBk = imageFive
+					Sky.SkyboxDn = imageFive
+					Sky.SkyboxFt = imageFive
+					Sky.SkyboxLf = imageFive
+					Sky.SkyboxRt = imageFive
+					Sky.SkyboxUp = imageFive
+					task.wait(0.15)
+					Sky.SkyboxBk = imageSix
+					Sky.SkyboxDn = imageSix
+					Sky.SkyboxFt = imageSix
+					Sky.SkyboxLf = imageSix
+					Sky.SkyboxRt = imageSix
+					Sky.SkyboxUp = imageSix
+					task.wait(0.15)
+					Sky.SkyboxBk = imageSeven
+					Sky.SkyboxDn = imageSeven
+					Sky.SkyboxFt = imageSeven
+					Sky.SkyboxLf = imageSeven
+					Sky.SkyboxRt = imageSeven
+					Sky.SkyboxUp = imageSeven
+					task.wait(0.15)
+					Sky.SkyboxBk = imageEight
+					Sky.SkyboxDn = imageEight
+					Sky.SkyboxFt = imageEight
+					Sky.SkyboxLf = imageEight
+					Sky.SkyboxRt = imageEight
+					Sky.SkyboxUp = imageEight
+					task.wait(0.15)
+				end
+			end)
+		end)
+		if success then
+			Outputithink.Text = "[IDE]: Executed Dancing Skeleton Sky!"
+		else
+			Outputithink.Text = "[IDE Error]: " .. tostring(err)
+		end
+	end)
+end
+coroutine.wrap(DancingSkeletonScript)()
+
+local function AnimeSkyScript()
+	local script = Instance.new('LocalScript', AnimeSkyBtn)
+	local Outputithink = script.Parent.Parent.Parent.Parent.Outputithink
+	script.Parent.MouseButton1Click:Connect(function()
+		local success, err = pcall(function()
+			task.spawn(function()
+				task.wait()
+				local s = Instance.new("Sky")
+				s.Parent = game.Lighting
+				s.Name = "awesome skybox"
+				while true do
+					s.SkyboxBk = "http://www.roblox.com/asset/?id=21076888"
+					s.SkyboxDn = "http://www.roblox.com/asset/?id=21076888"
+					s.SkyboxFt = "http://www.roblox.com/asset/?id=21076888"
+					s.SkyboxLf = "http://www.roblox.com/asset/?id=21076888"
+					s.SkyboxRt = "http://www.roblox.com/asset/?id=21076888"
+					s.SkyboxUp = "http://www.roblox.com/asset/?id=21076888"
+					task.wait(0.1)
+					s.SkyboxBk = "http://www.roblox.com/asset/?id=21076945"
+					s.SkyboxDn = "http://www.roblox.com/asset/?id=21076945"
+					s.SkyboxFt = "http://www.roblox.com/asset/?id=21076945"
+					s.SkyboxLf = "http://www.roblox.com/asset/?id=21076945"
+					s.SkyboxRt = "http://www.roblox.com/asset/?id=21076945"
+					s.SkyboxUp = "http://www.roblox.com/asset/?id=21076945"
+					task.wait(0.1)
+					s.SkyboxBk = "http://www.roblox.com/asset/?id=21077007"
+					s.SkyboxDn = "http://www.roblox.com/asset/?id=21077007"
+					s.SkyboxFt = "http://www.roblox.com/asset/?id=21077007"
+					s.SkyboxLf = "http://www.roblox.com/asset/?id=21077007"
+					s.SkyboxRt = "http://www.roblox.com/asset/?id=21077007"
+					s.SkyboxUp = "http://www.roblox.com/asset/?id=21077007"
+					task.wait(0.1)
+					s.SkyboxBk = "http://www.roblox.com/asset/?id=21077125"
+					s.SkyboxDn = "http://www.roblox.com/asset/?id=21077125"
+					s.SkyboxFt = "http://www.roblox.com/asset/?id=21077125"
+					s.SkyboxLf = "http://www.roblox.com/asset/?id=21077125"
+					s.SkyboxRt = "http://www.roblox.com/asset/?id=21077125"
+					s.SkyboxUp = "http://www.roblox.com/asset/?id=21077125"
+					task.wait(0.1)
+					s.SkyboxBk = "http://www.roblox.com/asset/?id=21077227"
+					s.SkyboxDn = "http://www.roblox.com/asset/?id=21077227"
+					s.SkyboxFt = "http://www.roblox.com/asset/?id=21077227"
+					s.SkyboxLf = "http://www.roblox.com/asset/?id=21077227"
+					s.SkyboxRt = "http://www.roblox.com/asset/?id=21077227"
+					s.SkyboxUp = "http://www.roblox.com/asset/?id=21077227"
+					task.wait(0.1)
+					s.SkyboxBk = "http://www.roblox.com/asset/?id=21077345"
+					s.SkyboxDn = "http://www.roblox.com/asset/?id=21077345"
+					s.SkyboxFt = "http://www.roblox.com/asset/?id=21077345"
+					s.SkyboxLf = "http://www.roblox.com/asset/?id=21077345"
+					s.SkyboxRt = "http://www.roblox.com/asset/?id=21077345"
+					s.SkyboxUp = "http://www.roblox.com/asset/?id=21077345"
+					task.wait(0.1)
+					s.SkyboxBk = "http://www.roblox.com/asset/?id=21077227"
+					s.SkyboxDn = "http://www.roblox.com/asset/?id=21077227"
+					s.SkyboxFt = "http://www.roblox.com/asset/?id=21077227"
+					s.SkyboxLf = "http://www.roblox.com/asset/?id=21077227"
+					s.SkyboxRt = "http://www.roblox.com/asset/?id=21077227"
+					s.SkyboxUp = "http://www.roblox.com/asset/?id=21077227"
+					task.wait(0.1)
+					s.SkyboxBk = "http://www.roblox.com/asset/?id=21077125"
+					s.SkyboxDn = "http://www.roblox.com/asset/?id=21077125"
+					s.SkyboxFt = "http://www.roblox.com/asset/?id=21077125"
+					s.SkyboxLf = "http://www.roblox.com/asset/?id=21077125"
+					s.SkyboxRt = "http://www.roblox.com/asset/?id=21077125"
+					s.SkyboxUp = "http://www.roblox.com/asset/?id=21077125"
+					task.wait(0.1)
+					s.SkyboxBk = "http://www.roblox.com/asset/?id=21077007"
+					s.SkyboxDn = "http://www.roblox.com/asset/?id=21077007"
+					s.SkyboxFt = "http://www.roblox.com/asset/?id=21077007"
+					s.SkyboxLf = "http://www.roblox.com/asset/?id=21077007"
+					s.SkyboxRt = "http://www.roblox.com/asset/?id=21077007"
+					s.SkyboxUp = "http://www.roblox.com/asset/?id=21077007"
+					task.wait(0.1)
+					s.SkyboxBk = "http://www.roblox.com/asset/?id=21076945"
+					s.SkyboxDn = "http://www.roblox.com/asset/?id=21076945"
+					s.SkyboxFt = "http://www.roblox.com/asset/?id=21076945"
+					s.SkyboxLf = "http://www.roblox.com/asset/?id=21076945"
+					s.SkyboxRt = "http://www.roblox.com/asset/?id=21076945"
+					s.SkyboxUp = "http://www.roblox.com/asset/?id=21076945"
+					task.wait(0.1)
+				end
+			end)
+		end)
+		if success then
+			Outputithink.Text = "[IDE]: Executed Anime Sky!"
+		else
+			Outputithink.Text = "[IDE Error]: " .. tostring(err)
+		end
+	end)
+end
+coroutine.wrap(AnimeSkyScript)()
+
+local function DuckRainScript()
+	local script = Instance.new('LocalScript', DuckRainBtn)
+	local Outputithink = script.Parent.Parent.Parent.Parent.Outputithink
+	script.Parent.MouseButton1Click:Connect(function()
+		local success, err = pcall(function()
+			task.spawn(function()
+				while task.wait(0.1) do
+					local duck = Instance.new("Part", game.Workspace)
+					duck.Size = Vector3.new(40,40,40)
+					local asd = Instance.new("FileMesh", duck)
+					asd.MeshId = "rbxassetid://521754610"
+					asd.TextureId = "rbxassetid://521754612"
+					asd.Scale = Vector3.new(40,40,40)
+					duck.CanCollide = false
+					duck.CFrame = CFrame.new(math.random(-1000,1000), math.random(300,700), math.random(-1000,1000))
+					local quack = Instance.new("Sound", duck)
+					quack.SoundId = "rbxassetid://198462271"
+					quack.Volume = 5
+					quack:Play()
+					game.Debris:AddItem(quack, 0.5)
+				end
+			end)
+		end)
+		if success then
+			Outputithink.Text = "[IDE]: Executed Duck Rain!"
+		else
+			Outputithink.Text = "[IDE Error]: " .. tostring(err)
+		end
+	end)
+end
+coroutine.wrap(DuckRainScript)()
+
+local function SpookifyScript()
+	local script = Instance.new('LocalScript', SpookifyBtn)
+	local Outputithink = script.Parent.Parent.Parent.Parent.Outputithink
+	script.Parent.MouseButton1Click:Connect(function()
+		local success, err = pcall(function()
+			task.spawn(function()
+				local workspace = game:GetService("Workspace")
+
+				local function playSound(soundId, loop, pitch, volume)
+					local sound = Instance.new("Sound")
+					sound.SoundId = "rbxassetid://" .. soundId
+					sound.Parent = workspace
+					sound.Looped = loop
+					sound.Pitch = pitch
+					sound.Volume = volume
+					sound:Play()
+					return sound
+				end
+
+				local soundIds = {
+					72141332532439,
+					86140257759613,
+					106583245385825,
+					99516782375219,
+					138305537168202,
+					75436219824043,
+				}
+
+				local fixedPitch = 0.226
+				local fixedVolume = 1
+
+				while true do
+					for _, soundId in ipairs(soundIds) do
+						local sound = playSound(soundId, false, fixedPitch, fixedVolume)
+						repeat
+							task.wait(0.1)
+						until not sound.IsPlaying
+						sound:Destroy()
+					end
+				end
+			end)
+		end)
+		if success then
+			Outputithink.Text = "[IDE]: Executed Spookify Audio!"
+		else
+			Outputithink.Text = "[IDE Error]: " .. tostring(err)
+		end
+	end)
+end
+coroutine.wrap(SpookifyScript)()
+
+local function LazyTownScript()
+	local script = Instance.new('LocalScript', LazyTownBtn)
+	local Outputithink = script.Parent.Parent.Parent.Parent.Outputithink
+	script.Parent.MouseButton1Click:Connect(function()
+		local success, err = pcall(function()
+			local s = Instance.new("Sky")
+			s.Name = "Sky"
+			s.Parent = game.Lighting
+			s.SkyboxBk = "http://www.roblox.com/asset/?id=110240864101518"
+			s.SkyboxDn = "http://www.roblox.com/asset/?id=110240864101518"
+			s.SkyboxFt = "http://www.roblox.com/asset/?id=110240864101518"
+			s.SkyboxLf = "http://www.roblox.com/asset/?id=110240864101518"
+			s.SkyboxRt = "http://www.roblox.com/asset/?id=110240864101518"
+			s.SkyboxUp = "http://www.roblox.com/asset/?id=110240864101518"
+			game.Lighting.TimeOfDay = 12
+		end)
+		if success then
+			Outputithink.Text = "[IDE]: Executed Lazy Town Sky!"
+		else
+			Outputithink.Text = "[IDE Error]: " .. tostring(err)
+		end
+	end)
+end
+coroutine.wrap(LazyTownScript)()
+
+local function SongGoodScript()
+	local script = Instance.new('LocalScript', SongGoodBtn)
+	local Outputithink = script.Parent.Parent.Parent.Parent.Outputithink
+	script.Parent.MouseButton1Click:Connect(function()
+		local success, err = pcall(function()
+			task.spawn(function()
+				local ContentProvider = game:GetService("ContentProvider")
+				local soundIds = {
+					"rbxassetid://123538552604206",
+					"rbxassetid://81763153581180",
+					"rbxassetid://108431427964374",
+					"rbxassetid://97349423894815",
+					"rbxassetid://97697360513604"
+				}
+				local sounds = {}
+				for _, id in ipairs(soundIds) do
+					local s = Instance.new("Sound")
+					s.SoundId = id
+					s.Volume = 1
+					s.PlaybackSpeed = 0.17
+					s.Looped = false
+					s.Parent = workspace
+					local distortion = Instance.new("DistortionSoundEffect")
+					distortion.Level = 0.887887
+					distortion.Parent = s
+					local e = Instance.new("EqualizerSoundEffect")
+					e.HighGain = -1
+					e.LowGain = 1
+					e.MidGain = 1
+					e.Parent = s
+					table.insert(sounds, s)
+				end
+				ContentProvider:PreloadAsync(sounds)
+				local index = 1
+				local function playCurrent()
+					local current = sounds[index]
+					current:Play()
+					current.Ended:Once(function()
+						index += 1
+						if index > #sounds then
+							index = 1
+						end
+						playCurrent()
+					end)
+				end
+				playCurrent()
+			end)
+		end)
+		if success then
+			Outputithink.Text = "[IDE]: Executed Song (good🤑)!"
+		else
+			Outputithink.Text = "[IDE Error]: " .. tostring(err)
+		end
+	end)
+end
+coroutine.wrap(SongGoodScript)()
+
+local function RainingTacosScript()
+	local script = Instance.new('LocalScript', RainingTacosBtn)
+	local Outputithink = script.Parent.Parent.Parent.Parent.Outputithink
+	script.Parent.MouseButton1Click:Connect(function()
+		local success, err = pcall(function()
+			task.spawn(function()
+				while task.wait(0.01) do
+					for _, v in pairs(game.Players:GetChildren()) do
+						pcall(function()
+							local char = v.Character
+							local root = char and (char:FindFirstChild("Torso") or char:FindFirstChild("HumanoidRootPart"))
+							if root then
+								local taco = Instance.new("Part", workspace)
+								taco.CanCollide = true
+								local m = Instance.new("SpecialMesh", taco)
+								m.MeshId = "http://www.roblox.com/asset/?id=14846869"
+								m.TextureId = "http://www.roblox.com/asset/?id=14846834"
+								taco.CFrame = root.CFrame + Vector3.new(math.random(-50, 50), 100, math.random(-50, 50))
+							end
+						end)
+					end
+				end
+			end)
+			
+			task.spawn(function()
+				while task.wait() do
+					if not workspace:FindFirstChild("L0L0LW0T?") then
+						local z = Instance.new("Sound")
+						z.Parent = workspace
+						z.SoundId = "http://www.roblox.com/asset/?id=142295308"
+						z.Looped = true
+						z.Volume = 10
+						z.Pitch = 1
+						z.Name = "L0L0LW0T?"
+						z:Play()
+					end
+				end
+			end)
+		end)
+		if success then
+			Outputithink.Text = "[IDE]: Executed Raining Tacos!"
+		else
+			Outputithink.Text = "[IDE Error]: " .. tostring(err)
+		end
+	end)
+end
+coroutine.wrap(RainingTacosScript)()
+
+-- Script xử lý nút Pee mới
+local function PeeScript()
+	local script = Instance.new('LocalScript', PeeBtn)
+	local Outputithink = script.Parent.Parent.Parent.Parent.Outputithink
+	script.Parent.MouseButton1Click:Connect(function()
+		local success, err = pcall(function()
+			local Player = game.Players.LocalPlayer
+			local Character = Player.Character or Player.CharacterAdded:Wait()
+			local Head = Character:WaitForChild("Head")
+			local Torso = Character:FindFirstChild("Torso") or Character:WaitForChild("UpperTorso")
+
+			local function Weld(x, y)
+				local W = Instance.new("Weld")
+				W.Part0 = x
+				W.Part1 = y
+				local CJ = CFrame.new(x.Position)
+				local C0 = x.CFrame:inverse() * CJ
+				local C1 = y.CFrame:inverse() * CJ
+				W.C0 = C0
+				W.C1 = C1
+				W.Parent = x
+			end
+
+			local Breath = Instance.new("Part")
+			Breath.Name = "Breath"
+			Breath.Parent = Head
+			Breath.CFrame = Torso.CFrame * CFrame.new(0, -1, 0)
+			Breath.CanCollide = false
+			Breath.Transparency = 1
+			Breath.Size = Vector3.new(0.05, 0.05, 0.05)
+
+			local Air = Instance.new("ParticleEmitter")
+			Air.Parent = Breath
+			Air.EmissionDirection = Enum.NormalId.Front
+			Air.Rate = 500
+			Air.Color = ColorSequence.new(Color3.new(1, 1, 0), Color3.new(1, 1, 0))
+			Air.Speed = NumberRange.new(15, 15)
+			Air.Acceleration = Vector3.new(0, -25, 0)
+			Air.Size = NumberSequence.new(0.1, 0.1)
+			Air.Lifetime = NumberRange.new(0.5, 0.5)
+			Air.Transparency = NumberSequence.new(0, 0)
+
+			local Pees = Instance.new("Sound")
+			Pees.Parent = Torso
+			Pees.SoundId = "rbxassetid://258063615"
+			Pees.Looped = true
+			Pees.Volume = 0.8
+			Pees:Play()
+
+			Weld(Head, Breath)
+
+			task.spawn(function()
+				while true do
+					local pee = Instance.new("Part")
+					pee.Name = "Pee"
+					pee.Parent = workspace
+					game:GetService("Debris"):AddItem(pee, 10)
+					pee.CFrame = Torso.CFrame * CFrame.new(0, -2.9, -6)
+					pee.CanCollide = false
+					pee.BrickColor = BrickColor.new("New Yeller")
+					pee.Transparency = 0.4
+					pee.Size = Vector3.new(1.5, 0.01, 1.5)
+					pee.Anchored = true
+
+					local pmesh = Instance.new("SpecialMesh")
+					pmesh.Parent = pee
+					pmesh.Scale = Vector3.new(1, 0.1, 1)
+					pmesh.MeshType = Enum.MeshType.Sphere
+
+					for size = 1.5, 2, 0.1 do
+						pee.Size = Vector3.new(size, 0.01, size)
+						task.wait(0.05)
+					end
+
+					task.wait(1 / 60)
+				end
+			end)
+		end)
+		if success then
+			Outputithink.Text = "[IDE]: Executed Pee Script!"
+		else
+			Outputithink.Text = "[IDE Error]: " .. tostring(err)
+		end
+	end)
+end
+coroutine.wrap(PeeScript)()
+
+local function MSOQQK_fake_script() 
+	local script = Instance.new('LocalScript', close)
+	local button = script.Parent
+	local targetFrame = Frame
+	local userInputService = game:GetService("UserInputService")
+	local isFrameVisible = true
+	
+	local function onButtonClicked()
+		isFrameVisible = not isFrameVisible
+		targetFrame.Visible = isFrameVisible
+	end
+	
+	button.MouseButton1Click:Connect(onButtonClicked)
+	
+	userInputService.InputBegan:Connect(function(input, gameProcessed)
+		if not gameProcessed and input.KeyCode == Enum.KeyCode.P then
+			isFrameVisible = not isFrameVisible
+			targetFrame.Visible = isFrameVisible
+		end
+	end)
+end
+coroutine.wrap(MSOQQK_fake_script)()
+
+local function XIYFWXN_fake_script() 
+	local script = Instance.new('LocalScript', Remove)
+	script.Parent.MouseButton1Click:Connect(function()
+		ScreenGui:Destroy()
+	end)
+end
+coroutine.wrap(XIYFWXN_fake_script)()
