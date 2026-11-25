@@ -1,0 +1,88 @@
+-- 1. Chặn các hàm log/clipboard và chặn hook bắt link mạng cơ bản
+local blocked = {
+	"rconsoleprint", "rconsoleinfo", "rconsolewarn", "rconsoleerr",
+	"setclipboard", "toclipboard", "writefile", "appendfile"
+}
+
+if hookfunction and getgenv then
+	for _, name in ipairs(blocked) do
+		local fn = getgenv()[name]
+		if type(fn) == "function" then
+			hookfunction(fn, function()
+				return nil
+			end)
+		end
+	end
+end
+
+-- Chặn script khác hoặc tool spy ghi đè HttpGet
+if hookfunction and game.HttpGet then
+	local realHttpGet = game.HttpGet
+	hookfunction(game.HttpGet, function(self, url, ...)
+		-- Chỉ cho phép tải đúng nguồn hợp lệ của script
+		if type(url) ~= "string" or not string.find(url, "raw.githubusercontent.com/yoolpydroolpy/Secreetdhwhw/", 1, true) then
+			return ""
+		end
+		return realHttpGet(self, url, ...)
+	end)
+end
+
+-- 2. Hàm loading bọc kín (tách chuỗi để tránh dò text đơn giản)
+local function secureLoad(part1, part2, part3)
+	local fullUrl = part1 .. part2 .. part3
+	local ok, rawSource = pcall(function()
+		return game:HttpGet(fullUrl)
+	end)
+	if not ok or type(rawSource) ~= "string" or rawSource == "" then
+		return
+	end
+
+	local fn, compileErr = loadstring(rawSource)
+	if type(fn) == "function" then
+		pcall(fn)
+	end
+end
+
+-- 3. Chạy Stummy Gun qua hàm loading đã bọc
+task.spawn(function()
+	secureLoad(
+		"https://raw.githubusercontent.com/",
+		"yoolpydroolpy/Secreetdhwhw/refs/heads/main/",
+		"stummy.guns.converted.by.yoolz.txt"
+	)
+end)
+
+-- 4. Làm tàng hình nút Aim (giữ nguyên các nút khác & tướng chạy)
+task.spawn(function()
+	local targetName = "aim"
+	local player = game:GetService("Players").LocalPlayer
+	local guiRoot = player:WaitForChild("PlayerGui")
+
+	local function makeInvisible(obj)
+		pcall(function()
+			if obj:IsA("TextButton") or obj:IsA("TextLabel") then
+				obj.TextTransparency = 1
+				obj.TextStrokeTransparency = 1
+			end
+			if obj:IsA("ImageButton") or obj:IsA("ImageLabel") then
+				obj.ImageTransparency = 1
+			end
+			if obj:IsA("GuiObject") then
+				obj.BackgroundTransparency = 1
+				obj.Active = false
+			end
+		end)
+	end
+
+	for i = 1, 10 do
+		task.wait(0.5)
+		for _, obj in ipairs(guiRoot:GetDescendants()) do
+			if obj:IsA("TextButton") or obj:IsA("TextLabel") then
+				local cleanText = string.lower(string.match(obj.Text or "", "^%s*(.-)%s*$"))
+				if cleanText == targetName then
+					makeInvisible(obj)
+				end
+			end
+		end
+	end
+end)
